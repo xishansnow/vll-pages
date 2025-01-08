@@ -1,0 +1,1280 @@
+<!DOCTYPE html><html class="hide-aside" lang="zh-cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>低空无人机交通管理的空域设计和运行 | 构建低空信息理论与技术知识图谱！</title><meta name="author" content="Xishansnow"><meta name="copyright" content="Xishansnow"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="低空无人机交通管理的空域设计和运行"><link rel="shortcut icon" href="/vll-pages/img/favi.jpg"><link rel="canonical" href="http://xishansnow.github.io/vll-pages/posts/cb57fa9d.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/vll-pages/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/vll-pages/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '低空无人机交通管理的空域设计和运行',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/vll-pages/img/favi.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/vll-pages/archives/"><div class="headline">Articles</div><div class="length-num">45</div></a><a href="/vll-pages/tags/"><div class="headline">Tags</div><div class="length-num">46</div></a><a href="/vll-pages/categories/"><div class="headline">Categories</div><div class="length-num">50</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/vll-pages/index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map"></i><span> 运行概念</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/94508604.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 综合运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UTM/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> UTM 运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UAM/"><i class="fa-fw fa-solid fa-map"></i><span> UAM 运行概念</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 空域管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/5d2e7a7c.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/"><i class="fa-fw fas fa-atom"></i><span> 空域结构</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E6%B3%95%E8%A7%84/"><i class="fa-fw fa-solid fa-magnet"></i><span> 空域法规</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 飞行规划</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d04ee52a.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%92/"><i class="fa-fw fas fa-atom"></i><span> 全局规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E5%B1%80%E9%83%A8%E8%A7%84%E5%88%92/"><i class="fa-fw fa-solid fa-magnet"></i><span> 局部规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/"><i class="fa-fw fas fa-cogs"></i><span> 轨迹生成</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 风险管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/e53d9399.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E6%80%A7%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 定性评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fa-solid fa-magnet"></i><span> 定量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%BB%93%E6%9E%9C%E5%BA%94%E7%94%A8/"><i class="fa-fw fas fa-cogs"></i><span> 结果应用</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 冲突管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d805a213.html"><i class="fa-fw fas fa-cogs"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E7%95%A5%E5%B1%82/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 战略层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E6%9C%AF%E5%B1%82/"><i class="fa-fw fa-solid fa-magnet"></i><span> 战术层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/DAA/"><i class="fa-fw fa-solid fa-magnet"></i><span> DAA</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E9%98%B2%E6%92%9E/"><i class="fa-fw fa-solid fa-magnet"></i><span> 防撞</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-ghost"></i><span> 需求容量平衡</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/337b7ab7.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E7%94%9F%E6%88%90/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求生成</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E9%A2%84%E6%B5%8B/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求预测</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 容量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/DCB%E6%8E%AA%E6%96%BD/"><i class="fa-fw fas fa-school"></i><span> DCB 措施</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 基础设施与飞行器</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E7%9B%91%E8%A7%86/"><i class="fa-fw fas fa-cogs"></i><span> 监视</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E9%80%9A%E4%BF%A1/"><i class="fa-fw fas fa-cogs"></i><span> 通信</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 定位导航</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BE%AE%E6%B0%94%E8%B1%A1/"><i class="fa-fw fa-solid fa-magnet"></i><span> 微气象</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E8%B5%B7%E9%99%8D%E5%9C%BA/"><i class="fa-fw fas fa-cogs"></i><span> 起降场</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/UAS/"><i class="fa-fw fas fa-cogs"></i><span> UAS</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eVTOL/"><i class="fa-fw fa-solid fa-layer-group"></i><span> eVTOL</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eCTOL/"><i class="fa-fw fa-solid fa-magnet"></i><span> eCTOL</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eSTOL/"><i class="fa-fw fa-solid fa-magnet"></i><span> eSTOL</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-compass"></i><span> 索引</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/archives/"><i class="fa-fw fa-solid fa-timeline"></i><span> 时间索引</span></a></li><li><a class="site-page child" href="/vll-pages/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签索引</span></a></li><li><a class="site-page child" href="/vll-pages/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类索引</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/vll-pages/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/book_04.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/vll-pages/"><span class="site-name">构建低空信息理论与技术知识图谱！</span></a><a class="nav-page-title" href="/vll-pages/"><span class="site-name">低空无人机交通管理的空域设计和运行</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/vll-pages/index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map"></i><span> 运行概念</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/94508604.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 综合运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UTM/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> UTM 运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UAM/"><i class="fa-fw fa-solid fa-map"></i><span> UAM 运行概念</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 空域管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/5d2e7a7c.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/"><i class="fa-fw fas fa-atom"></i><span> 空域结构</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E6%B3%95%E8%A7%84/"><i class="fa-fw fa-solid fa-magnet"></i><span> 空域法规</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 飞行规划</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d04ee52a.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%92/"><i class="fa-fw fas fa-atom"></i><span> 全局规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E5%B1%80%E9%83%A8%E8%A7%84%E5%88%92/"><i class="fa-fw fa-solid fa-magnet"></i><span> 局部规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/"><i class="fa-fw fas fa-cogs"></i><span> 轨迹生成</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 风险管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/e53d9399.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E6%80%A7%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 定性评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fa-solid fa-magnet"></i><span> 定量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%BB%93%E6%9E%9C%E5%BA%94%E7%94%A8/"><i class="fa-fw fas fa-cogs"></i><span> 结果应用</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 冲突管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d805a213.html"><i class="fa-fw fas fa-cogs"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E7%95%A5%E5%B1%82/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 战略层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E6%9C%AF%E5%B1%82/"><i class="fa-fw fa-solid fa-magnet"></i><span> 战术层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/DAA/"><i class="fa-fw fa-solid fa-magnet"></i><span> DAA</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E9%98%B2%E6%92%9E/"><i class="fa-fw fa-solid fa-magnet"></i><span> 防撞</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-ghost"></i><span> 需求容量平衡</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/337b7ab7.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E7%94%9F%E6%88%90/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求生成</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E9%A2%84%E6%B5%8B/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求预测</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 容量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/DCB%E6%8E%AA%E6%96%BD/"><i class="fa-fw fas fa-school"></i><span> DCB 措施</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 基础设施与飞行器</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E7%9B%91%E8%A7%86/"><i class="fa-fw fas fa-cogs"></i><span> 监视</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E9%80%9A%E4%BF%A1/"><i class="fa-fw fas fa-cogs"></i><span> 通信</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 定位导航</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BE%AE%E6%B0%94%E8%B1%A1/"><i class="fa-fw fa-solid fa-magnet"></i><span> 微气象</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E8%B5%B7%E9%99%8D%E5%9C%BA/"><i class="fa-fw fas fa-cogs"></i><span> 起降场</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/UAS/"><i class="fa-fw fas fa-cogs"></i><span> UAS</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eVTOL/"><i class="fa-fw fa-solid fa-layer-group"></i><span> eVTOL</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eCTOL/"><i class="fa-fw fa-solid fa-magnet"></i><span> eCTOL</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eSTOL/"><i class="fa-fw fa-solid fa-magnet"></i><span> eSTOL</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-compass"></i><span> 索引</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/archives/"><i class="fa-fw fa-solid fa-timeline"></i><span> 时间索引</span></a></li><li><a class="site-page child" href="/vll-pages/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签索引</span></a></li><li><a class="site-page child" href="/vll-pages/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类索引</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/vll-pages/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">低空无人机交通管理的空域设计和运行</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-08T14:42:00.000Z" title="Created 2025-01-08 22:42:00">2025-01-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-08T15:41:08.771Z" title="Updated 2025-01-08 23:41:08">2025-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/">空域管理</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/">空域结构</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">16.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>56mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><script src='https://unpkg.com/tippy.js@2.0.2/dist/tippy.all.min.js'></script>
+<script src='/js/attachTooltips.js'></script>
+<link rel='stylesheet' href='/css/tippy.css'>
+<p>〖摘要〗随着无人机 ( UAV ) 的可用性和需求的增加，有必要建立无人机系统交通管理 ( UTM ) 系统，以实现低空的高效无人机运行。为了避免与地面障碍物、其他无人机和有人驾驶飞机相撞，在建立安全路径时，UTM 需要确定分配给每次飞行的时间和空间。已经提出了各种形式的离散化和结构化空域的想法，以通过有效的空域分配来提高系统运行效率并改善交通拥堵。此外，文献中还研究了将无人机分配到结构化单元空间的各种方法。本文将相关研究中出现的空域分配方法和结构设计分为几种类型，并分析了它们的优缺点。结构化空域设计分为三种模型： Air-Matrix、Air-Network 和 Air-Tubes ，并根据它们的子结构和时间分配方法进行分析。此外，通过重新分类结构化空域和运行方法并建立其组合进行了定量分析。</p>
+<!-- 〖原文〗 -->
+
+<p>〖参考〗 Lee, U.-J. et al. (2023) ‘Airspace designs and operations for UAS traffic management at low altitude’, Aerospace, 10(9), p. 737. Available at: <a target="_blank" rel="noopener" href="https://doi.org/10.3390/aerospace10090737">https://doi.org/10.3390/aerospace10090737</a>.</p>
+<style>p{text-indent:2em}</style>
+
+<hr>
+<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>无人驾驶飞行器 ( UAV ) 的使用日益增多，在包裹配送、监视、信息收集和精准农业 (Petrova and Petrov 2020)等工业活动中有着各种需求。随着无人机飞行数量的增加，需要提供安全高效的交通管制服务。现有的 ATM ( ATM ) 系统基于有人驾驶飞机的飞行特性、人工监控和控制以及语音通信，不适合控制无人机，无法处理快速增长的飞行需求。此外，小型无人机应用在人类经济活动密集的地方更受欢迎，并且集中在没有 ATM 服务的低空空域（ 例如 G 类 ）。因此，许多国家都在努力开发和标准化无人交通管理（ UTM ）：美国的 UTM (Whitley 2020)，欧洲的 U-Space (Balakrishnan et al. 2018)，中国的 U-Cloud (Balakrishnan et al. 2018)，日本的 JUTM (Balakrishnan et al. 2018; Consortium 2017)，韩国的 K-UTM (“Korea Institute of Aviation Safety Technology” 2022)，以及新加坡的 UTM-UAS (Salleh et al. 2017-01-09)。</p>
+<p>UTM 的主要目标是开发面向无人机的控制服务、飞行规则、导航系统和空域管理，解决低空城市地区和现有 ATM 管制空域的运行问题。UTM 系统根据用户的飞行请求确定安全路径并批准飞行计划。批准的飞行路径应与其他飞行计划无冲突，并且需要足够的间隔以防止与地面障碍物（ 如地形、建筑物和树木 ）以及飞行中的其他无人机相撞。当同时运行多个飞行的 UTM 时，在消解冲突和处理批准时会产生巨大的通信和计算负担。虽然考虑到上述因素，运行 UTM 的方法可能多种多样，但最直观和直接的概念是在飞行请求时确定是否批准用户提出的期望飞行路径，而不使用任何预设的空域 (Whitley 2020; Chakrabarty and Ippolito 2020-01-06; Sedov and Polishchuk 2018-06-26)的空间或时间结构。但在这种情况下，用户的期望飞行路径可能经常在要求苛刻的区域或起飞和降落设施中重叠，空域利用率会很快就达到其容量。因此，为了尽可能高效、安全地利用有限的空域，人们提出了各种空域结构概念。</p>
+<p>1）<strong>美国</strong>：虽然 NASA 提出了基于非结构化飞行管理的 UTM 运行概念 (Whitley 2020)，但也有一项研究考虑了可能的空域结构 (Ippolito et al. 2019-06-17)：它提出了四种空间和时间空域设计选择。</p>
+<p>2）<strong>欧洲</strong>：SESAR JU 一直在研究基本路径结构，如走廊、自由路线和固定路线 (Balakrishnan et al. 2018)。</p>
+<p>3）<strong>新加坡</strong>：在新加坡，TM-UAS 团队研究了各种空域设计，称为 Air-Matrix 模型，以便他们可以在城市地区有效地运行无人机 (Salleh et al. 2018-01-08)。Salleh et al. (2018-01-08)中提出的工作分析和比较了三种不同类型的路线网络：之前研究中提出的<em>基于网格的离散空域概念</em>(Institute 2017-09-22; D. Y. Tan et al. 2017-11-14)和两种在建筑物或道路上方有节点的图结构类型设计。</p>
+<p>4）<strong>其他</strong>：其他研究还提出了空域配置的基本结构化方法：地理囚笼、地理围栏以及拓扑方法 (Jung and Lee 2019; Hu et al. 2020; Kim and Atkins 2022; Cho and Yoon 2018)。</p>
+<p>有关 UTM 空域结构化的相关研究可分为两种情况：<strong>“结构化” 和 “非结构化”</strong> ，如 所示。前者构建预设的结构来规划飞行路径，而后者则没有任何明确的空域结构。事实上，对于结构化方法，已经提出了很多种空域结构概念，本文根据其空间划分和形式，将结构化方法分为三种模型：Air-Matrix、Air-Network 和 Air-Tubes ，将在下一节中介绍。我们根据 “运行类型” 和 “空域分配方法” ，对文献中的结构化概念进行了细分。</p>
+<p>本文根据前人研究中提出的 UTM 空域结构及其时空结构和运行方法的特点对其进行了分类和系统化。尽管目前已有少量关于 UTM 研究的综述 (Bauranov and Rakas 2021; Liu, Cai, and Zhu 2021)，但文献中还未出现过针对空域设计和运行方法分类的分析。因此，这对于建立识别和分析近期将要运行的 UTM 空域结构和非结构化运行特征的基础具有实用价值。此外，本文还介绍了可能的空域结构和运行方法的组合，包括文献中尚未提出的组合，并定性分析了每种组合的安全性、效率和计算&#x2F;通信复杂性。这使得人们能够在进行详细的高成本分析之前评估空域结构和运行方法的优缺点。此外，本研究可作为通过仿真无人机飞行和 UTM 系统模型进行定量分析的初步数据。</p>
+<p>本文的其余部分安排如下。第 2 节介绍了对空域结构和运行方法进行分类的概念。第 3 节详细回顾了文献中分类的空域结构和运行方法，其中有一小节回顾了非结构化案例。第 4 节对空域结构进行了定性研究，第 5 节对本文进行了总结。</p>
+<div class="scriptsize" markdown="1">
+
+<div class="center" markdown="1">
+
+<div id="tab:tab1" markdown="1">
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>结构</strong></th>
+<th align="left"><strong>多重性&#x2F;中心性</strong></th>
+<th align="left"><strong>运行方法</strong></th>
+<th align="left"><strong>相关工作</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Air-Matrix</strong></td>
+<td align="left">单个运行&#x2F;单位空间</td>
+<td align="left">完整时间分配</td>
+<td align="left">(Skorup 2019)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">部分时间分配</td>
+<td align="left">(Salleh et al. 2017-01-09; Pongsakornsathien et al. 2020)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">多个运行&#x2F;单位空间</td>
+<td align="left">在非节点处细分单位空间</td>
+<td align="left">(Salleh et al. 2018-01-08; Q. Tan et al. 2019-06-11)</td>
+</tr>
+<tr>
+<td align="left"><strong>Air-Network</strong></td>
+<td align="left">单个运行&#x2F;单位空间</td>
+<td align="left">部分时间分配</td>
+<td align="left">(Sunil et al. 2016-06-20, 2017; Zhu and Wei 2016-06-13, 2019-06-17)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">多个运行&#x2F;单位空间</td>
+<td align="left">在非节点处细分单位空间</td>
+<td align="left">(Salleh et al. 2018-01-08; Sunil et al. 2016-06-20, 2017; Niu et al. 2015; Bae, Shin, and Tsourdos 2018-09-23)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">细分全部单位空间</td>
+<td align="left">(Labib et al. 2019; Devasia and Lee 2016; Sacharny and Henderson 2019-06-11)</td>
+</tr>
+<tr>
+<td align="left"><strong>Air-Tubes</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">(Low, Gan, and Mao 2016-04-07; Pathiyil et al. 2016-04-07; EmbraerX 2019; Peinecke, Volkert, and Korn 2017-04-18; Gharibi 1594)</td>
+</tr>
+<tr>
+<td align="left"><strong>Unstructured</strong></td>
+<td align="left">中心式</td>
+<td align="left"></td>
+<td align="left">(Whitley 2020; Chakrabarty and Ippolito 2020-01-06; Sedov and Polishchuk 2018-06-26; Sarim et al. 2019; McCarthy, Pforte, and Burke 2020; Maciel 2019)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">分布式</td>
+<td align="left"></td>
+<td align="left">(Sedov and Polishchuk 2018-06-26; Sunil et al. 2016-06-20, 2017)</td>
+</tr>
+</tbody></table>
+<p>空域设计和运行方法的分类。</p>
+</div>
+
+</div>
+
+</div>
+
+<h1 id="空域结构和运行方式"><a href="#空域结构和运行方式" class="headerlink" title="空域结构和运行方式"></a>空域结构和运行方式</h1><h2 id="空域结构模型"><a href="#空域结构模型" class="headerlink" title="空域结构模型"></a>空域结构模型</h2><p>本节介绍了三种用于低空无人机运行的空域结构模型，并提到了它们的一般优缺点。这些模型分为 Air-Matrix、Air-Network 和 Air-Tubes ，是通过采用文献中提出的各种概念而开发的。现有的结构化空域运行 UTM 理念可以归类为这三种模型之一。</p>
+<h3 id="Air-Matrix"><a href="#Air-Matrix" class="headerlink" title="Air-Matrix"></a>Air-Matrix</h3><p>Air-Matrix 是离散空域最直观的方法（ ）。在分配给无人机的空域中，除障碍物限制飞行的地方外，空间使用一定大小的网格划分为立方体。使用网格的第一种方法通过 “<strong>连接立方体的中心点来创建无人机的飞行路径</strong>” ，并将连接连续立方体的通道分配给无人机飞行。利用 Air-Matrix 结构的另一种方法是 “<strong>通过连接相邻的网格点来创建飞行路径</strong>” 。在这种情况下，不是用立方体明确分配空域，而是沿着网格创建推荐路径，并使用立方体的宽度和高度来提供与其他飞行路径的隔离。</p>
+<figure id="fig:fig1">
+<div class="scriptsize">
+<div class="center">
+<figure id="fig:fig1.a">
+<img src="2024_10_21_d05eee106e69e86de84ag-03(2)" />
+<figcaption aria-hidden="true"></figcaption>
+</figure>
+<figure id="fig:fig1.b">
+<img src="2024_10_21_d05eee106e69e86de84ag-03(1)" />
+<figcaption aria-hidden="true"></figcaption>
+</figure>
+<figure id="fig:fig1.c">
+<img src="2024_10_21_d05eee106e69e86de84ag-03" />
+<figcaption aria-hidden="true"></figcaption>
+</figure>
+</div>
+</div>
+<figcaption>三种空域结构模型：(a) Air-Matrix ；(b) Air-Network ；(c) Air-Tubes。</figcaption>
+</figure>
+
+<p>前者在文献中更为常见，因此下文将基于前者进行描述。立方体是离散空域分配的单位，其宽度、长度和高度可根据给定的运行环境而不同。使用更细粒度的单位立方体，可以通过为一架( 或多架 )无人机的每次飞行分配多个立方体来灵活地调整分配空间的大小。它在空域利用方面是高效的，因为可以根据飞机特性（ 飞行重量、传感器和飞行精度等 ）或运行环境（ 例如天气 ）改变分配空间的大小。但随着离散空域数量的增加，需要更多计算来搜索和确认航班之间已分配空域之间的重叠。Air-Matrix 只需为每个立方体分配一个唯一的地址，即可轻松管理空域。处理三维空间信息的数据结构可以快速处理立方体之间的访问和搜索查询。因此，它提供了一种方便的方法来检查无人机运营商的飞行计划重叠，建议无冲突的路线，并确保无人机之间的飞行路径。</p>
+<p>Air-Matrix 有两个主要缺点：</p>
+<p>1）首先，当管理空间远大于单位立方体时，需要存储和管理的数据量会大大增加。</p>
+<p>2）其次，沿着方格立方体形状创建的飞机路径只是一系列 “<strong>以直角连接的直线</strong>”。通过将立方体划分为子结构（ 例如三棱柱 ）可以稍微缓解这种情况，但这会使交通管理所需的计算更加困难。因此，<strong>Air-Matrix 更适合运行可以悬停和垂直飞行的旋翼无人机；对于固定翼飞机，它可能导致空域利用率低下，因为必须在转弯曲线或爬升路径周围分配大量外围立方体，以确保安全</strong>。</p>
+<h3 id="Air-Network"><a href="#Air-Network" class="headerlink" title="Air-Network"></a>Air-Network</h3><p>Air-Network 是一种使用具有节点和边的图在空域中构建交通网络的方法（ ）。节点是设置在起飞和着陆点或主要无人机交通交叉口上方的一块空间，边是连接这些节点的通道型空间，可以设置在连接节点的最短直线附近，也可以是曲线，以避免与障碍物、地形或其他边相交。在同一条边内，可以分配一架或多架无人机的飞行。如果一条边中有多个飞行，则可以在边内安装指示通道，以减少自主性要求和空中相撞的机会。更进一步的，应该为边中的多个航班提供安全隔离。如果不做任何进一步的分割结构，UTM 也可以像在传统 ATM 中一样监控、指挥和控制无人机交通，或者无人机本身可以用自己的传感器和通信解决隔离问题，但这对 “监视基础设施” 或 “飞行自主性” 的要求很高。或者，可以沿其长度将每条边分成若干节，并将每一节专门分配给一架无人机。</p>
+<p>由于 Air-Network 是一种由节点和边组成的图模型空域结构，利用图的数据结构可以快速处理空域的分配和管理。因此，很容易识别每架无人机的位置和飞行情况，许多现有的图搜索算法可用于规划路线。但<strong>在飞行流量集中的节点上很容易发生拥堵，并且可能存在确定多架无人机试图通过同一节点起飞、降落或过渡的顺序的问题，就像路口的红绿灯一样。一些研究提出了在节点内设置特定细节结构和规则来处理此问题</strong>。通过允许每个航班只在预先计划的时间和空间内飞行，并在特定时间将每个节点&#x2F;边仅分配给一个飞行单元，可以防止拥堵，但这会大大降低空域利用率。</p>
+<p>Air-Network 空域便于 UTM 管理者根据现有地面交通网络及无人机起降点了解交通状况，直观地构建结构，但每当新建起降点或交通需求发生变化时，都需要重新配置网络。</p>
+<p>此外，还存在没有设置节点或边的死角，这意味着没有充分利用用于 UTM 的空域。</p>
+<h3 id="Air-Tubes"><a href="#Air-Tubes" class="headerlink" title="Air-Tubes"></a>Air-Tubes</h3><p>Air-Tubes 类似于 Air-Network 中的边的概念：它们是直接连接起点和终点的空域结构，没有任何中转节点（ ）。这可以看作是无人机飞行高速公路的概念。Air-Tubes 类别的空域结构在文献中略有不同，并且可以在管道内设置特定的飞行方向。虽然 Air-Tubes 在连接两个高流量节点方面非常有效，因为它们直接连接节点，但管道可能不适合处理各种飞行计划。因此，此概念可以用作解决其他概念（ 即 Air-Matrix 或 Air-Network 概念 ）中的交通拥堵问题的补充结构。</p>
+<h2 id="运行方法：切分、多架次与时间分配"><a href="#运行方法：切分、多架次与时间分配" class="headerlink" title="运行方法：切分、多架次与时间分配"></a>运行方法：切分、多架次与时间分配</h2><p>为了分配可接受的空域和飞行权，实现低空无人机的安全运行，必须考虑空域结构的设计和分配方法。UTM 管理员负责分配空域，并将空域的 “结构化” 或 “非结构化”飞行区域分配给 “按照一定优先级和程序请求飞行批准的” 运营商。由于空域分配的优先级和飞行批准程序可能因 UTM 系统环境和航空当局的政策而异，因此本文仅从空域分配的物理方面对运行方法和形式进行分类和分析。空域分配方法可以分为几种，具体取决于 “单位空间随时间的变化方式” 、 “单位空间运行的飞行单元数量” 以及 “单位空间是否细分” 。</p>
+<h3 id="基本对象"><a href="#基本对象" class="headerlink" title="基本对象"></a>基本对象</h3><p>“<strong>单位空间</strong>” 是划分空域的基本组成部分。例如，Air-Matrix 中的立方体、Air-Network 中的节点和边。如果使用特定标准将节点或边划分为更小的节，则每一个节都是单位空间。</p>
+<p>“<strong>飞行单元</strong>” 是执行飞行任务的飞行器或飞行器组。例如，在包裹配送任务中， “单独递送轻包裹的飞行器” 和 “协作递送重包裹的飞行组” 就是单个飞行单元的例子。具有不同运行目的、目的地和路径的无人机可以被视为独立的飞行单元。</p>
+<h3 id="时间分配策略"><a href="#时间分配策略" class="headerlink" title="时间分配策略"></a>时间分配策略</h3><p>无人机运营商向 UTM 管理者提交飞行计划后，后者会审查该计划。如果该计划与其他飞行计划发生冲突时，运营商应适当修改飞行路径，直至得到批准。 然后，将飞行路径周围的空间指定为允许无人机飞行的 “<strong>计划飞行空域</strong>” 。</p>
+<p>计划飞行空域有使用时间限制，运行方法可能会根据空间的时间分配方式不同而有所区别，既可以为 “整个计划飞行空域” 分配 “所有计划时间” （即从计划开始时间到计划结束时间），也可以 “将计划飞行空域划分为多个部分” ，并 “为每一个部分分配不同的时间区间” （ ）。 当在结构化空域中采用 “部分时间分配” 方案时，计划路径上的每个空间都是空域结构中的单位空间。</p>
+<p><strong>整体分配</strong>：将 “飞行计划中的整个时间” 分配给无人机运行，可降低与其他无人机发生碰撞的可能性，并允许无人机按需或按照紧急情况自由调整飞行速度或返回原点（ a ）。但飞行路径及其分配时间越长，其他无人机飞行受到的限制就越多，进而降低了整个空域运行的效率。</p>
+<p><strong>部分分配</strong>：如果时间是部分分配的，则有多种可能的选项：1）可以释放已分配的空间（ b ），2）可以稍后再分配有足够剩余时间可到达的空间（ c ），3）也可以为每个单位空间分配时间窗口（ d ）。因此，部分分配方案能够在有限空域中处理更多的航班，实现更高效的运行。但动态运行需要更严格的 “通信、基础设施、无人机传感器和自主性要求”。此外，当空域未被离散化时，可以在飞行计划中的无人机位置周围设置 “与隔离距离相对应的” 动态地理围栏，该围栏会随着时间不断移动。</p>
+<figure id="fig:fig2">
+<div class="scriptsize">
+<div class="center">
+<img src="2024_10_21_d05eee106e69e86de84ag-06(2)" style="width:75.0%" />
+</div>
+</div>
+<figcaption>空域时间分配的选项。</figcaption>
+</figure>
+
+<h3 id="单位空间内运行的多重性"><a href="#单位空间内运行的多重性" class="headerlink" title="单位空间内运行的多重性"></a>单位空间内运行的多重性</h3><p>在为无人机分配单位空间时需要考虑的另一个因素是空域使用的排他性。换句话说，需要确定是否将单位空间中同时分配的无人机数量限制为 1 架（ a ）或允许多架（ b ）。</p>
+<p>1）<strong>单架无人机</strong>：如果假设在指定时间内单位空间中只能分配一架无人机，则在与其他计划没有冲突，并且所有无人机都正常飞行（ 即按计划飞行 ）的情况下，空中相撞的可能性可以保持在非常低的水平。此时，也可以放宽无人机为确保隔离或为特殊情况做准备而对传感和通信的要求。但是，在交通汇聚的区域（如网络结构中的节点或升降点），在已分配的无人机飞行完成之前，其他无人机都无法使用该空间，这会造成拥堵。</p>
+<p>2）<strong>多架无人机</strong>：为了缓解拥堵，也可以将多个飞行单元分配到一个单位空间。此时空域利用效率可能会提高，不过，对通信感知的要求也会加强，同时由于无人机需要自行确保间隔距离，成本和重量也会增加。</p>
+<figure id="fig:fig3">
+<div class="scriptsize">
+<div class="center">
+<p><img src="2024_10_21_d05eee106e69e86de84ag-06(1)" style="width:55.0%" alt="image" /><br />
+(a)<br />
+<img src="2024_10_21_d05eee106e69e86de84ag-06" style="width:55.0%" alt="image" /><br />
+(b)<br />
+</p>
+</div>
+</div>
+<figcaption>每个空域单元内有多个飞行运行：(a)单个运行；(b)多个运行。一架无人机或由运营商控制的一组执行单个飞行运行的无人机组成一个飞行单元，用圆圈围起来。</figcaption>
+</figure>
+
+<h3 id="单元空间的进一步划分"><a href="#单元空间的进一步划分" class="headerlink" title="单元空间的进一步划分"></a>单元空间的进一步划分</h3><p>除了多个飞行单元外，文献中所示的运行方法还考虑了单元空间的进一步划分。具体来说，如果在 Air-Network 结构中将管状的边空间沿长度划分为多个子空间，则可以将无人机分别分配到子空间中。这意味着可以在边内实施隔离控制，而不仅依赖无人机的自隔离措施。此外，由于各种交通流汇聚的节点很容易发生拥堵，因此可以通过将节点划分为多层或安装辅助结构（ 例如环形交叉路口 ）来解决此问题。</p>
+<h1 id="相关成果回顾"><a href="#相关成果回顾" class="headerlink" title="相关成果回顾"></a>相关成果回顾</h1><h2 id="Air-Matrix-1"><a href="#Air-Matrix-1" class="headerlink" title="Air-Matrix"></a>Air-Matrix</h2><h3 id="单位空间内有单个运行"><a href="#单位空间内有单个运行" class="headerlink" title="单位空间内有单个运行"></a>单位空间内有单个运行</h3><h4 id="完全时间分配"><a href="#完全时间分配" class="headerlink" title="完全时间分配"></a>完全时间分配</h4><p>Skorup (Skorup 2019)建议拍卖空域，即联邦政府将低空和城市空域划分为多个区块，并将每个区块的专有使用权拍卖给想要飞行无人机的运营商。购买区块的运营商可以将它们组合起来，为自己的无人机开辟自由飞行路径。区块的具体大小没有提出，但假设为无人机的平均大小。由于分配给一次飞行的区块是为该飞行的整个运行时间保留的，因此不会与其他无人机发生冲突。但空域的利用效率仍然很低，因为无人机已经通过的区块被严重浪费了。</p>
+<h4 id="部分时间分配"><a href="#部分时间分配" class="headerlink" title="部分时间分配"></a>部分时间分配</h4><p>南洋理工大学 ( NTU ) 的研究人员提出并分析了多种空域结构概念，包括 Air-Matrix 和 Air-Network 模型。Air-Matrix 的早期概念由 Salleh 等提出(Salleh et al. 2017-01-09)，城市空域被划分为区块（block），每个区块都可以被无人机占用，可以通过连接 Air-Matrix 网格的节点来创建飞行路径。在该方法中，根据对飞行过程中风险程度的评估来确定区块大小。每个运营商都可以根据 C3、GPS 和 RF 能力来评估区块是否适合无人机运行。作者提出了两种时间分配方法： “单位空域内的单一运行” 和 “单位空域内的多个运行” 。在单一运行方法中，UTM 系统根据区块的占用状态（随时间变化）来分配进入该区块的权限，进而生成路线。一旦飞行路径获得批准，无人机就可以安全地沿着无冲突的路线飞行，而不会出现时间延迟。</p>
+<h3 id="单位空间内有多个运行-sec-sec3-1-2"><a href="#单位空间内有多个运行-sec-sec3-1-2" class="headerlink" title="单位空间内有多个运行 [sec:sec3.1.2]"></a>单位空间内有多个运行 [sec:sec3.1.2]</h3><p>在 NTU 研究人员 (Salleh et al. 2018-01-08; Q. Tan et al. 2019-06-11)的后续研究中，提出了 AirMatrix 概念的结构，以解决在同一航线上容纳多个航班的冲突问题。首先，将空域划分为一定大小的小块，并将每个块的质心作为节点。相邻块的节点通过链接连接，无障碍物碰撞块的节点和链接集合形成用于构建航线的网络。每架无人机的运营商提交飞行许可请求，其中包含起飞节点、目的地、首选起飞时间和最大可容忍延迟时间。路径规划算法被用于在网络中为每一个请求创建独立的航线，这可能会造成多个飞行航线中具有相同的节点和边。为此，<strong>UTM 系统通过控制每个运行的延迟时间</strong>，来 “消解冲突” 并 “确保同一路径上不同航班之间的隔离时间” 。在 (Q. Tan et al. 2019-06-11)中还提出了一种基于遗传算法的冲突消解算法。</p>
+<h2 id="Air-Network-1"><a href="#Air-Network-1" class="headerlink" title="Air-Network"></a>Air-Network</h2><h3 id="单位空间内有单个运行-sec-sec3-2-1"><a href="#单位空间内有单个运行-sec-sec3-2-1" class="headerlink" title="单位空间内有单个运行 [sec:sec3.2.1]"></a>单位空间内有单个运行 [sec:sec3.2.1]</h3><h4 id="部分时间分配-1"><a href="#部分时间分配-1" class="headerlink" title="部分时间分配"></a>部分时间分配</h4><p>Sunil 等提出了四种空域设计，包括两种 Air-Network 设计 (Sunil et al. 2016-06-20)，即 “<strong>管道（tubes）</strong>” 和 “<strong>带（zones）</strong>” 。管道可适应单位空间内的单个飞行，而带则允许单位空间中的多个飞行。在管道概念中，空域按高度分为若干层，每层根据高度设定不同的网络密度。高度越高的层，包含的节点和边数量越少，因此网络允许无人机在较高的层中，实施长距离高速飞行。举例来说，对于两个指定的层，短距离飞行的无人机可以在低层中以低速运行，因为该层的节点和边密度较高；长距离飞行的无人机可以在高层中以更高速度运行。这意味着 UTM 系统可以减少同时以不同速度运行无人机时发生的时间延迟。当无人机计划通过某个节点时，系统会以规定的时间区间分配该节点。在无人机占据节点期间，其他无人机无法通过该节点。每个节点的预测占用列表都会实时更新。此列表与所有无人机共享，并使用该列表沿未占用节点创建新路线。由于节点的占用与飞行方向无关，因此边允许双向交通。</p>
+<p>Zhu 和 Wei 提出了两种不同的 Air-Network 设计 (Zhu and Wei 2016-06-13, 2019-06-17)。第一种设计构建具有局部连接节点的网络，而第二种设计中的节点是全连接的。第一种设计的网络结构简单，每个节点的度（ 节点的连接边数 ）较低，但飞行路线是曲折的。全连接网络中的飞行路径比第一个更直，但由于每个节点的度都最大化，计划冲突的可能性更大。路径必须避开任何禁飞区并沿单向边构建。当飞行路径定义为静态地理围栏时，只有在飞行完全结束后，它们才能用于其他无人机。因此，在每架飞行中的无人机周围分配一个动态地理围栏以防止碰撞。动态地理围栏沿飞行路径放置，其长度与无人机的速度成正比。</p>
+<h3 id="单位空间内有多个运行-单位空间内有多个运行"><a href="#单位空间内有多个运行-单位空间内有多个运行" class="headerlink" title="单位空间内有多个运行 [单位空间内有多个运行]"></a>单位空间内有多个运行 [单位空间内有多个运行]</h3><h4 id="仅在非节点的单位空间中进行划分"><a href="#仅在非节点的单位空间中进行划分" class="headerlink" title="仅在非节点的单位空间中进行划分"></a>仅在非节点的单位空间中进行划分</h4><p>Salleh 等 (Salleh et al. 2018-01-08)提出了两种 Air-Network 设计： “建筑物上方” 和 “道路上方” 。在建筑物上方方法中，节点仅在建筑物上方的特定高度生成。两个节点之间配置连接边以越过开放空间。在道路上方方法中，节点被放置在道路上方一定高度的每一个层，并通过沿道路轮廓的链接连接。这两种方法中的防撞系统与中的 Air-Matrix 概念相同（即通过时间调度来避免冲突）。</p>
+<p>Sunil et al. (2016-06-20, 2017)的 Zones 概念在水平方向上对空域实施分割，由进入或离开市中心的有向边（径向带）和顺时针或逆时针环绕市中心的圆形边（环形带）组成，如 所示。由于边没有高度限制，因此每架无人机的飞行高度由自身飞行计划决定。该方法**使用自隔离解决方案（如通过速度或高度差）**来避免无人机之间的冲突。不过，在该方法中，沿边飞行时不允许调整水平航向角。</p>
+<figure id="fig:fig4">
+<div class="scriptsize">
+<div class="center">
+<img src="2024_10_21_d05eee106e69e86de84ag-08" style="width:25.0%" />
+</div>
+</div>
+<figcaption>带的空域设计。根据 <span class="citation" data-cites="22">(Sunil et al. 2016-06-20)</span>重新绘制。</figcaption>
+</figure>
+
+<p>Bae 等 (Bae, Shin, and Tsourdos 2018-09-23)使用了“基于图的网络”，与现有 ATM 系统的运行概念类似。一条边的完整空间被视为一个 “仅能单向飞行的” 单位空间，如果在同一边中，一架无人机逐步接近前方无人机的安全距离，则需要<strong>通过调整自身速度来确保隔离</strong>。每架无人机应与其他无人机保持 5 秒的安全距离。节点有两种类型：汇合节点和交叉节点。汇合节点是两条边合并为一条边的节点。当两架无人机接近汇合节点时，速度更快的无人机优先行驶。在交叉节点上，无论速度如何，先到达距节点一定距离内的无人机都具有优先权。因此，当无人机接近繁忙的路口时，可能需要减速或悬停片刻。</p>
+<h4 id="在所有单位空间中进行划分"><a href="#在所有单位空间中进行划分" class="headerlink" title="在所有单位空间中进行划分"></a>在所有单位空间中进行划分</h4><p>Labib et al. (2019)将空域划分为几个具有规则高度间距的层。层间距由空域内飞行的最大无人机的**容纳极限[^1]**决定。容纳极限是根据无人机真实位置与指定飞行路径之间的误差计算得出的。作者使用 “<strong>alpha 形状方法</strong>” 对空域进行离散化，然后 UTM 系统基于拓扑方法建立结构化空域网络（具体为静态无障碍层， 如 所示 ）。拓扑方法将原始三维空域划分为多个二维水平层，并对层中的无障碍点进行采样，并通过边连接在三维中重建这些点。在这个网络中，边仅按照一组规则进行运行，例如速度限制、行驶方向和最大交通密度。信息通过无人机之间的临时通信进行交换，无需与 UTM 系统直接通信。如 所示， “边的横截面积” 以及 “层间隔” 均由无人机的 “容纳极限” 调节。无人机的飞行状态（ 例如悬停和巡航 ）可以在节点中改变，由于拓扑性质，层越高，创建的边越长。因此，无人机在上层飞行速度更快。当无人机数量超过边的最大容量时，作者提出了三种避免无人机之间发生碰撞的方法。第一种方法是无人机简单地悬停在当前节点并等待轮到它进入拥挤的边。第二种方法是随机确定是保持在同一路径上还是采取替代新路径的方法。第三种是通过无人机之间的信息交换、确定和修改路径，预先防止其他无人机选择相同的路径。有人认为，所有方法都可以通过无人机之间的通信减轻系统负荷，并且无人机可以满足有限的任务时间，因为可以通过空域内的局部路线决策减少时间延迟。</p>
+<figure id="fig:fig5">
+<div class="scriptsize">
+<div class="center">
+<img src="2024_10_21_d05eee106e69e86de84ag-09" style="width:35.0%" />
+</div>
+</div>
+<figcaption><span class="citation" data-cites="40">Cho and Yoon (2018-06-26)</span>中的拓扑方法的表示。</figcaption>
+</figure>
+
+<figure id="fig:fig6">
+<div class="scriptsize">
+<div class="center">
+<img src="2024_10_21_d05eee106e69e86de84ag-10(1)" style="width:35.0%" />
+</div>
+</div>
+<figcaption>边的概念。从 <span class="citation" data-cites="39">Schwithal et al. (2017-09-19)</span>重新绘制。</figcaption>
+</figure>
+
+<p>Devasia and Lee (2016) 提出了另外一种空域结构，其概念是无人机交通网络 ( UNET ) ，它是一个大而宽的空域单位，以及几个按常规大小分成多个扇区的扇区级无人机交通网络 ( SNET ) 。每个 SNET 中的节点和边都远离障碍物定义。SNET 动态更新可用的路线网络，当地商业团体可以开发或管理 SNET 上的信息。运营商可以使用互联网应用程序在实际飞行中生成最优路线。当所有无人机以恒定速度飞行时，它们的出发时间不同，因此它们不会在同一条边内发生碰撞。如果速度不同，SNET 会针对每个运行速度搜索不同的路线，或者跟随另一架早先安排的无人机的无人机可以悬停并等待在边上。此外，还提出了一种防止节点发生碰撞的结构。如 所示，进入节点的每条边都有一个编号，通过边进入节点的无人机将移动到与 “边编号” 匹配的层。无人机交通可以在这个三维环形交叉路口无冲突地通过节点。</p>
+<figure id="fig:fig7">
+<div class="scriptsize">
+<div class="center">
+<img src="2024_10_21_d05eee106e69e86de84ag-10" style="width:35.0%" />
+</div>
+</div>
+<figcaption>节点和边之间的关系。从 <span class="citation" data-cites="29">Devasia and Lee (2016)</span>重新绘制。</figcaption>
+</figure>
+
+<p>Sacharny and Henderson (2019-06-11) 提出的空域设计中，在道路上方设置边，所有无人机以恒定速度飞行。每条边都指定了容量和飞行方向。在同一道路上方设置相反方向的边，就像地面上的多车道道路一样。每一个节点由多个小边组成，形成一个如 所示的环形交叉路口，该节点允许多架无人机进入，只需其满足节点的容量范围。当运营商提出包含目的地和首选航线的飞行计划时，贪婪调度算法会考虑未来的拥堵程度来确定起飞时间和修正航线。由于贪婪算法采用快速且直观的方式，因此可以根据请求立即运行无人机。但与实施专门的飞行运行管理的情况相比，整个空域的使用效率较低。</p>
+<figure id="fig:fig8">
+<div class="scriptsize">
+<div class="center">
+<img src="2024_10_21_d05eee106e69e86de84ag-11" style="width:25.0%" />
+</div>
+</div>
+<figcaption>节点结构。从 <span class="citation" data-cites="30">Sacharny and Henderson (2019-06-11)</span>重新绘制。</figcaption>
+</figure>
+
+<h2 id="Air-Tubes-1"><a href="#Air-Tubes-1" class="headerlink" title="Air-Tubes"></a>Air-Tubes</h2><p>Low, Gan, and Mao (2016-04-07)提出了一种具有多条双向航道的空域概念。为避免空中相撞，同一航道和各个方向相邻航道上的无人机之间存在安全间隔距离。这些航道通过绕过人口密集区或禁区以及使用火车轨道和交通信号灯等基础设施不断发展。因此，航道可以沿着道路、轨道等部署，也可以沿着高层建筑的一侧连接不同高度的过渡点。航道使用的优先级根据无人机的用途确定。</p>
+<p>Pathiyil et al. (2016-04-07)提出的空域概念中，有专门用于无人机飞行的隧道。航道是沿着 “运河” 、 “水库” 、“绕过人口稀少地区的沿海地区” 或 “现有基础设施” 建设的，就像城市地区的铁路一样。空域结构可以根据无人机交通量和飞行特性动态设计。此外，作者还设置了禁飞区作为禁入地理围栏。在利用起降点实时交换无人机交通信息的同时，还可以考虑所需的通信范围、飞行便利性、与机场的距离等，将无人机交通管理站添加到 UTM 基础设施中。</p>
+<p>开发 eVTOL 的航空航天公司 Embraer-X 提出了多项原则 (EmbraerX 2019)，包括空域结构的灵活性，以便为城市空中交通 ( UAM ) 航班设计城市 ATM ( UATM ) 系统。建议的空域设计中的关键概念是 “<strong>空港（Skyports）</strong>” 和 “<strong>走廊（Corridors）</strong>” ：空港是空中出租车的停靠站，走廊是一条可容纳多辆飞行器的公共交通路径，类似于高速公路 (Muna et al. 2021; Emadi, Atkins, and Rastgoftar, n.d.)。当飞行员提交飞行请求时，城市空域服务提供商 ( UASP ) 会根据请求中提供的信息规划走廊上的直达路线。此外，UASP 会优化路线，以便只有一架指定的空中出租车在该航线上飞行。</p>
+<p>Peinecke, Volkert, and Korn (2017-04-18)建议将 G 类空域改为 G+ 类，以解决在 G 类空域内运行无人机的问题，例如对传感器设备的有效载荷要求高以及与现有 ATM 系统相冲突。G+ 类空域是连接机场的走廊形式，建在沙漠、河流和森林等罕见开发区域上方，尽可能不经过市中心或居住区。通过在走廊各处安装天线配置低空空运服务网络，以便所有空域用户都可以访问信息，包括无人机的位置、高度和速度。其他类别飞机的信息也通过网络共享，因此，如果有飞机闯入走廊，无人机可以利用共享信息自行隔离，避免空中相撞。</p>
+<p>Gharibi (1594)将空域划分为几个带，每个带都被构建成类似于道路交通网络的系统（如 所示）。所提出的单位空间类似于本文中的节点和边概念，但定义略有不同。“航路（airway）” 是无人机飞行道路的单位空间， “交叉口” 是至少有两条航路（airway）连接的地方；有飞行限制，类似于交通方向指定。此外，特定感兴趣的区域（ 例如国家公园 ）被定义为 “节点” ，节点内可以自由飞行。每个区域中都会多次引入称为 “带服务提供商 ( ZSP )” 的系统。它向无人机提供其指定区域内单位空间的导航信息和整体运行的交通控制顺序（ 例如悬停、迫降 ）。当无人机移动到另一个带时，运行权限将转移到相应区域的新 ZSP。进出口（Inbound and outbound gates）是相邻带的边界连接处，被视为 “交叉口（intersections）” 。此外，在口之间还有一条快速航道，使无人机可以立即飞越一个带，称为 “过渡（transit）”。(Gharibi 1594)中的空域设计是 Air-Network 和 Air-Tubes 模型的混合。每个 ZSP 都会使用其控制的单位空间元素实时为无人机飞行创建优化路线。对于其他飞行来说，已分配给某架无人机的空间是独占的，因此，这个想法可以归类为，而绕过区域的过渡是 Air-Tubes 结构。</p>
+<figure id="fig:fig9">
+<div class="scriptsize">
+<div class="center">
+<img src="2024_10_21_d05eee106e69e86de84ag-12" style="width:35.0%" />
+</div>
+</div>
+<figcaption>空域设计。根据 <span class="citation" data-cites="35">Gharibi (1594)</span>重新绘制。</figcaption>
+</figure>
+
+<h2 id="“非结构化空域”-或-“分层空域”"><a href="#“非结构化空域”-或-“分层空域”" class="headerlink" title="“非结构化空域” 或 “分层空域”"></a>“非结构化空域” 或 “分层空域”</h2><p>本节总结了空域 “完全非结构化” 或 “仅部分结构化” 的情况，这意味着<strong>层划分</strong>，以及<strong>不使用预设单位空间进行路径规划</strong>。NASA 的 UTM 系统是这些情况的典型代表，其中一旦指定运营商提交了飞行计划请求，无人机服务供应商（ USS ）就会创建飞行路线。当路线生成时，空域也可以暂时结构化，直到飞行结束时间 (Sarim et al. 2019)。很难用前面几节中的标准对本节中的研究进行分类，因为在这种场景中，单位空间的定义并不明确或是模糊的。因此，非结构化概念分为两种情况：<strong>“由中心式系统管制的空域设计”</strong> 和**“以分布式方式运行的其他情况”** 。</p>
+<h3 id="中心式系统"><a href="#中心式系统" class="headerlink" title="中心式系统"></a>中心式系统</h3><p>NASA 的 UTM 研究 (Whitley 2020; Chakrabarty and Ippolito 2020-01-06)指出，无人机运营商需要根据 USS 提供的信息，针对具有空间和时间数据的四维空域体空间提出运行计划（包括起降点、飞行时间和中途停留等），以便获得空域分配。然后，USS 将空域体空间计划与 FAA 的无人机设施地图进行比较，以确定空域的授权。该文献没有描述构建空域的细节，但系统 “根据最优飞行路径” 来运行。</p>
+<p>Sedov and Polishchuk (2018-06-26)提出了一种基于层的空域设计，其中在单层设计中所有无人机都在同一高度运行，在多层设计中使用图着色算法实施无人机的层分配 (Barnier and Brisset 2004)。两种空域设计都分别采用中心式或分布式运行方法运行。中心式系统意味着 UTM 系统知道过去和当前的运行计划以及所有无人机的状态，并且还可以生成&#x2F;批准没有任何计划冲突的路线。<strong>在中心式系统中，单层设计使用地面延迟策略，多层设计使用层分配策略</strong>。在地面延迟策略中，UTM 系统检查运营商的飞行计划，并在预测发生碰撞时延迟一定时间起飞。该策略完全不受碰撞影响，并且易于通过系统管理进行控制，但是与其他方法相比，它可能会导致效率低下，因为在提交飞行计划时不知道起飞延迟。对于多层设计中的层分配方法，它将无人机分配到各个层中，每个层之间无冲突，这样飞行计划有冲突的无人机就不会被分配到同一层。除了路径生成所需计算之外，没有额外的延迟时间。</p>
+<p>Sarim et al. (2019)根据安全运行的最小直径将 400 英尺以下的空域划分为若干层，与 Sedov and Polishchuk (2018-06-26)的概念类似。但在规划路径时的空域结构化方面有一些不同。在(Sedov and Polishchuk 2018-06-26)中，路径是直接在层上规划的，但在(Sarim et al. 2019)中，每一层被临时划分为“无人机在适当时间内可以穿越的” 节（sections）。根据运营商要求，使用航路点（ 每个航路点都是每个路径段的中心 ）通过 A* 算法生成路线。根据路线上每个空间划分对应的出发和到达时间区间，如 所示，无人机只在相应时间区间内占据空间。其他无人机均被视为移动障碍物，然后使用 MILP 算法重新生成最优路径。因此，由于空间被划分并按时间区间进行动态管理，因此空域的运行空间非常高效。</p>
+<figure id="fig:fig10">
+<div class="scriptsize">
+<div class="center">
+<img src="2024_10_21_d05eee106e69e86de84ag-13" style="width:25.0%" />
+</div>
+</div>
+<figcaption>动态地理围栏的空间分配。从 <span class="citation" data-cites="36">Sarim et al. (2019)</span>重新绘制。</figcaption>
+</figure>
+
+<p>McCarthy, Pforte, and Burke (2020)建议在最低高度 50 m以上由三组层组成的空域。每组层由 “冲突消解层” 和 “巡航层” 组成。如果飞行距离短，无人机就在低层运行，反之则在高层飞行。作者利用地理空间数据确定三种地理围栏，即禁飞区 ( NFZ ) 、许可优先区 ( PPZ ) 和临时保留区 ( TRZ ) 。UTM 系统根据这些地理围栏，使用 A* 算法为无人机分配路线。如果无人机在从出发地到目的地的直达路线上与 “禁飞区” 和 “许可优先区” 相遇，则飞行将绕行，每个绕行点定义为 “节点” ，这与本文之前的定义不同。在无人机预计通过的点 “之前至少 15 秒” 和 “之后 60 秒” 之间设置一个安全管道，类似于动态地理围栏，并且该空间被视为其他无人机的禁飞区。由于无人机减速，UTM 在安全管道指定时间后的 45 秒后发出警报。当没有其他无人机计划在安全管道内飞行时，它将根据位置重新生成。但如果与现有路径重叠，则无人机将移动到冲突消解层并返回，如 所示。此时，如果冲突消解层中已经存在无人机，它将保留在巡航层中并在水平方向上绕过其他无人机以避免碰撞。同样， Maciel (2019)还建议采用双向 “无人机航路（droneways）” 设计空域，每条无人机航路（droneways）由三条航道（lane）组成，分别为 “紧急航道” 、 “巡航航道” 和 “慢速航道” ，类似于 所示的输电线路径。</p>
+<figure id="fig:fig11">
+<div class="scriptsize">
+<div class="center">
+<img src="2024_10_21_d05eee106e69e86de84ag-14" style="width:35.0%" />
+</div>
+</div>
+<figcaption>空域设计和冲突消解系统。根据 <span class="citation" data-cites="37">McCarthy, Pforte, and Burke (2020)</span>重新绘制。</figcaption>
+</figure>
+
+<figure id="fig:fig12">
+<div class="scriptsize">
+<div class="center">
+<img src="2024_10_21_d05eee106e69e86de84ag-14(1)" style="width:35.0%" />
+</div>
+</div>
+<figcaption>空域设计。根据 <span class="citation" data-cites="38">Maciel (2019)</span>重新绘制。</figcaption>
+</figure>
+
+<h3 id="分布式系统"><a href="#分布式系统" class="headerlink" title="分布式系统"></a>分布式系统</h3><p>在 Sedov and Polishchuk (2018-06-26)中提出的运行中， “单层设计中的悬停策略” 和 “多层设计中的按需下降策略” 被用于分布式方法。分布式系统依托于无人机的机对机通信 ( V2V ) 实施运行。1） 在悬停策略中，当无人机在安全距离内相互接近时，优先级较低的无人机会向下移动一段时间并悬停，直到确定没有碰撞的可能性。由于这种方法的悬停和等待燃料消耗率很高，因此可以通过检查燃料消耗状态来重新评估无人机之间的优先级。2） 在按需下降策略中，所有飞行都从顶层开始，当检测到空中碰撞时，优先级较低的无人机按顺序下降到较低的层。 在这两种方法中，最初启动的无人机具有较高的优先级，当预测到空中碰撞时，优先级较低的无人机应首先采取行动。对于紧急任务，系统会分配与紧急程度相匹配的高优先级。</p>
+<p>Sunil et al. (2016-06-20, 2017)除了提出了两种 Air-Network 类型外（如所述），还提出了两种结构性较弱的设计，即 “全混合（full mix）” 和 “层（layers）” 。全混合空域是一种完全非结构化的空域概念，其中每条路径都规划为一条连接起点和目的地的高速公路。有人认为，由于燃料消耗高和费用上升，结构化空域会降低运行效率。层空域是一种在空域中垂直堆叠多个层的形式，但与Sedov and Polishchuk (2018-06-26)的多层概念不同。每个层都分配了一定的航向范围，如 所示。无人机在与行进方向相匹配的层中飞行。空域被分为两组层：高层组和低层组，低层组用于低速飞行，高层组用于高速飞行。虽然上面两种方法都通过自我隔离避免碰撞，但分层概念没有考虑起飞和降落以外的高度分辨率。</p>
+<figure id="fig:fig13">
+<div class="scriptsize">
+<div class="center">
+<img src="2024_10_21_d05eee106e69e86de84ag-15" style="width:35.0%" />
+</div>
+</div>
+<figcaption>图层方法的空域设计。从 <span class="citation" data-cites="22">(Sunil et al. 2016-06-20)</span>重新绘制。</figcaption>
+</figure>
+
+<h1 id="空域设计的定性研究"><a href="#空域设计的定性研究" class="headerlink" title="空域设计的定性研究"></a>空域设计的定性研究</h1><p>现有的大多数关于空域结构和运行方法的研究仅提出了一些尚未与其他概念进行系统比较的概念。即使在使用数值仿真比较几种结构设计的效率的研究中，由于性能标准不同，也很难进行一致的评估。此外，如第 2 节和第 3 节的分类和分析所示，文献中出现了各种空域结构和运行方法，因此有必要对这些概念进行系统分析。本文对空域结构划分进行了分类，以研究由 “时间分配” 和 “单位空间允许运行数” 形成的概念和可能组合。本节对这些组合进行了定性研究，包括对评估准则的设计。</p>
+<h2 id="定性研究"><a href="#定性研究" class="headerlink" title="定性研究"></a>定性研究</h2><p>定性研究被视为开始初步研究之前的步骤，它在为初步研究的设计提供合理支持的同时，也可作为强大而通用的决策工具。因此，定性研究被称为 “用于选择可应用于后续工作的研究方法” 的 “广义统称” (Fossey et al. 2002)。进行定性研究可通过细化研究问题、开发精确的测量工具和提供全面的背景理解来提高后续定量研究的质量。这种顺序方法对于研究复杂或研究较少的主题特别有利。但定性研究有局限性，包括固有的主观性和研究人员解释的潜在偏见、复制研究结果的挑战、数据分析过程中解释的复杂性以及通过目的抽样引入的潜在偏见。根据定性研究结果，可能需要进行适当的定量研究作为后续行动。</p>
+<p>设计合适的评估标准对于建立标准的定性研究至关重要。在设计评估标准时，可以采用数值推断。这种推断可以建立在现有理论、研究、研究人员的经验以及通过调查收集的意见 (Maxwell 2008)之上。根据赋予标准的权重计算分数被认为是量化定性数据 (Taherdoost 2022; Halevi Hochwald et al. 2023)的最有效方法之一。因此，提出了基于评分的比较分析，使用下一小节中的分类：空域空间划分和运行方法。从运行角度使用四个标准对由分类组成的空域设计组合进行评估。随后，使用强调稳定性和效率的不同权重计算设计组合的总分。</p>
+<h2 id="空间划分及运行方法"><a href="#空间划分及运行方法" class="headerlink" title="空间划分及运行方法"></a>空间划分及运行方法</h2><p>为了比较和评估空域结构的设计和运行方法，有必要对当前空域结构及分配概念进行分类，并构建其组合。</p>
+<h3 id="空域划分方法"><a href="#空域划分方法" class="headerlink" title="空域划分方法"></a>空域划分方法</h3><p>如 所示，我们将空域划分方法分为八种情况，具体<strong>取决于单位空间的定义方式</strong>：</p>
+<p>(a)<strong>边&#x2F;节点无细分</strong>：边和节点中的所有空间形成一个单位空间（面向单个飞行单元）；</p>
+<p>(b)<strong>边细分</strong>：仅将边划分为具有一定时间区间的多个单位空间；</p>
+<p>(c)<strong>节点分层</strong>：将节点划分为具有不同高度的多个层；</p>
+<p>(d)<strong>边细分+节点分层</strong>：将边和节点划分为子结构；</p>
+<p>(e)<strong>直接走廊</strong>：从起点到目的地的每条路径都由一条走廊直接连接；</p>
+<p>(f)<strong>随时间缩短的走廊</strong>：直接走廊在开始时建立，并沿着飞行的计划位置随时间迁移而逐步缩短。飞行已经通过的空间将释放用于其他用途；</p>
+<p>(g)<strong>动态地理围栏</strong>：在计划的无人机位置周围设置管状安全缓冲区，并随时间迁移，沿着走廊逐步移动；</p>
+<p>(h)<strong>块</strong>：由格子创建的矩形长方体。</p>
+<figure id="fig:fig14">
+<div class="scriptsize">
+<div class="center">
+<p><img src="2024_10_21_d05eee106e69e86de84ag-16" style="width:65.0%" alt="image" /><br />
+</p>
+</div>
+</div>
+<figcaption>空域的空间划分方法。</figcaption>
+</figure>
+
+<p>总结了 “空间划分方法” 与第 2 节中提出的 “空域结构模型” 之间的关系。 块划分 (h) 仅适用于 Air-Matrix 模型，而边和节点 ( a-d ) 划分方法可用于 Air-Network。非节点划分 (a,b) 方法适用于 Air-Tube，而基于走廊的方法 ( e-g ) 是非结构化 UTM 系统中的可能情况（其中空域根据用户请求进行分配和围栏）。</p>
+<div class="scriptsize" markdown="1">
+
+<div class="center" markdown="1">
+
+<div id="tab:tab2" markdown="1">
+
+<table>
+<thead>
+<tr>
+<th align="left">Structure Designs</th>
+<th align="center">Partitioning Methods in Figure 14</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Air-Matrix</td>
+<td align="center">$( \mathrm{h} )$</td>
+</tr>
+<tr>
+<td align="left">Air-Network</td>
+<td align="center">(a) , (b) , (c) , (d)</td>
+</tr>
+<tr>
+<td align="left">Air-Tubes</td>
+<td align="center">(a) , (b)</td>
+</tr>
+<tr>
+<td align="left">Unstructured</td>
+<td align="center">(e) , (f) , (g)</td>
+</tr>
+</tbody></table>
+<p>空域结构设计和可能的划分方法。</p>
+</div>
+
+</div>
+
+</div>
+
+<h3 id="空域运行方式"><a href="#空域运行方式" class="headerlink" title="空域运行方式"></a>空域运行方式</h3><p>空域运行方式可根据 “时间分配策略” 和 “单位空间分配飞行单元数” 进行分类。根据第 2 节的分析，空域运行方式可分为以下五种类型：</p>
+<p>(1)<strong>完整时间分配</strong>：飞机在整个运行时间内占据其飞行路径上的每一个单位空间；</p>
+<p>(2)<strong>部分时间分配</strong>：分配给飞机的每个单位空间仅在一段时期内可用；</p>
+<p>(3)<strong>节点处允许多个运行</strong>：节点上可分配多个飞机单元；</p>
+<p>(4)<strong>非节点处允许多个运行</strong>：除节点外的单位空间上可分配多个飞机单元；</p>
+<p>(5)<strong>边和节点处均允许多个运行</strong>：边和节点上可分配多个飞机单元。</p>
+<h2 id="分值设置"><a href="#分值设置" class="headerlink" title="分值设置"></a>分值设置</h2><p>为了进行定量分析，我们制定了评估上一节中总结的空间划分和运行方法的得分标准。共设置了四个指标：<strong>空域效率、计算负荷、通信负荷和安全性</strong>。其中：</p>
+<p>1）<strong>空域效率</strong>：表示空域的利用效率。同一空间内允许的飞行单元越多，得分越高。</p>
+<p>2）<strong>计算负荷</strong>：指 UTM 系统为维持相应的结构或运行方法以及消解冲突所需的计算量。计算负荷越大，得分越高。</p>
+<p>3）<strong>通信负荷</strong>：表示 UTM 安全运行所需的 UTM-UAS 之间和无人机之间的通信量。</p>
+<p>4）<strong>安全性</strong>：指 UTM 对可能因干扰或紧急情况而发生空中碰撞和坠毁的稳健性。</p>
+<p>展示了每种空间划分方式的得分。由于稳定性因素与时间分配和多个选项密切相关，因此安全性不在本评估的考虑范围内。</p>
+<p><strong>空间效率得分</strong>：“块” (h) 的空域效率得分设置为与 “边细分+节点分层” (d) 相同，因为分割层级在两种划分中都是最大的。通过比较两种方法可以得出其他的空域效率得分。</p>
+<p><strong>计算负荷得分</strong>：该分值随方法所需的实时计算而变化： “动态地理围栏” （g） 获得最高分，而简单的较少细分的得分较低。 “节点分区和边分层” (d) 和 “动态地理围栏” (g) 在计算负荷方面得分很高，因为它们可能需要频繁通信以防止拥挤区域中连续飞行之间发生碰撞。</p>
+<div class="scriptsize" markdown="1">
+
+<div class="center" markdown="1">
+
+<div id="tab:tab3" markdown="1">
+
+<table>
+<caption>空间划分方法的评分。</caption>
+<thead>
+<tr>
+<th style="text-align: left;">Partitioning Methods</th>
+<th style="text-align: center;">Efficiency</th>
+<th style="text-align: center;"><div id="tab:tab3">
+<table>
+<caption>空间划分方法的评分。</caption>
+<tbody>
+<tr>
+<td style="text-align: center;">Computation</td>
+</tr>
+<tr>
+<td style="text-align: center;">Load</td>
+</tr>
+</tbody>
+</table>
+</div></th>
+<th style="text-align: center;"><div id="tab:tab3">
+<table>
+<caption>空间划分方法的评分。</caption>
+<tbody>
+<tr>
+<td style="text-align: center;">Communication</td>
+</tr>
+<tr>
+<td style="text-align: center;">Load</td>
+</tr>
+</tbody>
+</table>
+</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">(a) No partition in edges/nodes</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">(b) Partition in edges</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;">(c) Layers in nodes</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">(d) Partitioned edges and layered nodes</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">(e) Direct corridor</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">(f) Corridor shrinking over time</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;">(g) Dynamic geofence tubelet</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">(h) Blocks</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<p>显示了 5 种 “时间分配策略” 和 “运行多重性方案” 的得分。</p>
+<p>完整时间分配是最安全的，在所有方案中飞行容量最小，需要的计算量和通信负载也较小。随着运行多重性的增加，空域运行的稳定性得分降低，但效率和所需通信量增加。直到第三个方案（即节点空间的多重运行），飞行之间的隔离可以通过 UTM 分配来控制，计算负载增加。但据推测，在其余方案中，中心式 UTM 控制不足以隔离低空沿相同边飞行的无人机，这反而会导致通信负担增加。</p>
+<div class="scriptsize" markdown="1">
+
+<div class="center" markdown="1">
+
+<div id="tab:tab4" markdown="1">
+
+<table>
+<caption> 时间分配策略和运行多重性方案的评分。</caption>
+<thead>
+<tr>
+<th style="text-align: left;">Temporal Allocation and Plurality</th>
+<th style="text-align: center;">Safety</th>
+<th style="text-align: center;">Efficiency</th>
+<th style="text-align: center;"><div id="tab:tab4">
+<table>
+<caption> 时间分配策略和运行多重性方案的评分。</caption>
+<tbody>
+<tr>
+<td style="text-align: center;">Computation</td>
+</tr>
+<tr>
+<td style="text-align: center;">Load</td>
+</tr>
+</tbody>
+</table>
+</div></th>
+<th style="text-align: center;"><div id="tab:tab4">
+<table>
+<caption> 时间分配策略和运行多重性方案的评分。</caption>
+<tbody>
+<tr>
+<td style="text-align: center;">Communication</td>
+</tr>
+<tr>
+<td style="text-align: center;">Load</td>
+</tr>
+</tbody>
+</table>
+</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">(1)Temporal allocation-full</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">(2)Temporal allocation-partial</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">(3)Multiple operations at nodes</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;">(4)Multiple operations at non-node spaces</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">(5)Multiple operations at edges and nodes</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<h2 id="空域设计的组合评估"><a href="#空域设计的组合评估" class="headerlink" title="空域设计的组合评估"></a>空域设计的组合评估</h2><p>本节将空域划分和运行方法结合起来，并根据其组成方法的得分对每种组合空域设计进行评估。</p>
+<p>显示了空间划分与时间分配策略和运行多重性的可能组合。由于并非所有运行方法都是可行的，因此根据空间划分，总共有 13 种设计组合是可行的。例如，来自 (a) 或 (b) 的结构在节点中不提供多种运行，因为节点中没有给出子结构。块 (h) 仅在 Air-Matrix 中可用，并且空域结构中不能放置任何边或节点。因此，只有时间分配方法与块划分相结合。另一方面，相同的组合可以根据空域结构模型产生不同复杂度的设计。没有划分 (a) 与 “完整” 时间分配方法相结合，在 Air-Network 和 Air-Tubes 中可能会有相当不同的运行复杂度。</p>
+<p>给出了安全性、效率、计算量和通信负荷四个标准赋予的两组权重，其中稳定性和效率分别占了主导地位。安全性权重法认为组合的安全性得分比效率得分更重要，而效率权重法则相反。列出了基于给定标准的 13 个组合的得分，以及使用 中的重点得到的加权总和。中代表每个设计组合的符号中，括号中的字符表示分割方法，破折号后的数字表示运行方法。该运行方法是单位空间内的时间分配策略和多种选项之一。组合的得分主要通过对分割方法和运行方法的得分求和来计算。同一组合应用于不同结构模型的得分会根据不同的实施方面进行调整。</p>
+<p>从 的总和来看，完全时间分配的组合（ Air-Network 和 Air-Tubes 中的 (a)-(1)）与其他组合相比得分更高，尤其是在安全性是主要加权因素的情况下。相反，在更加注重效率的情况下，由于 Air-Network 设计本身更节省空间，因此 ( (a)-(1)Air-Network ) 获得的分数高于 ( (a)-(1)Air-Tubes。由于元素差异，类似设计组合的加权总和可能有很大差异。例如，设计组合 ( (a)-(1)Air-Network ) 和 ( (a)-(2)Air-Network ) 都没有空间划分。但 ( (a)-(1)Air-Network ) 采用完全时间分配，而 ( (a)-(2)Air-Network ) 对每个飞行单元采用部分时间分配。在以安全为中心的加权下，与部分时间分配相比，完全时间分配可降低发生紧急情况的可能性。这导致 Air-Network 中的（ (a)-(1) ）的总分远高于 Air-Network 中的（ (a)-(2) ）。另一方面，对于非结构化组合，当空域完全分配给（ (e)-(1) ）所示的飞行单元时，会给出高分，从而最大限度地减少计算和通信负载。表明，非结构化设计的得分低于具有多个飞行运行的结构化设计，尤其是在优化空域效率是主要考虑因素时。</p>
+<div class="landscape" markdown="1">
+
+<div class="scriptsize" markdown="1">
+
+<div class="center" markdown="1">
+
+<div id="tab:tab5" markdown="1">
+
+<table>
+<thead>
+<tr>
+<th align="center">Spatial Partitioning</th>
+<th align="center">Temporal Allocation and Plurality Allocating</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2-6</td>
+<td align="center">(1)</td>
+<td align="center">(2)</td>
+<td align="center">(3)</td>
+<td align="center">(4)</td>
+<td align="center">(5)</td>
+</tr>
+<tr>
+<td align="center">(a) No partition in edges&#x2F;nodes</td>
+<td align="center">No partition with full temporal allocation</td>
+<td align="center">No partition with partial temporal allocation</td>
+<td align="center">None</td>
+<td align="center">No partition with non-node multiple operations</td>
+<td align="center">None</td>
+</tr>
+<tr>
+<td align="center">(b) Partition in edges</td>
+<td align="center">None</td>
+<td align="center">Partition with partial temporal allocation</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">None</td>
+</tr>
+<tr>
+<td align="center">(c) Layers in nodes</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">Multiple operations with layers in nodes</td>
+<td align="center">None</td>
+<td align="center">Multiple operations with layers in nodes</td>
+</tr>
+<tr>
+<td align="center">(d) Partitioned edges and layered nodes</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">Multiple operations at layered nodes</td>
+<td align="center">None</td>
+<td align="center">None</td>
+</tr>
+<tr>
+<td align="center">(e) Direct corridor</td>
+<td align="center">Full temporal allocation at direct corridor</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">None</td>
+</tr>
+<tr>
+<td align="center">(f) Corridor shrinking over time</td>
+<td align="center">None</td>
+<td align="center">Partial temporal allocation at shrinking corridor</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">None</td>
+</tr>
+<tr>
+<td align="center">(g) Dynamic geofence tubelet</td>
+<td align="center">None</td>
+<td align="center">Partial temporal allocation at dynamic geofence</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">None</td>
+</tr>
+<tr>
+<td align="center">(h) Blocks</td>
+<td align="center">Full temporal allocation at blocks</td>
+<td align="center">Partial temporal allocation at blocks</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">None</td>
+</tr>
+</tbody></table>
+<p>分区和运行方法的组合。</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="scriptsize" markdown="1">
+
+<div class="center" markdown="1">
+
+<div id="tab:tab6" markdown="1">
+
+<table>
+<thead>
+<tr>
+<th align="left">Main Focus of Weights</th>
+<th align="center">Safety</th>
+<th align="center">Efficiency</th>
+<th align="center">Computation Load</th>
+<th align="center">Communication Load</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Safety focused</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">-2</td>
+<td align="center">-1</td>
+</tr>
+<tr>
+<td align="left">Efficiency focused</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">-2</td>
+<td align="center">-1</td>
+</tr>
+</tbody></table>
+<p>明显强调稳定性和效率的权重。</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="scriptsize" markdown="1">
+
+<div class="center" markdown="1">
+
+<div id="tab:tab7" markdown="1">
+
+<table>
+<thead>
+<tr>
+<th align="center">Design Combination</th>
+<th align="center">Safety</th>
+<th align="center">Efficiency</th>
+<th align="center">Computation Load</th>
+<th align="center">Communication Load</th>
+<th align="center">Summation</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">Safety Focused</td>
+<td align="center">Efficiency Focused</td>
+</tr>
+<tr>
+<td align="center">(a)-(1)in Net.</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">6</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">(a)-(1)in Tub.</td>
+<td align="center">3</td>
+<td align="center">0</td>
+<td align="center">1 *</td>
+<td align="center">1</td>
+<td align="center">6</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">(a)-(2)in Net.</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">(a)-(4)in Net. or Tub.</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">4</td>
+<td align="center">0</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">(b)-(2)in Net. or Tub.</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">(c)-(3)in Net.</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+</tr>
+<tr>
+<td align="center">(c)-(5)in Net.</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">4</td>
+<td align="center">0</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">(d)-(3)in Net.</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">-3</td>
+<td align="center">-2</td>
+</tr>
+<tr>
+<td align="center">(e)-(1)in Un.</td>
+<td align="center">3</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">4</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">(f)-(2)in Un.</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">-1</td>
+<td align="center">-2</td>
+</tr>
+<tr>
+<td align="center">(g)-(2)in Un.</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center">-4</td>
+<td align="center">-4</td>
+</tr>
+<tr>
+<td align="center">(h)-(1)in Mat.</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">5</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">(h)-(2)in Mat.</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+</tbody></table>
+<p>对空域结构设计和运行方法组合进行评分（ Mat： Air-Matrix ，Net： Air-Network ，Tub： Air-Tubes ，Un：非结构化。 ）。</p>
+</div>
+
+</div>
+
+</div>
+
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>要成功开发用于低空城市地区的 UTM 系统，必须设计高效安全的空域结构和运行方法。在我们的研究中，回顾了之前关于 UTM 系统中运行空域的研究，并根据以下几个特点进行了分类： “空域的结构化方法” 、 “时间分配策略” 和 “运行多重性方案” 、 “子结构划分” 和 “非结构化空域管理的中心性” 。文献中的结构化概念根据本文提出的空域结构模型进行分类： Air-Matrix、Air-Network 和 Air-Tubes。基于此回顾，进行了一项定性研究，以建立未来定量研究的指南。评估标准用于比较设计方案，这些方案由空间划分、时间分配和多元化选项相结合而成。考虑到低空城市地区对无人机运行的需求不断增加以及许多国家目前都在努力建立 UTM 系统，有必要对安全高效的 UTM 架构的构建估算和评估工具进行初步研究。通过本文提出的定性研究，未来的工作需要采用定量方法和数值仿真进行进一步的深入分析。</p>
+<div id="refs" class="references csl-bib-body hanging-indent" markdown="1" entry-spacing="0">
+
+<div id="ref-27" class="csl-entry" markdown="1">
+
+<p>Bae, S., H. Shin, and A. Tsourdos. 2018-09-23. “A New Graph-Based Flight Planning Algorithm for Unmanned Aircraft System Traffic Management.” In <em>Proceedings of the 2018 IEEE&#x2F;AIAA 37th Digital Avionics Systems Conference (DASC</em>, 1–9. London, UK.</p>
+</div>
+
+<div id="ref-3" class="csl-entry" markdown="1">
+
+<p>Balakrishnan, K., J. Polastre, J. Mooberry, R. Golding, and P. Sachs. 2018. “Blueprint for the Sky. The Roadmap for the Safe Integration of Autonomous Aircraft; Airbus UTM.” San Francisco, CA, USA.</p>
+</div>
+
+<div id="ref-43" class="csl-entry" markdown="1">
+
+<p>Barnier, N., and P. Brisset. 2004. “Graph Coloring for Air Traffic Flow Management.” <em>Ann. Oper. Res</em> 130: 163–78.</p>
+</div>
+
+<div id="ref-17" class="csl-entry" markdown="1">
+
+<p>Bauranov, A., and J. Rakas. 2021. “Designing Airspace for Urban Air Mobility: A Review of Concepts and Approaches.” <em>Prog. Aerosp. Sci</em> 125: 100726.</p>
+</div>
+
+<div id="ref-7" class="csl-entry" markdown="1">
+
+<p>Chakrabarty, A., and C. A. Ippolito. 2020-01-06. “Autonomous Flight for Multi-Copters Flying in UTM TCL4+ Sharing Common Airspace.” In <em>Proceedings of the AIAA Scitech 2020 Forum</em>, 0881. Orlando, FL, USA.</p>
+</div>
+
+<div id="ref-40" class="csl-entry" markdown="1">
+
+<p>Cho, J., and Y. Yoon. 2018-06-26. “Assessing the Airspace Availability for sUAV Operations in Urban Environments: A Topological Approach Using Keep-in and Keep-Out Geofence.” In <em>Proceedings of the 2018 International Conference on Research in Air Transportation (ICRAT</em>, 26–29. Barcelona, Spain.</p>
+</div>
+
+<div id="ref-16" class="csl-entry" markdown="1">
+
+<p>———. 2018. “How to Assess the Capacity of Urban Airspace: A Topological Approach Using Keep-in and Keep-Out Geofence.” <em>Transp. Res. Part C Emerg. Technol</em> 92: 137–49.</p>
+</div>
+
+<div id="ref-4" class="csl-entry" markdown="1">
+
+<p>Consortium, Japan U. T. M. 2017. “JTUM: About the JTUM: Japan UTM Consortium.” <a target="_blank" rel="noopener" href="https://www.jutm.org/">https://www.jutm.org/</a>.</p>
+</div>
+
+<div id="ref-29" class="csl-entry" markdown="1">
+
+<p>Devasia, S., and A. Lee. 2016. “Scalable Low-Cost Unmanned-Aerial-Vehicle Traffic Network.” <em>J. Air Transp</em> 24: 74–83.</p>
+</div>
+
+<div id="ref-42" class="csl-entry" markdown="1">
+
+<p>Emadi, H., E. Atkins, and H. Rastgoftar. n.d. “A Finite-State Fixed-Corridor Model for UAS Traffic Management.”</p>
+</div>
+
+<div id="ref-33" class="csl-entry" markdown="1">
+
+<p>EmbraerX. 2019. “Flight Plan 2030; EmbraerX: São José Dos Campos.” Brazil.</p>
+</div>
+
+<div id="ref-44" class="csl-entry" markdown="1">
+
+<p>Fossey, E., C. Harvey, F. McDermott, and L. Davidson. 2002. “Understanding and Evaluating Qualitative Research.” <em>Aust. N. Z. J. Psychiatry</em> 36: 717–32.</p>
+</div>
+
+<div id="ref-35" class="csl-entry" markdown="1">
+
+<p>Gharibi, M. 1594. “On the Integration of Unmanned Aerial Vehicles into Public Airspace 2020.” <a target="_blank" rel="noopener" href="http://hdl.handle.net/">http://hdl.handle.net/</a>.</p>
+</div>
+
+<div id="ref-47" class="csl-entry" markdown="1">
+
+<p>Halevi Hochwald, I., G. Green, Y. Sela, Z. Radomyslsky, R. Nissanholtz-Gannot, and O. Hochwald. 2023. “Converting Qualitative Data into Quantitative Values Using a Matched Mixed-Methods Design: A New Methodological Approach.” <em>J. Adv. Nurs</em>.</p>
+</div>
+
+<div id="ref-14" class="csl-entry" markdown="1">
+
+<p>Hu, J., H. Erzberger, K. Goebel, and Y. Liu. 2020. “Probabilistic Risk-Based Operational Safety Bound for Rotary-Wing Unmanned Aircraft Systems Traffic Management.” <em>J. Aerosp. Inf. Syst</em> 17: 171–81.</p>
+</div>
+
+<div id="ref-11" class="csl-entry" markdown="1">
+
+<p>Institute, A. T. M. R. 2017-09-22. “Framework for Urban Airspace Management of Unmanned Aircraft Systems (UTM-UAS.” In <em>Proceedings of the DRONE ENABLE, ICAO Unmanned Aircraft Systems (UAS) Industry Symposium</em>. Montreal, QC, Canada.</p>
+</div>
+
+<div id="ref-9" class="csl-entry" markdown="1">
+
+<p>Ippolito, C. A., K. Krishnakumar, V. Stepanyan, A. Chakrabarty, and J. Baculi. 2019-06-17. “SAFE50 Reference Design Study for Large-Scale High-Density Low-Altitude UAS Operations in Urban Areas.” In <em>Proceedings of the 2019 AIAA Modeling and Simulation Technologies Conference</em>. Dallas, TX, USA.</p>
+</div>
+
+<div id="ref-13" class="csl-entry" markdown="1">
+
+<p>Jung, K., and K. Lee. 2019. “Geo-Fencing Method for Low Altitude Unmanned Aircraft System Traffic Management.” <em>J. Transp. Res</em>, 26, 63–74.</p>
+</div>
+
+<div id="ref-15" class="csl-entry" markdown="1">
+
+<p>Kim, J., and E. Atkins. 2022. “Airspace Geofencing and Flight Planning for Low-Altitude, Urban, Small Unmanned Aircraft Systems.” <em>Appl. Sci</em> 12: 576.</p>
+</div>
+
+<div id="ref-5" class="csl-entry" markdown="1">
+
+<p>“Korea Institute of Aviation Safety Technology.” 2022. <em>Drone Traffic Management</em>. <a target="_blank" rel="noopener" href="https://www.kiast.or.kr/en/">https://www.kiast.or.kr/en/</a>.</p>
+</div>
+
+<div id="ref-28" class="csl-entry" markdown="1">
+
+<p>Labib, N. S., G. Danoy, J. Musial, M. R. Brust, and P. Bouvry. 2019. “Internet of Unmanned Aerial Vehicles-a Multilayer Low-Altitude Airspace Model for Distributed UAV Traffic Management.” <em>Sensors</em> 19: 4779.</p>
+</div>
+
+<div id="ref-18" class="csl-entry" markdown="1">
+
+<p>Liu, Z., K. Cai, and Y. Zhu. 2021. “Civil Unmanned Aircraft System Operation in National Airspace: A Survey from Air Navigation Service Provider Perspective.” <em>Chin. J. Aeronaut</em> 34: 200–224.</p>
+</div>
+
+<div id="ref-31" class="csl-entry" markdown="1">
+
+<p>Low, K. H., L. Gan, and S. Mao. 2016-04-07. “A Preliminary Study in Managing Safe and Efficient Low-Altitude Unmanned Aircraft System Operations in a Densely Built-up Urban Environment.” In <em>Proceedings of the International Symposium on Enhanced Solutions for Aircraft and Vehicle Surveillance Applications (ESAVS 2016</em>. Berlin, Germany.</p>
+</div>
+
+<div id="ref-38" class="csl-entry" markdown="1">
+
+<p>Maciel, L. R. 2019. “Droneway: A Viable Initial Scenario for UTM Using Private Wireless Network for Localized BVLOS.” <a target="_blank" rel="noopener" href="https://agyacorp.com/Droneway:%20A%20Viable%20Initial%20Scenario.pdf">https://agyacorp.com/Droneway:%20A%20Viable%20Initial%20Scenario.pdf</a>.</p>
+</div>
+
+<div id="ref-45" class="csl-entry" markdown="1">
+
+<p>Maxwell, J. A. 2008. “Designing a Qualitative Study.” In <em>The SAGE Handbook of Applied Social Research Methods</em>. Vol. 2. New York, NY, USA: SAGE Publications, Inc.</p>
+</div>
+
+<div id="ref-37" class="csl-entry" markdown="1">
+
+<p>McCarthy, T., L. Pforte, and R. Burke. 2020. “Fundamental Elements of an Urban UTM.” <em>Aerospace</em> 7: 85.</p>
+</div>
+
+<div id="ref-41" class="csl-entry" markdown="1">
+
+<p>Muna, S. I., S. Mukherjee, K. Namuduri, M. Compere, M. I. Akbas, P. Molnár, and R. Subramanian. 2021. “Air Corridors: Concept, Design, Simulation, and Rules of Engagement.” <em>Sensors</em> 21: 7536.</p>
+</div>
+
+<div id="ref-26" class="csl-entry" markdown="1">
+
+<p>Niu, S., J. Zhang, F. Zhang, and H. Li. 2015. “A Method of UAVs Route Optimization Based on the Structure of the Highway Network.” <em>Int. J. Distrib. Sens. Netw</em> 11: 359657.</p>
+</div>
+
+<div id="ref-32" class="csl-entry" markdown="1">
+
+<p>Pathiyil, L., K. Low, B. H. Soon, and S. Mao. 2016-04-07. “Enabling Safe Operations of Unmanned Aircraft Systems in an Urban Environment: A Preliminary Study.” In <em>Proceedings of the International Symposium on Enhanced Solutions for Aircraft and Vehicle Surveillance Applications (ESAVS 2016</em>. Berlin, Germany.</p>
+</div>
+
+<div id="ref-34" class="csl-entry" markdown="1">
+
+<p>Peinecke, N., A. Volkert, and B. R. Korn. 2017-04-18. “Minimum Risk Low Altitude Airspace Integration for Larger Cargo UAS.” In <em>Proceedings of the 2017 Integrated Communications, Navigation and Surveillance Conference (ICNS</em>, 6 2–1. Herndon, VA, USA.</p>
+</div>
+
+<div id="ref-1" class="csl-entry" markdown="1">
+
+<p>Petrova, T., and Z. Petrov. 2020. “Economic Factors in the Development and Application of UAV’s and the Fight with Wild Fires.” <em>IJASOS-Int. J. Adv. Soc. Sci</em> 6: 73–79.</p>
+</div>
+
+<div id="ref-20" class="csl-entry" markdown="1">
+
+<p>Pongsakornsathien, N., S. Bijjahalli, A. Gardi, A. Symons, Y. Xi, R. Sabatini, and T. Kistan. 2020. “A Performance-Based Airspace Model for Unmanned Aircraft Systems Traffic Management.” <em>Aerospace</em> 7: 154.</p>
+</div>
+
+<div id="ref-30" class="csl-entry" markdown="1">
+
+<p>Sacharny, D., and T. C. Henderson. 2019-06-11. “A Lane-Based Approach for Large-Scale Strategic Conflict Management for UAS Service Suppliers.” In <em>Proceedings of the 2019 International Conference on Unmanned Aircraft Systems (ICUAS</em>, 937–45. Atlanta, GA, USA.</p>
+</div>
+
+<div id="ref-6" class="csl-entry" markdown="1">
+
+<p>Salleh, M. F. B., D. Y. Tan, C. H. Koh, and K. H. Low. 2017-01-09. “Concept of Operations (ConOps) for Traffic Management of Unmanned Aircraft Systems (TM-UAS) in Urban Environment.” In <em>Proceedings of the AIAA Information Systems-AIAA Infotech@ Aerospace</em>, 0223. Grapevine, TX, USA.</p>
+</div>
+
+<div id="ref-10" class="csl-entry" markdown="1">
+
+<p>Salleh, M. F. B., C. Wanchao, Z. Wang, S. Huang, D. Y. Tan, T. Huang, and K. H. Low. 2018-01-08. “Preliminary Concept of Adaptive Urban Airspace Management for Unmanned Aircraft Operations.” In <em>Proceedings of the 2018 AIAA Information Systems-AIAA Infotech@ Aerospace</em>, 2260. Kissimmee, FL, USA.</p>
+</div>
+
+<div id="ref-36" class="csl-entry" markdown="1">
+
+<p>Sarim, M., M. Radmanesh, M. Dechering, M. Kumar, R. Pragada, and K. Cohen. 2019. “Distributed Detect-and-Avoid for Multiple Unmanned Aerial Vehicles in National Air Space.” <em>J. Dyn. Syst. Meas. Control</em> 141: 071014.</p>
+</div>
+
+<div id="ref-39" class="csl-entry" markdown="1">
+
+<p>Schwithal, A., C. Tonhäuser, S. Wolkow, M. Angermann, P. Hecker, N. Mumm, and F. Holzapfel. 2017-09-19. “Integrity Monitoring in GNSS&#x2F;INS Systems by Optical Augmentation.” In <em>Proceedings of the 2017 DGON Inertial Sensors and Systems (ISS</em>, 1–22. Karlsruhe, Germany.</p>
+</div>
+
+<div id="ref-8" class="csl-entry" markdown="1">
+
+<p>Sedov, L., and V. Polishchuk. 2018-06-26. “Centralized and Distributed UTM in Layered Airspace.” In <em>Proceedings of the 8 Th International Conference on Research in Air Transportation (ICRAT 2018</em>. Barcelona, Spain.</p>
+</div>
+
+<div id="ref-19" class="csl-entry" markdown="1">
+
+<p>Skorup, B. 2019. “Auctioning Airspace. North Carol.” <em>J. Law Technol</em> 21: 79.</p>
+</div>
+
+<div id="ref-23" class="csl-entry" markdown="1">
+
+<p>Sunil, E., J. Ellerbroek, J. Hoekstra, A. Vidosavljevic, M. Arntzen, F. Bussink, and D. Nieuwenhuisen. 2017. “Analysis of Airspace Structure and Capacity for Decentralized Separation Using Fast-Time Simulations.” <em>J. Guid. Control Dyn</em> 40: 38–51.</p>
+</div>
+
+<div id="ref-22" class="csl-entry" markdown="1">
+
+<p>Sunil, E., J. Hoekstra, J. Ellerbroek, F. Bussink, A. Vidosavljevic, and D. Nieuwenhuisen. 2016-06-20. “The Influence of Traffic Structure on Airspace Capacity.” In <em>Proceedings of the 7th International Conference on Research in Air Transportation</em>. Philadelphia, PA, USA.</p>
+</div>
+
+<div id="ref-46" class="csl-entry" markdown="1">
+
+<p>Taherdoost, H. 2022. “What Are Different Research Approaches? Comprehensive Review of Qualitative, Quantitative, and Mixed Method Research, Their Applications, Types, and Limitations.” <em>J. Manag. Sci. Eng. Res</em> 5: 53–63.</p>
+</div>
+
+<div id="ref-12" class="csl-entry" markdown="1">
+
+<p>Tan, D. Y., M. F. Bin Mohamed, W. C. Salleh, and K. H. Low. 2017-11-14. “Traffic Management of Unmanned Aircarft Systems (TM-UAS) in Urban Environment.” In <em>Proceedings of the ENRI International Workshop on ATM&#x2F;CNS</em>. Tokyo, Japan.</p>
+</div>
+
+<div id="ref-21" class="csl-entry" markdown="1">
+
+<p>Tan, Q., Z. Wang, Y. S. Ong, and K. H. Low. 2019-06-11. “Evolutionary Optimization-Based Mission Planning for UAS Traffic Management (UTM.” In <em>Proceedings of the 2019 International Conference on Unmanned Aircraft Systems (ICUAS</em>, 952–58. Atlanta, GA, USA.</p>
+</div>
+
+<div id="ref-2" class="csl-entry" markdown="1">
+
+<p>Whitley, P. 2020. “Unmanned Aircraft Systems (UAS) Traffic Management (UTM.” <em>Concept of Operations</em> V2 (0).</p>
+</div>
+
+<div id="ref-24" class="csl-entry" markdown="1">
+
+<p>Zhu, G., and P. Wei. 2016-06-13. “Low-Altitude Uas Traffic Coordination with Dynamic Geofencing.” In <em>Proceedings of the 16th AIAA Aviation Technology, Integration, and Operations Conference</em>, 3453. Washington, DC, USA.</p>
+</div>
+
+<div id="ref-25" class="csl-entry" markdown="1">
+
+<p>———. 2019-06-17. “Pre-Departure Planning for Urban Air Mobility Flights with Dynamic Airspace Reservation.” In <em>Proceedings of the AIAA Aviation 2019 Forum</em>, 3519. Dallas, TX, USA.</p>
+</div>
+
+</div>
+
+<p>[^1]:  国际民用航空组织 ( ICAO ) 将其定义为移动飞行器在其指定位置的任何时间内，有 95% 概率在其中的体空间</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://xishansnow.github.io/vll-pages">Xishansnow</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://xishansnow.github.io/vll-pages/posts/cb57fa9d.html">http://xishansnow.github.io/vll-pages/posts/cb57fa9d.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/vll-pages/tags/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/">空域管理</a><a class="post-meta__tags" href="/vll-pages/tags/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/">空域结构</a></div><div class="post-share"><div class="social-share" data-image="/vll-pages/img/book_04.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/vll-pages/posts/cebe6f4d.html" title="基于空域资源中心方法的城市空中交通无冲突轨迹规划"><img class="cover" src="/vll-pages/img/010.png" onerror="onerror=null;src='/vll-pages/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">基于空域资源中心方法的城市空中交通无冲突轨迹规划</div></div><div class="info-2"><div class="info-item-1">     〖摘要〗 城市空中交通 (UAM) 因其在未来城市交通系统中发挥重要作用的巨大潜力而受到相关利益者关注。预期 UAM 运行的高密度需要先进的空域资源管理策略。在本文中，我们提出了一种以空域资源为中心 (ARC) 的 UAM 飞行规划方法。首先，开发了城市空域管理的空域资源中心概念。然后在该概念下设计了一种具有最佳空域利用率的 4D 轨迹规划方法。该方法包括三个步骤。首先，为每个飞行计划分配一个飞行高度层。其次，通过 $\mathrm{A}^{*}$ 算法生成最佳 3D 路径并进行平滑。最后，将 4D 轨迹生成建模为数学优化问题，并通过商业求解器进行求解。数值模拟结果表明，该方法可为 UAM 规划轨迹，每次飞行的计算时间少于 1 秒。  引言城市空中交通在解决特大城市交通拥堵方面显示出巨大潜力，近年来引起了政策制定者、服务提供商、运营商和研究人员越来越多的关注 (Thipphavong et al. 2018; Straubinger et al....</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/94508604.html" title="综合运行概念"><img class="cover" src="/vll-pages/img/book_18.png" onerror="onerror=null;src='/vll-pages/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">综合运行概念</div></div><div class="info-2"><div class="info-item-1">             #refplus, #refplus li{          padding:0;         margin:0;         list-style:none;     }；                         document.querySelectorAll(".refplus-num").forEach((ref) => {         let refid = ref.firstChild.href.replace(location.origin+location.pathname,'');         let refel = document.querySelector(refid);         let refnum = refel.dataset.num;         let ref_content = refel.innerText.replace(`[${refnum}]`,'');         tippy(ref, {             content: ref_content,    ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/vll-pages/posts/ce8f62ac.html" title="空域结构概述"><img class="cover" src="/vll-pages/img/001.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">空域结构概述</div></div><div class="info-2"><div class="info-item-1">   〖摘要〗 〖原文〗 〖参考〗Kin Huat Low, Framework for urban Traffic Management of Unmanned Aircraft System (uTM-UAS),  p{text-indent:2em}    </div></div></div></a><a class="pagination-related" href="/vll-pages/posts/5d2e7a7c.html" title="空域管理索引帖"><img class="cover" src="/vll-pages/img/coffe_05.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">空域管理索引帖</div></div><div class="info-2"><div class="info-item-1">   引言空域要素空域划分空域拓扑          #refplus, #refplus li{          padding:0;         margin:0;         list-style:none;     }；                         document.querySelectorAll(".refplus-num").forEach((ref) => {         let refid = ref.firstChild.href.replace(location.origin+location.pathname,'');         let refel = document.querySelector(refid);         let refnum = refel.dataset.num;         let ref_content = refel.innerText.replace(`[${refnum}]`,'');         tippy(ref, {             content:...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/c2d88c64.html" title="空域管理系统"><img class="cover" src="/vll-pages/img/001.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">空域管理系统</div></div><div class="info-2"><div class="info-item-1">   〖摘要〗 〖原文〗 〖参考〗 p{text-indent:2em}   </div></div></div></a><a class="pagination-related" href="/vll-pages/posts/2e275440.html" title="空域管理法规"><img class="cover" src="/vll-pages/img/book_18.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">空域管理法规</div></div><div class="info-2"><div class="info-item-1">   〖摘要〗 〖原文〗 〖参考〗  CMU 10-708 Slides CMU 10-708 Notes Jordan’s Textbook Airoldi’s Tutorial  p{text-indent:2em} </div></div></div></a><a class="pagination-related" href="/vll-pages/posts/55be6bf3.html" title="空域管理相关项目"><img class="cover" src="/vll-pages/img/coffe_12.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">空域管理相关项目</div></div><div class="info-2"><div class="info-item-1">   〖摘要〗 〖原文〗 〖参考〗  CMU 10-708 Slides CMU 10-708 Notes Jordan’s Textbook Airoldi’s Tutorial  p{text-indent:2em}   </div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84%E5%92%8C%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="toc-text">空域结构和运行方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84%E6%A8%A1%E5%9E%8B"><span class="toc-text">空域结构模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Air-Matrix"><span class="toc-text">Air-Matrix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Air-Network"><span class="toc-text">Air-Network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Air-Tubes"><span class="toc-text">Air-Tubes</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%96%B9%E6%B3%95%EF%BC%9A%E5%88%87%E5%88%86%E3%80%81%E5%A4%9A%E6%9E%B6%E6%AC%A1%E4%B8%8E%E6%97%B6%E9%97%B4%E5%88%86%E9%85%8D"><span class="toc-text">运行方法：切分、多架次与时间分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%AF%B9%E8%B1%A1"><span class="toc-text">基本对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5"><span class="toc-text">时间分配策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E7%A9%BA%E9%97%B4%E5%86%85%E8%BF%90%E8%A1%8C%E7%9A%84%E5%A4%9A%E9%87%8D%E6%80%A7"><span class="toc-text">单位空间内运行的多重性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%85%83%E7%A9%BA%E9%97%B4%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%88%92%E5%88%86"><span class="toc-text">单元空间的进一步划分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%88%90%E6%9E%9C%E5%9B%9E%E9%A1%BE"><span class="toc-text">相关成果回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Air-Matrix-1"><span class="toc-text">Air-Matrix</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E7%A9%BA%E9%97%B4%E5%86%85%E6%9C%89%E5%8D%95%E4%B8%AA%E8%BF%90%E8%A1%8C"><span class="toc-text">单位空间内有单个运行</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E6%97%B6%E9%97%B4%E5%88%86%E9%85%8D"><span class="toc-text">完全时间分配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E6%97%B6%E9%97%B4%E5%88%86%E9%85%8D"><span class="toc-text">部分时间分配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E7%A9%BA%E9%97%B4%E5%86%85%E6%9C%89%E5%A4%9A%E4%B8%AA%E8%BF%90%E8%A1%8C-sec-sec3-1-2"><span class="toc-text">单位空间内有多个运行 [sec:sec3.1.2]</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Air-Network-1"><span class="toc-text">Air-Network</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E7%A9%BA%E9%97%B4%E5%86%85%E6%9C%89%E5%8D%95%E4%B8%AA%E8%BF%90%E8%A1%8C-sec-sec3-2-1"><span class="toc-text">单位空间内有单个运行 [sec:sec3.2.1]</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E6%97%B6%E9%97%B4%E5%88%86%E9%85%8D-1"><span class="toc-text">部分时间分配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E7%A9%BA%E9%97%B4%E5%86%85%E6%9C%89%E5%A4%9A%E4%B8%AA%E8%BF%90%E8%A1%8C-%E5%8D%95%E4%BD%8D%E7%A9%BA%E9%97%B4%E5%86%85%E6%9C%89%E5%A4%9A%E4%B8%AA%E8%BF%90%E8%A1%8C"><span class="toc-text">单位空间内有多个运行 [单位空间内有多个运行]</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%85%E5%9C%A8%E9%9D%9E%E8%8A%82%E7%82%B9%E7%9A%84%E5%8D%95%E4%BD%8D%E7%A9%BA%E9%97%B4%E4%B8%AD%E8%BF%9B%E8%A1%8C%E5%88%92%E5%88%86"><span class="toc-text">仅在非节点的单位空间中进行划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E6%89%80%E6%9C%89%E5%8D%95%E4%BD%8D%E7%A9%BA%E9%97%B4%E4%B8%AD%E8%BF%9B%E8%A1%8C%E5%88%92%E5%88%86"><span class="toc-text">在所有单位空间中进行划分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Air-Tubes-1"><span class="toc-text">Air-Tubes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%80%9C%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E7%A9%BA%E5%9F%9F%E2%80%9D-%E6%88%96-%E2%80%9C%E5%88%86%E5%B1%82%E7%A9%BA%E5%9F%9F%E2%80%9D"><span class="toc-text">“非结构化空域” 或 “分层空域”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83%E5%BC%8F%E7%B3%BB%E7%BB%9F"><span class="toc-text">中心式系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F"><span class="toc-text">分布式系统</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A9%BA%E5%9F%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%AE%9A%E6%80%A7%E7%A0%94%E7%A9%B6"><span class="toc-text">空域设计的定性研究</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%80%A7%E7%A0%94%E7%A9%B6"><span class="toc-text">定性研究</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%88%92%E5%88%86%E5%8F%8A%E8%BF%90%E8%A1%8C%E6%96%B9%E6%B3%95"><span class="toc-text">空间划分及运行方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E5%9F%9F%E5%88%92%E5%88%86%E6%96%B9%E6%B3%95"><span class="toc-text">空域划分方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E5%9F%9F%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="toc-text">空域运行方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%80%BC%E8%AE%BE%E7%BD%AE"><span class="toc-text">分值设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E5%9F%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E7%BB%84%E5%90%88%E8%AF%84%E4%BC%B0"><span class="toc-text">空域设计的组合评估</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By Xishansnow</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional and Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/vll-pages/js/utils.js"></script><script src="/vll-pages/js/main.js"></script><script src="/vll-pages/js/tw_cn.js"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (true){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : ''
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script></div></body></html>
