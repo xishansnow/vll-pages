@@ -1,0 +1,1410 @@
+<!DOCTYPE html><html class="hide-aside" lang="zh-cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>大规模无人机配送交通的受限城市空域设计 | 构建低空信息理论与技术知识图谱！</title><meta name="author" content="Xishansnow"><meta name="copyright" content="Xishansnow"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="大规模无人机配送交通的受限城市空域设计"><link rel="shortcut icon" href="/vll-pages/img/favi.jpg"><link rel="canonical" href="http://xishansnow.github.io/vll-pages/posts/8f2073f9.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/vll-pages/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/vll-pages/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '大规模无人机配送交通的受限城市空域设计',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/vll-pages/img/favi.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/vll-pages/archives/"><div class="headline">Articles</div><div class="length-num">82</div></a><a href="/vll-pages/tags/"><div class="headline">Tags</div><div class="length-num">88</div></a><a href="/vll-pages/categories/"><div class="headline">Categories</div><div class="length-num">54</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/vll-pages/index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map"></i><span> 运行概念</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/94508604.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 综合运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UTM/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> UTM 运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UAM/"><i class="fa-fw fa-solid fa-map"></i><span> UAM 运行概念</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 空域管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/5d2e7a7c.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/"><i class="fa-fw fas fa-atom"></i><span> 空域结构</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E6%B3%95%E8%A7%84/"><i class="fa-fw fa-solid fa-magnet"></i><span> 空域法规</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 任务规划</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d04ee52a.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 任务分配</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%95%E6%9C%BA%E8%A7%84%E5%88%92/"><i class="fa-fw fas fa-atom"></i><span> 单机规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92/"><i class="fa-fw fa-solid fa-magnet"></i><span> 多机规划</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 风险管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/e53d9399.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E6%80%A7%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 定性评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fa-solid fa-magnet"></i><span> 定量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%BB%93%E6%9E%9C%E5%BA%94%E7%94%A8/"><i class="fa-fw fas fa-cogs"></i><span> 结果应用</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 冲突管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d805a213.html"><i class="fa-fw fas fa-cogs"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E7%95%A5%E5%B1%82/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 战略层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E6%9C%AF%E5%B1%82/"><i class="fa-fw fa-solid fa-magnet"></i><span> 战术层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/DAA/"><i class="fa-fw fa-solid fa-magnet"></i><span> DAA</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E9%98%B2%E6%92%9E/"><i class="fa-fw fa-solid fa-magnet"></i><span> 防撞</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-ghost"></i><span> DCB 管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/337b7ab7.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E7%94%9F%E6%88%90/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求生成</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E9%A2%84%E6%B5%8B/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求预测</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 容量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/DCB%E6%8E%AA%E6%96%BD/"><i class="fa-fw fas fa-school"></i><span> DCB 措施</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E7%9B%91%E8%A7%86/"><i class="fa-fw fas fa-cogs"></i><span> 监视</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E9%80%9A%E4%BF%A1/"><i class="fa-fw fas fa-cogs"></i><span> 通信</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 定位导航</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BE%AE%E6%B0%94%E8%B1%A1/"><i class="fa-fw fa-solid fa-magnet"></i><span> 微气象</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E8%B5%B7%E9%99%8D%E5%9C%BA/"><i class="fa-fw fas fa-cogs"></i><span> 起降场</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/UAS/"><i class="fa-fw fas fa-cogs"></i><span> 飞行器</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BD%AF%E4%BB%B6%E5%B9%B3%E5%8F%B0/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 软件平台</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-compass"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/archives/"><i class="fa-fw fa-solid fa-timeline"></i><span> 时间索引</span></a></li><li><a class="site-page child" href="/vll-pages/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签索引</span></a></li><li><a class="site-page child" href="/vll-pages/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类索引</span></a></li><li><a class="site-page child" href="/vll-pages/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/coffe_05.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/vll-pages/"><span class="site-name">构建低空信息理论与技术知识图谱！</span></a><a class="nav-page-title" href="/vll-pages/"><span class="site-name">大规模无人机配送交通的受限城市空域设计</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/vll-pages/index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map"></i><span> 运行概念</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/94508604.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 综合运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UTM/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> UTM 运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UAM/"><i class="fa-fw fa-solid fa-map"></i><span> UAM 运行概念</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 空域管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/5d2e7a7c.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/"><i class="fa-fw fas fa-atom"></i><span> 空域结构</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E6%B3%95%E8%A7%84/"><i class="fa-fw fa-solid fa-magnet"></i><span> 空域法规</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 任务规划</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d04ee52a.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 任务分配</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%95%E6%9C%BA%E8%A7%84%E5%88%92/"><i class="fa-fw fas fa-atom"></i><span> 单机规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92/"><i class="fa-fw fa-solid fa-magnet"></i><span> 多机规划</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 风险管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/e53d9399.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E6%80%A7%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 定性评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fa-solid fa-magnet"></i><span> 定量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%BB%93%E6%9E%9C%E5%BA%94%E7%94%A8/"><i class="fa-fw fas fa-cogs"></i><span> 结果应用</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 冲突管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d805a213.html"><i class="fa-fw fas fa-cogs"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E7%95%A5%E5%B1%82/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 战略层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E6%9C%AF%E5%B1%82/"><i class="fa-fw fa-solid fa-magnet"></i><span> 战术层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/DAA/"><i class="fa-fw fa-solid fa-magnet"></i><span> DAA</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E9%98%B2%E6%92%9E/"><i class="fa-fw fa-solid fa-magnet"></i><span> 防撞</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-ghost"></i><span> DCB 管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/337b7ab7.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E7%94%9F%E6%88%90/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求生成</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E9%A2%84%E6%B5%8B/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求预测</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 容量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/DCB%E6%8E%AA%E6%96%BD/"><i class="fa-fw fas fa-school"></i><span> DCB 措施</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E7%9B%91%E8%A7%86/"><i class="fa-fw fas fa-cogs"></i><span> 监视</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E9%80%9A%E4%BF%A1/"><i class="fa-fw fas fa-cogs"></i><span> 通信</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 定位导航</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BE%AE%E6%B0%94%E8%B1%A1/"><i class="fa-fw fa-solid fa-magnet"></i><span> 微气象</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E8%B5%B7%E9%99%8D%E5%9C%BA/"><i class="fa-fw fas fa-cogs"></i><span> 起降场</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/UAS/"><i class="fa-fw fas fa-cogs"></i><span> 飞行器</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BD%AF%E4%BB%B6%E5%B9%B3%E5%8F%B0/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 软件平台</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-compass"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/archives/"><i class="fa-fw fa-solid fa-timeline"></i><span> 时间索引</span></a></li><li><a class="site-page child" href="/vll-pages/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签索引</span></a></li><li><a class="site-page child" href="/vll-pages/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类索引</span></a></li><li><a class="site-page child" href="/vll-pages/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">大规模无人机配送交通的受限城市空域设计</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-09T14:42:00.000Z" title="Created 2025-01-09 22:42:00">2025-01-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-17T11:30:32.325Z" title="Updated 2025-01-17 19:30:32">2025-01-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/">空域管理</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/">空域结构</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">14.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>50mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><script src='https://unpkg.com/tippy.js@2.0.2/dist/tippy.all.min.js'></script>
+<script src='/js/attachTooltips.js'></script>
+<link rel='stylesheet' href='/css/tippy.css'>
+<p>【摘 要】
+在城市地区大规模采用无人机送货服务有望在排放和地面交通拥堵方面带来社会效益，并为无人机物流公司节省成本。但要实现这一点，在城市空域容纳大量无人机交通的能力是最大的挑战之一。对于不受约束的空域，已经证明可以使用交通对齐与分割来减轻冲突概率。当前的研究调查了这些原则在高度受限的空域中的应用。我们提出了两个城市空域概念，通过施加水平结构应用双向和单行道的道路类比。这两个空域概念都采用航向高度规则，根据行进方向垂直分割巡航交通。这些空域配置还具有过渡高度，以适应需要降低飞行速度以便在交叉路口安全转弯的转弯飞行。在使用快速时间仿真实验时，在安全性、稳定性和效率方面比较和评估了这些空域概念在多种交通需求密度下的性能。结果表明，在受限的城市地区构建无人机交通的有效方法是根据行进方向垂直分割高度层，并对交通流量施加水平限制。该研究还为未来研究领域提出了建议，旨在支持动态交通需求模式。</p>
+<p>【原 文】</p>
+<p>【参考资料】</p>
+<hr />
+<h1 id="引言">引言</h1>
+<p>无人驾驶飞行器（通常称为无人机）的最新进展，在农业、研究、检查、医疗保健、城市空中交通 [<a
+href="#ref-2">16</a>, <a href="#ref-4">18</a>, <a href="#ref-1">23</a>,
+<a href="#ref-5">27</a>, <a href="#ref-7">40</a>, <a
+href="#ref-3">41</a>, <a
+href="#ref-6">46</a>]和物流方面都有潜在的应用，尤其是在城市内运输小型快递消费品和快餐 [<a
+href="#ref-8">5</a>, <a href="#ref-9">26</a>, <a href="#ref-10">33</a>,
+<a
+href="#ref-11">42</a>]。最近，商业物流公司在人口密集的城市地区进行无人机送货试飞，就体现了这种需求
+[<a href="#ref-12">22</a>, <a
+href="#ref-13">45</a>]。人们产生这种兴趣的原因之一是潜在的环境效益 [<a
+href="#ref-14">58</a>]和无人机送货的经济效益 [<a href="#ref-15">20</a>,
+<a
+href="#ref-16">21</a>]。但如果无人机送货开始大规模普及，那么在受现有街道网络和建筑物严重限制的低空城市空域安全地组织这种交通将是需要克服的主要挑战之一。</p>
+<p>为了满足未来对无人机服务的需求，先前的研究（例如 Metropollis
+项目）已经证明，垂直分割空域以将巡航交通按不同高度的行进方向分开可以提高安全性
+[<a href="#ref-17">61</a>, <a
+href="#ref-18">62</a>]。研究表明，<strong>交通分割</strong>（指将交通分配到不同的垂直层中）和<strong>交通对齐</strong>（指航向相近的交通在同一高度层中巡航，因此相对速度会降低）是降低冲突概率的主要因素，从而提高了空域安全性
+[<a
+href="#ref-19">36</a>]。在后续研究中，这些原则被形式化为一个名为地理矢量化的概念，作为定义空域设计的一种手段
+[<a href="#ref-20">34</a>, <a
+href="#ref-21">60</a>]。但所有这些过去的研究都局限于不受约束的空域环境，即建筑物上方或没有任何建筑区的空域。</p>
+<p>其他近期研究调查了受限城市环境中无人机的多种基于风险的路径规划算法 [<a
+href="#ref-24">50</a>, <a href="#ref-22">52</a>, <a
+href="#ref-23">65</a>]。也有研究针对建筑密集区中有限数量的无人机的充电站位置寻找最佳三维
+(3D) 路径 [<a
+href="#ref-25">4</a>]。虽然在城市中为无人机规划航线方面已经做了大量工作
+[<a
+href="#ref-23">65</a>]，但它们主要是基于策略的研究。此外，无人交通管理计划（例如
+U-Space）支持使用四维 (4-D) 轨迹和 DAA 技术在城市环境中导航 [<a
+href="#ref-26">6</a>]。</p>
+<p>本文将研究如何构建城市空域，以促进大规模无人机送货交通，方法是将交通对齐与交通分割原则应用于受限的城市区域。为此，将介绍两种航路城市空域概念：双向和单向空域概念。通过使用快速仿真，比较了这两个空域概念在多种交通需求场景中的安全性、稳定性和效率指标方面的性能。</p>
+<p>本研究中描述的研究是在未来无人机送货任务的背景下进行的。这样做是为了仿真
+“在交通密度高的受限城市环境中运行”
+的自主飞行器的潜在场景，从而评估和比较单向和双向空域概念。无人机送货只是城市空域潜在应用的一个方面。还有其他候选者也可能出现在高交通密度中，例如飞行出租车
+[<a
+href="#ref-7">40</a>]。因此，本研究的目的不是为某种类型的无人机提供可投入使用的城市空域设计解决方案；相反，本研究的重点是高交通密度的影响以及它如何影响受限的城市空域概念。</p>
+<p>本文的其余部分结构如下：第 2 节概述了基本背景材料。第 3 节和第 4
+节介绍了研究方法。特别是，第 3
+节描述了两种受限环境城市空域概念的设计，第 4
+节解释了用于比较概念性能的仿真设置。在第 5
+节中，我们展示了仿真结果。然后，我们在第 6
+节中讨论了主要发现，概述了研究的局限性，并提出了未来研究的途径。最后，第
+7 节总结了本研究的主要结论。</p>
+<h1 id="背景">背景</h1>
+<p>本节将介绍相关背景材料。本节首先简要概述载人航空和公路运输中常见的交通结构概念。接下来，描述冲突和入侵之间的关系。随后，我们将讨论交通分割和对齐如何帮助降低冲突概率以及如何将它们应用于受限环境。</p>
+<h2 id="载人航空的空域结构">载人航空的空域结构</h2>
+<p><strong>空域结构的功能是提供先验的隔离和交通组织</strong> [<a
+href="#ref-27">59</a>, <a href="#ref-17">61</a>, <a
+href="#ref-18">62</a>]。载人航空中广泛使用的空域结构有两种：</p>
+<p><strong>半球规则</strong>：该规则确保在飞行高度 FL240
+以上、各自行进方向在 <span
+class="math inline">\(000-089^{\circ}\)</span> 和 <span
+class="math inline">\(090-179^{\circ}\)</span> 范围内的巡航飞机被分配到
+10 的倍数的奇数飞行高度层，而航向在 180-269 <span
+class="math inline">\({}^{\circ}\)</span> 和 <span
+class="math inline">\(270-360^{\circ}\)</span> 之间的巡航飞机也被分配到
+10 的倍数的偶数飞行高度层 [<a href="#ref-28">24</a>, <a
+href="#ref-29">48</a>]。</p>
+<p><strong>象限规则</strong>：另外一种更细粒度的空域概念，该规则在 3000
+英尺至 FL240 [<a
+href="#ref-28">24</a>]的高度范围内实施。在象限规则中，航向在 <span
+class="math inline">\(000-089^{\circ}\)</span> 之间的飞机需要以 1000
+英尺的倍数的奇数高度飞行，而航向在 <span
+class="math inline">\(090-179^{\circ}\)</span> 之间的飞机也被要求以 1500
+英尺的倍数的奇数高度飞行 [<a href="#ref-28">24</a>]。同样，航向在 <span
+class="math inline">\(180-269^{\circ}\)</span> 之间的航班必须使用 1000
+英尺的倍数的偶数高度，而航向在 <span
+class="math inline">\(270-359^{\circ}\)</span> 范围内的航班则被分配以
+1500 英尺的倍数的偶数高度飞行 [<a href="#ref-28">24</a>]。</p>
+<p>这两种空域结构方法都可以降低冲突概率，提高空域安全性和容量。请注意，半球规则类似于
+Metropollis 研究中的 “层” 空域概念，它促进了交通对齐与交通分割 [<a
+href="#ref-17">61</a>, <a href="#ref-18">62</a>]。</p>
+<figure id="fig:fig1">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-03.jpg" style="width:45.0%" /></p>
+</div>
+</div>
+<figcaption>
+道路交通的典型交叉路口配置。（a）双向网络。（b）单向网络。请注意，箭头表示交通流的方向。
+</figcaption>
+</figure>
+<h2 id="道路交通和街道结构">道路交通和街道结构</h2>
+<p>道路和城市街道网络包含大量结构，这些结构主要由城市的物理布局决定 [<a
+href="#ref-30">7</a>]。当前的道路和街道网络主要采用渠道化平面结构，使用道路标志、交通岛、凸起的中间带等定义交通流路径
+[<a
+href="#ref-31">17</a>]。这种结构模式有助于降低冲突的发生率，尤其是在冲突普遍存在的交叉路口
+[<a href="#ref-31">17</a>, <a
+href="#ref-32">25</a>]。这些措施还有助于定义和隔离双向和单向街道（见图<a
+href="#fig:fig1" data-reference-type="ref"
+data-reference="fig:fig1">1</a>），而且两者都是提高街道网络安全性和吞吐量的有效技术
+[<a href="#ref-31">17</a>, <a href="#ref-33">29</a>]。</p>
+<h2 id="冲突和入侵">冲突和入侵</h2>
+<p>冲突和入侵的数量是描述空域安全性的重要指标。当飞机之间的水平和垂直隔离要求被违反时，就会发生入侵，即失距。相反，当两架飞机（在本例中为无人机）之间的水平和垂直隔离距离预计在规定的
+“前瞻”
+时间内小于既定的隔离要求时，就会发生冲突，冲突被定义为预计的失距，这意味着冲突是预期/预测的入侵（见图<a
+href="#fig:fig2" data-reference-type="ref"
+data-reference="fig:fig2">2</a>）。</p>
+<figure id="fig:fig2">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-04.jpg" style="width:45.0%" /></p>
+</div>
+</div>
+<figcaption>
+水平面上两架无人机之间的入侵和冲突之间的区别。（a）当违反隔离边界时就会发生入侵。（b）冲突是预期或预测的入侵。
+</figcaption>
+</figure>
+<h2 id="交通分割与交通对齐">交通分割与交通对齐</h2>
+<p>交通分割和对齐的效果可以用式 (1) 表示的数学组合式来恰当地描述，这在
+[<a href="#ref-20">34</a>, <a href="#ref-19">36</a>]
+等空域研究中得到了广泛验证。</p>
+<p><span class="math display">\[C R_{\text{global}}=\frac{1}{2}N(N-1)
+p_{2}\tag{1}\]</span></p>
+<p>式中 <span class="math inline">\(N\)</span> 为无人机数量，因此 <span
+class="math inline">\(N(N-1)\)</span> 表示可能的无人机组合数量；<span
+class="math inline">\(p_{2}\)</span> 为无人机组合的冲突概率；<span
+class="math inline">\(C R_{\text{global}}\)</span>
+为全局冲突率（或冲突概率）。利用上式可以看出，对于指定空域体空间，增加无人机数量
+<span class="math inline">\((N)\)</span>
+会导致全局冲突率呈二次方增长；而增加无人机组合的可能冲突概率 ( <span
+class="math inline">\(p_{2}\)</span> )，会导致线性增加。</p>
+<p>参数 <span class="math inline">\(N\)</span> 和 <span
+class="math inline">\(p_{2}\)</span>
+影响空域结构的冲突概率。因此，通过降低 <span
+class="math inline">\(N\)</span> 和 <span
+class="math inline">\(p_{2}\)</span> 可以有效降低冲突概率。降低 <span
+class="math inline">\(N\)</span> 可以通过交通分割实现，而降低 <span
+class="math inline">\(p_{2}\)</span>
+可以通过交通对齐来降低巡航无人机之间的相对速度 [<a
+href="#ref-19">36</a>]。需要注意的是， “交通分割” 以及 “相对速度的降低”
+与冲突概率之间呈线性关系 [<a href="#ref-19">36</a>]。因此，同时影响参数
+<span class="math inline">\(N\)</span> 和 <span
+class="math inline">\(p_{2}\)</span> 会对冲突概率产生更大的影响。</p>
+<h2 id="受限的城市空域">受限的城市空域</h2>
+<p>过去的研究已将分割和对齐原则应用于不受约束或自由的空域 [<a
+href="#ref-17">61</a>, <a
+href="#ref-18">62</a>]，但无人机预计会在极低空城市空域中飞行，由于存在动态和静态障碍物以及临时和永久禁飞区
+[<a
+href="#ref-34">51</a>]，因此运行复杂性很高。此外，此部分空域也经常被通航飞机和直升机占用。因此，与载人航空空域相比，城市空域受到严重约束。尽管如此，低空运行复杂性（及其特性）的许多要素都与地面交通相同，而在地面交通领域存在着大量文献 [<a
+href="#ref-31">17</a>, <a href="#ref-36">28</a>, <a
+href="#ref-37">44</a>, <a href="#ref-35">57</a>]。</p>
+<p>与道路车辆类似，无人机可以利用现有的街道网络，从而在受限的城市空间中
+“在街道上空飞行”。然而，随着无人机交通量的预期大规模增长，仅在街道上空飞行可能不足以确保空域安全。尤其是当无人机在受限环境中朝相互竞争的方向飞行时，由于<strong>平均相对速度高</strong>且<strong>空域灵活性受限</strong>，将会引发大量冲突。因此，可以将交通分割和交通对齐原则应用于此部分空域，特别是将交通组织成相对于方向的不同高度层，从而为受限环境增加了更多结构。</p>
+<h1 id="受限环境下的城市空域概念设计">受限环境下的城市空域概念设计</h1>
+<p>本节首先介绍在受限城市地区实施在街道上空飞行的动机。在描述空域概念之前，先揭示初始实验的关键观察结果。随后，描述并比较了受限环境中的两个城市空域概念。</p>
+<h2 id="在街道上空飞行">在街道上空飞行</h2>
+<p>根据 Metropollis 项目 [<a href="#ref-17">61</a>, <a
+href="#ref-18">62</a>]和城市街道网络研究 [<a href="#ref-39">12</a>, <a
+href="#ref-33">29</a>, <a
+href="#ref-38">49</a>]的结论，我们开发了双向（Two-way）和单向（Two-way）空域配置。从此意义上讲，飞行路线服从城市街道网络，也就是说，无人机飞行直接沿着街道飞行。双向空域概念对交通流没有水平方向上的约束，而单向空域概念包含水平约束以实现定向流动。在这两个空域概念中，空域都被垂直分割以形成一组高度层，交通按照北、东、南和西四个方向（被称为<strong>基方向，Cardinal
+Directions</strong>）组织。</p>
+<p>无人机沿现有街道网络飞行有两个主要好处：</p>
+<ol type="1">
+<li><p>无人机不会直接飞越私人资产，因此隐私问题的风险相对较低。</p></li>
+<li><p>现有包裹运输方式（如卡车和货车）能够与送货无人机配合工作，优化最后一英里的送货时间表
+[<a href="#ref-40">2</a>]。</p></li>
+</ol>
+<h2 id="初步调查和主要观察">初步调查和主要观察</h2>
+<h3 id="转弯航班">转弯航班</h3>
+<p>通过将单向和双向这两个空域概念应用到实际的城市网络中，初步试验表明，<strong>城市网络交叉口的转弯半径与无人机的性能之间存在很强的关联</strong>。我们在初步实验中采用了恒定的无人机巡航速度（
+10.3 m/s ）和倾斜角（ 35<span class="math inline">\(^{\circ}\)</span>
+），试验仿真表明，如果无人机在转弯时保持巡航速度，会导致其偏离实际路线。为此，初步调查表明，无人机需要减速至少
+50%（即 5 m/s ）才能安全地执行转弯。</p>
+<h3 id="直通层和转弯层">直通层和转弯层</h3>
+<p>为了应对需要减速才能安全转弯的转弯飞行，在这两个空域概念中都需要包含
+“转弯高度层”（或 “过渡层”
+）。也就是说，使用转弯高度层将直行交通与转弯交通分开。在本研究中，直行交通被定义为
+“至少穿过一个交叉路口的交通” ，而转弯交通则
+“由在交叉路口转弯并为了安全考虑而减速的交通”
+组成。请注意，<strong>将直行交通和转弯交通分配到不同的高度层可减轻对交通流的任何干扰</strong>，因此降低了慢速转弯交通和直行交通之间发生冲突的可能性，并且提高了空域安全性。地面道路系统中采用了类似的设计理念来区分高速公路上不同类型的交通
+[<a href="#ref-36">28</a>]。</p>
+<p>在当前研究中，双向和单向空域概念均由多个高度层堆叠组成，范围从 75 到
+1050 ft。此外，这两个空间概念的特点是 “垂直间隔为 25
+英尺的直通层和转弯层” ，以及 “垂直间隔为 50
+英尺的直通-直通层和转弯-转弯层” ，如图<a href="#fig:fig3"
+data-reference-type="ref"
+data-reference="fig:fig3">3</a>所示。需要注意的是：我们在本研究中使用这样的高度范围，是因为
+U-Space
+尚未定义低空空域的边界。未来的运行（例如城市空中交通和其他无人机运行）可能需要比最初定义高得多的高度边界
+[<a href="#ref-26">6</a>]。</p>
+<figure id="fig:fig3">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-03a.jpg" style="width:65.0%" /></p>
+</div>
+</div>
+<figcaption>
+两种城市空域设计的完整高度带示意图，其中每个高度层对应其各自的行进方向。每个概念都有
+40 个高度层（其中包括 20 个用于直行交通的高度层和 20
+个用于转弯交通的高度层），高度从 75 到 1050 英尺，垂直间距为 25
+英尺。转弯层用于临时飞行，即需要在交叉路口转弯/改变方向的无人机。直通层由直行交通使用，即至少经过一个交叉路口的交通。（a）双向概念层系统，其中交通分配给相对于飞行航向
+<span class="math inline">(<em>ψ</em>)</span> 的基方向: 航向 <span
+class="math inline">315<sup>∘</sup> &lt; <em>ψ</em> ≤ 045<sup>∘</sup></span>
+分配给北； 航向 <span
+class="math inline">045<sup>∘</sup> &lt; <em>ψ</em> ≤ 135<sup>∘</sup></span>
+分配给东；航向 <span
+class="math inline">135<sup>∘</sup> &lt; <em>ψ</em> ≤ 225<sup>∘</sup></span>
+航向分配给南；航向 <span
+class="math inline">225<sup>∘</sup> &lt; <em>ψ</em> ≤ 315<sup>∘</sup></span>
+分配给西。(b) 单向空域概念层系统，其中飞行航向为： <span
+class="math inline">315<sup>∘</sup> &lt; <em>ψ</em> ≤ 045<sup>∘</sup></span>
+和 <span
+class="math inline">135<sup>∘</sup> &lt; <em>ψ</em> ≤ 225<sup>∘</sup></span>
+的交通被分配到北/南层；飞行航向在 <span
+class="math inline">045<sup>∘</sup> &lt; <em>ψ</em> ≤ 135<sup>∘</sup></span>
+和 <span class="math inline">225<sup>∘</sup> &lt; <em>ψ</em>≤</span>
+<span class="math inline">315<sup>∘</sup></span>
+之间的交通被分配到东/西层。值得注意的是，与双向概念相比，单向空域概念将南北和东/西交通分配到一个高度层，这些交通的隔离由城市街道网络的空间几何形状保证。
+</figcaption>
+</figure>
+<h2 id="概念设计特点">概念设计特点</h2>
+<p>无人机交通按照高度层进行分割，高度层根据其行进方向定义在 75 至 1050
+英尺之间。如前所述，每个高度层之间的垂直距离为 25
+英尺。这意味着这两个空域概念都包含了 40 个高度层，分别由 20 个直通层和
+20 个转弯层组成（见图<a href="#fig:fig3" data-reference-type="ref"
+data-reference="fig:fig3">3</a>）。此外，这两个空域概念都<strong>将行程距离较短的航班分配到较低高度（主要低速运行），而将行程距离较长的航班分配到较高的高度（可高速运行）</strong>。</p>
+<h3 id="双向空域概念">双向空域概念</h3>
+<p><strong>双向空域概念的高度层根据 <span
+class="math inline">\(90^{\circ}\)</span>
+航向范围组织交通</strong>，其中每条道路的上空允许存在方向相反的高度层。这样可以将飞行朝向为
+<span class="math inline">\((\psi)\)</span>
+的交通分配到四个基方向的飞行高度层，如下所示：</p>
+<ul>
+<li><p><span class="math inline">\(315^{\circ}&lt;\psi \leq
+045^{\circ}\)</span> ：北行层</p></li>
+<li><p><span class="math inline">\(045^{\circ}&lt;\psi \leq
+135^{\circ}\)</span> ：东行层</p></li>
+<li><p><span class="math inline">\(135^{\circ}&lt;\psi \leq
+225^{\circ}\)</span> ：南行层</p></li>
+<li><p><span class="math inline">\(225^{\circ}&lt;\psi \leq
+315^{\circ}\)</span> ：西行层</p></li>
+</ul>
+<p>Two-Way 空域概念由总共 40
+个高度层组成，包括直通层和转弯层。在这个空域概念中，四个方向各分配了 10
+个层（图<a href="#fig:fig3" data-reference-type="ref"
+data-reference="fig:fig3">3</a>）。这个空域概念中的交通分割可防止方向相反的交通流在交叉口处相互作用（图<a
+href="#fig:fig4" data-reference-type="ref"
+data-reference="fig:fig4">4</a>）。在此空域系统中，短途飞行被分配到低空，长途飞行被分配到高空。为了分配这些巡航高度，我们使用取自
+[<a href="#ref-27">59</a>] 的以下航向高度规则：</p>
+<p><span class="math display">\[h_{T W,
+i}=h_{\min}+\zeta\left[\left[\frac{d_{i}-d_{\min}}{d_{\max}-d_{\min}}\kappa\right]
+\beta+\left[\frac{\psi_{i}}{\alpha}\right]\right] \tag{2}\]</span></p>
+<p>式 (2) 描述的 “航向-高度规则” 是无人机航向 <span
+class="math inline">\(\psi_{i}\)</span>、最佳飞行路径距离 <span
+class="math inline">\(d_{i}\)</span> 、最小和最大 “起点-目标点”
+距离阈值（ <span class="math inline">\(d_{\text{min}}\)</span> 和 <span
+class="math inline">\(d_{\max}\)</span>， 分别被定义为 1 公里和 10
+公里）的函数<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>。其它常量包括：1）每个飞行高度的航向范围
+<span class="math inline">\(\alpha\)</span> ，等于 <span
+class="math inline">\(90^{\circ}\)</span> ；2）直通层的最低高度 <span
+class="math inline">\(h_{\min}\)</span> （即 100 英尺）；3）基方向数量
+<span class="math inline">\(\beta\)</span> ，等于 4（即 <span
+class="math inline">\(360^{\circ}/ \alpha\)</span> ）； <span
+class="math inline">\(\kappa\)</span> 为 5；直通层之间的垂直距离（ <span
+class="math inline">\(\zeta\)</span> ），等于 <span
+class="math inline">\(50 \mathrm{ft}\)</span>。</p>
+<figure id="fig:fig4">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-08.jpg" style="width:65.0%" /></p>
+</div>
+</div>
+<figcaption>
+双向空域概念中典型四路交叉口的交通流。交通根据其行进方向垂直划分为不同的高度。请注意，高度以英尺为单位。（a）属于直行交通的高度层，由
+20 个高度层组成。（b）分配给转弯交通的高度层，由 20
+个单独的高度层组成。值得注意的是，直通层适用于通过至少一个交叉口的交通，而转弯层适用于减速以在交叉口转弯的交通。请注意，对向交通流不会在交叉口相交。
+</figcaption>
+</figure>
+<h3 id="单向空域概念">单向空域概念</h3>
+<p>One-Way 概念由 40 个高度层组成，包括直行和转弯交通层（见图<a
+href="#fig:fig3" data-reference-type="ref"
+data-reference="fig:fig3">3</a>）。在此概念中，对行程方向施加水平约束以促进单向交通流。水平约束的实施导致<strong>每条街道上空只允许存在一个方向的交通流</strong>。因此，一条街道将仅能容纳北行、东行、南行或西行四种交通之一，具体取决于飞行朝向和单向的方向约束。这使单向空域概念与双向概念区分开来，在双向概念中，尽管高度不同，但相反方向的交通流允许位于同一街道上空。在单向空域概念中，
+“禁止在一条街道内有相反方向的交通流”
+允许为单向行程额外分配一组高度层。因此，相对于双向空域概念，单向空域概念的每个基方向可以多分配两倍的高度层。这意味着，在单向空域概念中，每个基方向有
+20 个高度层，而在双向概念中，每个基方向仅有 10
+个高度层。为了适应单向空域概念的这种情况，相反方向的交通流不再按照高度进行隔离，而是按照城市街道网络的空间排序进行隔离，这与道路交通相当。与双向概念类似，单向空域概念的高度层也是根据
+<span class="math inline">\(90^{\circ}\)</span>
+的航向范围构建，尽管每个基方向增加了 10
+个额外的层。也就是说，四个基方向均分配了 20
+个直通层和转弯层，这允许根据飞行朝向 <span
+class="math inline">\((\psi)\)</span> 以如下方式分配交通：</p>
+<ul>
+<li><p><span class="math inline">\(315^{\circ}&lt;\psi \leq
+045^{\circ}\)</span> ：北行层</p></li>
+<li><p><span class="math inline">\(045^{\circ}&lt;\psi \leq
+135^{\circ}\)</span> : 东行层</p></li>
+<li><p><span class="math inline">\(135^{\circ}&lt;\psi \leq
+225^{\circ}\)</span> ：南行层</p></li>
+<li><p><span class="math inline">\(225^{\circ}&lt;\psi \leq
+315^{\circ}\)</span> ：西行层</p></li>
+</ul>
+<p>图<a href="#fig:fig5" data-reference-type="ref"
+data-reference="fig:fig5">5</a>显示了典型四路交叉口的交通流及其高度层组合的示例。交通流方向的相似性可以与图<a
+href="#fig:fig1" data-reference-type="ref"
+data-reference="fig:fig1">1</a>所示的单向道路交叉口进行类比。此外，单向网络配置的特性使每个四路交叉口只能容纳两个方向的交通流，见图<a
+href="#fig:fig5" data-reference-type="ref"
+data-reference="fig:fig5">5</a>。请注意，在单向空域网络中，其他交通流方向将被纳入相邻的交叉口。</p>
+<figure id="fig:fig5">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-09.jpg" style="width:65.0%" /></p>
+</div>
+</div>
+<figcaption>
+单向空域概念下典型四路交叉口的交通流。交通根据其行进方向垂直划分为不同的高度。请注意，高度以英尺为单位。（a）属于直通层的交通流，共包含
+20 层。（b）转弯层的交通流，共包含 20
+层。直通层容纳通过至少一个交叉口的交通，而转弯层容纳减速以在交叉口转弯的交通。请注意，对向交通流不会在交叉口相交。
+</figcaption>
+</figure>
+<p>无论如何，单向空域概念的设计确保了不同方向的交通不会在交叉路口混合（图<a
+href="#fig:fig5" data-reference-type="ref"
+data-reference="fig:fig5">5</a>）。此外，我们还使用了简单的高度航向规则来计算相应的巡航高度
+<span class="math inline">\(\left(h_{O W, i}\right)\)</span> ：</p>
+<p><span class="math display">\[h_{O W,
+i}=h_{\min}+\frac{h_{\max}-h_{\min}}{d_{\max}-d_{\min}}\left(d_{i}-d_{\min}\right)
+\tag{3}\]</span></p>
+<p>一旦使用上述公式确定了每条街道对应的巡航高度，就可以使用一种简单的启发式方法来确保航班根据其航向
+<span class="math inline">\(\psi\)</span> 对齐到相应高度层，如算法 1
+所示：</p>
+<div class="algorithm">
+
+</div>
+<p>在公式（3）中， <span class="math inline">\(h_{\max}\)</span> 和
+<span class="math inline">\(h_{\min}\)</span>
+分别为直通层的最大和最小高度， <span
+class="math inline">\(d_{i}\)</span> 为最优路径， <span
+class="math inline">\(d_{\min}\)</span> 和 <span
+class="math inline">\(d_{\max}\)</span> 分别为
+“起点到终点的最小和最大阈值距离”
+。该公式确保将较短的飞行分配到较低的高度，将较长的飞行分配到较高的高度。</p>
+<h2 id="概念比较">概念比较</h2>
+<p>这两个空域概念的主要区别在于，与双向概念相比，单向空域概念在每个基方向上可用的道路数量只有双向概念的一半，但垂直层数却是双向概念的两倍。因此，对向交通共享同一飞行高度，并由街道布局隔开。此外，双向概念的交通水平分布更多，因此在同一高度层上没有对向交通流。<a
+href="#tab:tab1" data-reference-type="ref"
+data-reference="tab:tab1">1</a>总结了双向和单向城市空域概念的主要比较。</p>
+<div class="scriptsize">
+<div class="center">
+<div id="tab:tab1">
+<table style="width:94%;">
+<caption>双向和单向城市空域概念的主要优缺点。</caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 40%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Advantages</th>
+<th style="text-align: left;">Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Two-way</td>
+<td style="text-align: left;">- 飞行 计划不必遵守单向方向限制，
+因此不需要强制的水平分布。</td>
+<td style="text-align: left;">- 每个 基方向上的交通垂直层较少。</td>
+</tr>
+<tr>
+<td style="text-align: left;">One-way</td>
+<td style="text-align: left;"><p>- 由于每个基方向都增加了额
+外的层，因此空域利用率更高</p>
+<p>- 由于施加了水平限制， 对向交通流在空间上被隔离。</p></td>
+<td style="text-align: left;">- 由于施加了单向约
+束，航线的效率可能会降低。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h1 id="仿真设计">仿真设计</h1>
+<p>将在一组快速仿真中比较这两个空域概念的安全性、稳定性和效率。本节介绍了这些快速仿真实验的设计和开发。</p>
+<h2 id="仿真开发">仿真开发</h2>
+<h3 id="仿真平台">仿真平台</h3>
+<p>本研究使用开源空中交通管理仿真器 BlueSky [<a href="#ref-42">1</a>, <a
+href="#ref-41">38</a>]作为仿真平台，进行快速仿真实验。BlueSky
+交通仿真工具在过去的 ATM 相关研究中得到了广泛使用 [<a
+href="#ref-27">59</a>, <a href="#ref-17">61</a>, <a
+href="#ref-18">62</a>]。为了本研究的目的，该工具经过调整，包括城市空域概念的元素。这包括合适的无人机模型和更新
+BlueSky 的自动驾驶仪模块，以考虑无人机在城市布局中的安全机动性。</p>
+<p>媒体上描述的大多数包裹递送无人机原型主要看起来是多旋翼飞行器 [<a
+href="#ref-44">19</a>, <a href="#ref-43">32</a>, <a
+href="#ref-11">42</a>]。原因可能与直升机的灵活性和机动性有关，这使得它能够有效地在复杂的城市景观中导航。因此，假设同样的趋势在可预见的未来继续下去，我们在本研究中采用
+DJI Matric 600 Pro 六旋翼无人机模型。<a href="#tab:tab2"
+data-reference-type="ref"
+data-reference="tab:tab2">2</a>列出了无人机模型的特征。</p>
+<div class="scriptsize">
+<div class="center">
+<div id="tab:tab2">
+<table>
+<caption>本研究仿真中使用的 DJI Matrice 600 Pro 的性能数据。</caption>
+<thead>
+<tr>
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: center;">DJI Matrice <span
+class="math inline">\(\boldsymbol{6 0 0}\)</span> Pro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Speed <span
+class="math inline">\([\mathrm{m}/ \mathrm{s}]\)</span></td>
+<td style="text-align: center;">5-10.3</td>
+</tr>
+<tr>
+<td style="text-align: center;">Vertical speed <span
+class="math inline">\([\mathrm{m}/ \mathrm{s}]\)</span></td>
+<td style="text-align: center;">-5-5</td>
+</tr>
+<tr>
+<td style="text-align: center;">Mass <span
+class="math inline">\([\mathrm{kg}]\)</span></td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr>
+<td style="text-align: center;">Maximum bank angle <span
+class="math inline">\(\left[{}^{\circ}\right]\)</span></td>
+<td style="text-align: center;">35</td>
+</tr>
+<tr>
+<td style="text-align: center;">Acceleration <span
+class="math inline">\(/\)</span> deceleration <span
+class="math inline">\(\left[\mathrm{m}/
+\mathrm{s}^{2}\right]\)</span></td>
+<td style="text-align: center;">1.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id="测试区域">测试区域</h3>
+<p>在本研究中，我们调查了城市空域概念在纽约曼哈顿城市街道网络上的表现，如图<a
+href="#fig:fig6" data-reference-type="ref"
+data-reference="fig:fig6">6</a>所示。选择曼哈顿的原因有三方面：</p>
+<ol type="1">
+<li><p>首先，曼哈顿具有正交或网格状的空间顺序，其中包含更少的死胡同、更多的四向交叉路口以及更少弯曲的街道模式
+[<a
+href="#ref-39">12</a>]。与纽约市和史坦顿岛等邻近城市或阿姆斯特丹或巴黎等欧洲城市相比，曼哈顿的低熵和高度有序的网格状街道方向
+[<a href="#ref-46">13</a>, <a
+href="#ref-45">30</a>]限制了我们的研究结果中的任何歧义。</p></li>
+<li><p>其次，新建的街道越来越像网格状 [<a href="#ref-30">7</a>, <a
+href="#ref-47">8</a>, <a
+href="#ref-48">10</a>]。因此，本研究的结果对未来的城市街道网络仍然有效。</p></li>
+<li><p>第三，最近的城市空中交通研究也利用曼哈顿街道网络作为其实验中的测试区域
+[<a href="#ref-50">53</a>, <a href="#ref-49">54</a>]。</p></li>
+</ol>
+<h3 id="冲突检测与消解">冲突检测与消解</h3>
+<p>这两个城市空域概念依赖于 “基于状态”
+的冲突检测方法来识别任何潜在的隔离违规。冲突检测是通过在预定义的 “前瞻”
+时间内对无人机位置进行线性外推来完成的。但使用线性外推法意味着需要在后处理阶段识别假冲突。此外，本研究分别使用了水平
+164 英尺和垂直 25
+英尺的隔离要求。一旦检测到冲突，就会使用基本的（1-D）速度控制算法以成对的方式消解冲突。值得注意的是，本研究采用了
+164 英尺的水平隔离要求，因为它也在最近的无人机战术冲突消解研究 [<a
+href="#ref-52">55</a>]中使用。在垂直隔离方面，过去的研究中采用了一系列值 [<a
+href="#ref-56">3</a>, <a href="#ref-53">15</a>, <a
+href="#ref-54">56</a>, <a
+href="#ref-55">64</a>]。但根据初步测试仿真，发现 25
+英尺的垂直间隔适合实验。</p>
+<h3 id="城市空域概念的实施">城市空域概念的实施</h3>
+<p>构建曼哈顿街道网络的数据来自 OpenStreetMap，同时使用 [<a
+href="#ref-51">14</a>]中基于图形的方法。为每个空域概念生成单独的图形。双向概念的图形网络是通过创建忽略边方向的无向图来构建的，而单向空域概念则采用有向图来强制街道的方向为单向。随后，对于这两个空域概念，根据促进交通流收敛的初步实验选择了三个仓库位置（见图<a
+href="#fig:fig6" data-reference-type="ref"
+data-reference="fig:fig6">6</a>中的红色圆圈，在仿真期间，所有无人机航班都从三个仓库之一出发）。对于每个仓库，选择了随机目标点位置。为了遵守无人机模型的范围限制，进一步修剪随机目标点位置，以分别满足
+1 公里和 10
+公里的最小和最大距离。之后，对于每个仓库及其各自的随机目标点，我们使用
+[<a
+href="#ref-57">31</a>]中的方法计算最短路径。然后使用生成的最短路径（由一组地理坐标组成）来确定每条最短路径的街道的方位（航向）和最短路径的距离。随后，使用第
+3.3 节中描述的航向高度规则计算巡航高度。</p>
+<p>根据上述飞行计划数据，我们将评估转弯位置，以便为各个航班分配过渡高度。这样无人机飞行就可以下降和减速，以便在过渡高度内安全转弯。生成的飞行计划场景（包括航路点、航向、高度和速度）随后被导入
+BlueSky，以执行快速仿真。</p>
+<figure id="fig:fig6">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-11.jpg" style="width:25.0%" /></p>
+</div>
+</div>
+<figcaption>
+纽约市曼哈顿的城市街道网络（面积为 <span
+class="math inline">59.1 km<sup>2</sup></span> ），通过 OSMnx Python 库
+<span class="citation"
+data-cites="51">[<a href="#ref-51" role="doc-biblioref">14</a>]</span>从
+OpenStreetMap 获取。三个红点代表我们研究中所选无人机仓库的（大致）位置。
+</figcaption>
+</figure>
+<h2 id="独立变量">独立变量</h2>
+<p>本研究中的实验有三个独立变量：</p>
+<ol type="1">
+<li><p>城市空域概念：双向和单向设计；</p></li>
+<li><p>空中隔离保证条件：有或没有战术冲突消解；</p></li>
+<li><p>交通需求：低、中、高交通密度。</p></li>
+</ol>
+<p>此处的交通需求水平基于 [<a
+href="#ref-16">21</a>]中描述的食品配送场景。<a href="#tab:tab3"
+data-reference-type="ref"
+data-reference="tab:tab3">3</a>总结了由此产生的交通需求情景。</p>
+<div class="scriptsize">
+<div class="center">
+<div id="tab:tab3">
+<table>
+<caption>针对仿真区域为纽约市曼哈顿区、面积为 <span
+class="math inline">\(59.1 \mathrm{~km}^{2}\)</span>
+的网络构成的三种需求场景的交通密度特性。</caption>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: left;">Low</th>
+<th style="text-align: left;">Medium</th>
+<th style="text-align: left;">High</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traffic density (drones <span class="math inline">\(/
+\mathrm{km}^{2}\)</span> )</td>
+<td style="text-align: left;">55</td>
+<td style="text-align: left;">61</td>
+<td style="text-align: left;">73</td>
+</tr>
+<tr>
+<td>Inflow rate (drones <span class="math inline">\(/
+\mathrm{min})\)</span></td>
+<td style="text-align: left;">54</td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">72</td>
+</tr>
+<tr>
+<td>Hourly demand (drones <span class="math inline">\(/
+\mathrm{h})\)</span></td>
+<td style="text-align: left;">3240</td>
+<td style="text-align: left;">3600</td>
+<td style="text-align: left;">4320</td>
+</tr>
+<tr>
+<td>Demand per depot (drones/depot)</td>
+<td style="text-align: left;">1080</td>
+<td style="text-align: left;">1200</td>
+<td style="text-align: left;">1440</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>这三个独立变量的组合产生了 12
+种实验条件。对于每种实验条件，进行了五次重复，从而进行了 60
+次仿真运行（两个空域概念 <span class="math inline">\(\times\)</span>
+两个冲突消解条件 <span class="math inline">\(\times\)</span>
+三个交通需求场景 <span class="math inline">\(\times\)</span>
+五次重复）。请注意，对于每次仿真运行，都使用均匀随机的目标点（介于 1
+公里和 10 公里之间），从而在每次单独的仿真运行中创建不同的轨迹。</p>
+<h2 id="指标测度">指标测度</h2>
+<p>相关指标考虑以下类别：安全性、稳定性和效率，包括吞吐量（或无人机到达各自目标点的速度）、每次飞行的平均转弯次数和累计行程时间。</p>
+<h3 id="安全性">安全性</h3>
+<p>城市空域的安全性以冲突和入侵的数量来衡量。当违反最小垂直和水平隔离要求时，就会发生入侵（失距），如第
+2.3 节所述。冲突是在规定的预判时间内预测到的入侵。根据试验，本研究选择了
+30
+秒的预判时间，因为它证明了检测到的假冲突数量与阻止的入侵数量之间的最佳平衡。</p>
+<h3 id="稳定性">稳定性</h3>
+<p>城市空域稳定性是指由于空域稀缺而导致冲突消解策略可能引发新冲突。过去的研究使用多米诺效应参数
+(DEP) [<a href="#ref-59">39</a>, <a href="#ref-58">43</a>, <a
+href="#ref-17">61</a>, <a
+href="#ref-18">62</a>]测量了这种对空域的影响。DEP 可按以下方式计算：</p>
+<p><span class="math display">\[D E P=\frac{C_{w}}{C_{w o}}-1
+\tag{4}\]</span></p>
+<p>其中 <span class="math inline">\(C_{w}\)</span>
+表示启用了冲突消解的冲突数量， <span class="math inline">\(C_{w
+o}\)</span> 表示未启用冲突消解的冲突数量。请注意，正 DEP
+值越大，表示不稳定空域概念越高。</p>
+<h3 id="吞吐量">吞吐量</h3>
+<p>吞吐量指标衡量每分钟到达各自目标点的无人机数量。具体而言，吞吐量指标用于描述相对于两个空域概念的流量累积的流量流出率。当无人机以稳定的流入率离开各自的仓库时，交通密度将开始缓慢增加。因此，更高比例的无人机将开始减速以避免冲突，因此，无人机将花费更多时间穿越空域，这将导致吞吐量降低。</p>
+<h3 id="平均转弯数">平均转弯数</h3>
+<p>使用每次飞行的平均转弯次数和累计行程时间来评估概念的效率。同样，与地面运输相关的研究也采用平均转弯次数的概念来解释双向和单向街道网络的交通动态
+[<a href="#ref-33">29</a>, <a
+href="#ref-38">49</a>]。在当前的研究中，每次飞行的转弯次数预计会影响空域概念的性能。这是因为无人机在转弯时飞行速度会较低。尽管空域概念有转弯层来适应这些转弯飞行，但仍可能会引发尾迹冲突，尤其是当两架或更多架飞机使用同一个交叉路口进行转弯时。</p>
+<h3 id="累计行程时间">累计行程时间</h3>
+<p>由于飞行速度较低，无人机的飞行时间可能会延长，从而导致更多冲突。因此，这两个空域概念的累积飞行时间指标反映了低、中、高交通需求的情况。</p>
+<h2 id="实验假设">实验假设</h2>
+<p>假设随着交通需求从低到高增加，安全性、稳定性和效率指标将变得更糟。因此，随着交通需求的增加，我们预计会看到更多的冲突、入侵和冲突链。此外，单向空域概念的高度层是双向概念的两倍，因此交通分布的垂直分割更大，这比双向概念进一步减少了每层可能的无人机组合数量。出于这些原因，与双向概念相比，我们预计更大的垂直分割和水平结构将进一步降低发生冲突的概率。因此，假设单向空域概念在安全性和稳定性方面会有更好的表现。</p>
+<p>在效率方面，假设单向空域概念的交通吞吐量将高于双向概念。单向空域概念在每个基方向上分配了额外的高度层，因此可以容纳更多的交通流量。此外，假设单向空域概念会导致每段航班的转弯次数高于双向概念。这一假设是在街道网络研究的支持下发展起来的（参见
+[<a href="#ref-33">29</a>, <a
+href="#ref-38">49</a>]）。同样，假设与双向概念相比，单向空域概念会导致更长的累计行程时间。由于单向街道比双向街道包含更多的电路，因此可以预期到达特定目标点的行程时间会更长
+[<a href="#ref-33">29</a>, <a href="#ref-37">44</a>, <a
+href="#ref-38">49</a>]。</p>
+<h1 id="结果">结果</h1>
+<p>本节介绍本研究中进行的实验结果。使用箱线图展示了独立变量对安全性、稳定性和效率的影响。所有箱线图都显示中线；四分位距
+(IQR)，由箱子的边界表示；数据的最小和最大分布由晶须标记；并且，大于
+<span class="math inline">\(\pm 1.5 \times\)</span> IQR
+的点表示异常值。此外，还使用散点图展示了每个城市空域概念的吞吐量效率结果。</p>
+<h2 id="安全">安全</h2>
+<p>图<a href="#fig:fig7" data-reference-type="ref"
+data-reference="fig:fig7">7</a>和图<a href="#fig:fig8"
+data-reference-type="ref"
+data-reference="fig:fig8">8</a>显示了针对三种交通需求情况，每种城市空域概念的成对冲突和入侵总数。请注意，无论持续时间如何，成对冲突和入侵在仿真过程中仅计算一次，而重复的成对冲突和入侵则被重新计算。图<a
+href="#fig:fig7" data-reference-type="ref"
+data-reference="fig:fig7">7</a>显示，两种空域概念的交通需求冲突总数有所增加。入侵总数也呈现出相同的趋势（图<a
+href="#fig:fig8" data-reference-type="ref"
+data-reference="fig:fig8">8</a>）。正如假设的那样，这些图表明双向概念的冲突和入侵数量高于单向空域概念。</p>
+<p>此外，这些图还显示了战术冲突消解对每个空域概念的影响。启用冲突消解的结果描述了城市空域概念的安全性，而关闭冲突消解的结果则表明了冲突预防的水平。正如预期的那样，没有战术冲突消解的结果表明，单向空域概念能够避免冲突的发生，因此与双向概念相比，其内在安全性更高。对于这两个空域概念，在冲突消解开启后，入侵次数显著减少。尽管入侵次数有所减少，但冲突总数并没有出现同样的趋势。对于这两个空域概念，冲突次数在冲突消解开启后有所增加。这主要是由于空域性质受到高度限制，导致解决机动的灵活性降低。结果，遇到其他无人机的概率增加了，最终导致冲突连锁反应。空域稳定性指标进一步检验了这一概念。</p>
+<figure id="fig:fig7">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-14.jpg" style="width:65.0%" /></p>
+</div>
+</div>
+<figcaption>
+针对低、中、高交通需求的双向和单向城市空域概念的成对冲突总数。（a）无冲突消解方案。（b）有冲突消解方案。
+</figcaption>
+</figure>
+<figure id="fig:fig8">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-15(1).jpg" style="width:65.0%" /></p>
+</div>
+</div>
+<figcaption>
+针对低、中、高交通需求的双向和单向城市空域概念的成对入侵总数。（a）无冲突消解。（b）有冲突消解。
+</figcaption>
+</figure>
+<h2 id="稳定">稳定</h2>
+<p>空域稳定性通过多米诺骨牌效应参数 (DEP) [<a href="#ref-59">39</a>, <a
+href="#ref-58">43</a>]来衡量。高 DEP
+表示存在冲突连锁反应，从而导致空域变得不稳定。图<a href="#fig:fig9"
+data-reference-type="ref" data-reference="fig:fig9">9</a>描绘了 DEP
+值。值得注意的是，与双向概念相比，单向空域概念的 DEP
+值范围略低，因此表明不稳定效应较小。在冲突数量中也观察到了这种趋势（见图<a
+href="#fig:fig7" data-reference-type="ref"
+data-reference="fig:fig7">7</a>）。在所有条件下，DEP 值都接近于
+1，这表明每次消解冲突平均最多会引发一次额外的冲突。与预期相反，没有观察到交通密度对稳定性的影响。</p>
+<figure id="fig:fig9">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-15.jpg" style="width:65.0%" /></p>
+</div>
+</div>
+<figcaption>
+双向和单向城市空域概念的多米诺效应参数
+(DEP)，分别对应低、中、高交通需求。请注意，与双向概念相比，单向空域概念的
+DEP 值略低。
+</figcaption>
+</figure>
+<h2 id="吞吐量-1">吞吐量</h2>
+<p>每分钟无人机到达的数量由交通需求率决定（图<a href="#fig:fig10"
+data-reference-type="ref"
+data-reference="fig:fig10">10</a>）。可以看出，对于双向和单向空域概念，无论有无冲突消解，到达率从交通需求低到高呈上升趋势。但与实验假设相反，这两个空域概念在每个交通需求类别中都表现出相似的到达率（图<a
+href="#fig:fig10" data-reference-type="ref"
+data-reference="fig:fig10">10</a>）。三个交通需求水平的到达率都有所增加，这表明网络尚未达到其最大容量
+[<a
+href="#ref-60">47</a>]。换句话说，这两个空域概念中的交通流都没有拥堵。</p>
+<figure id="fig:fig10">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-16(1).jpg" style="width:65.0%" /></p>
+</div>
+</div>
+<figcaption>
+低、中、高交通需求的双向和单向城市空域概念的到达率。每个点代表每分钟无人机到达的数量。（a）无冲突消解方案。（b）有冲突消解方案。
+</figcaption>
+</figure>
+<h2 id="平均转弯数-1">平均转弯数</h2>
+<p>图<a href="#fig:fig11" data-reference-type="ref"
+data-reference="fig:fig11">11</a>显示了两种空域概念中每个飞行计划的转弯次数。有趣的是，对于均匀分布的行程距离，双向空域概念平均每个飞行计划转弯略多于
+8 次，而单向空域概念平均每个飞行计划转弯接近 6.5 次。</p>
+<figure id="fig:fig11">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-16.jpg" style="width:45.0%" /></p>
+</div>
+</div>
+<figcaption>
+双向和单向城市空域概念的每个累计飞行计划的转弯次数。
+</figcaption>
+</figure>
+<h2 id="累计行程时间-1">累计行程时间</h2>
+<p>如图<a href="#fig:fig12" data-reference-type="ref"
+data-reference="fig:fig12">12</a>所示，双向概念和单向空域概念之间的转弯次数相对较高，但对累积行程时间没有显著影响。此外，有无冲突消解，累积行程时间没有显著差异（图<a
+href="#fig:fig12" data-reference-type="ref"
+data-reference="fig:fig12">12</a>）。这两个空域概念都表现出相似的累积行程时间。</p>
+<figure id="fig:fig12">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2024_12_23_27c794c65425c5fbd4bfg-17.jpg" style="width:65.0%" /></p>
+</div>
+</div>
+<figcaption>
+针对低、中、高交通需求的双向和单向城市空域概念的总行程时间。（a）无冲突消解方案。（b）有冲突消解方案。
+</figcaption>
+</figure>
+<h1 id="讨论">讨论</h1>
+<p>无人机包裹递送产生的交通有可能使低空城市空域高密度激增，容纳这种交通将成为一项挑战。目前，人们严重依赖
+4-D 轨迹规划和 DAA 技术 [<a
+href="#ref-26">6</a>]等措施。但单独使用后一种方法可能会对空域的整体安全产生不利影响
+[<a href="#ref-20">34</a>, <a href="#ref-62">35</a>, <a
+href="#ref-61">37</a>]。我们需要空域设计和战术冲突消解措施之间的协同努力。但对于如何有效组织和构建城市空域以适应高密度无人机交通运行，人们知之甚少。在当前的研究中，我们给出了一个示例，说明如何将交通对齐与分割原则应用于现有城市街道网络上方高度受限的空域，以促进受限低空空域中的大规模无人机交通。</p>
+<p>在本研究中，我们调查了两个空域概念的性能：双向和单向城市空域概念，随后在比较仿真实验中将它们应用于纽约曼哈顿的街道网络（面积为
+<span class="math inline">\(59.1 \mathrm{~km}^{2}\)</span> ）。通过 60
+次随机快速仿真，涉及超过 200,000
+次无人机飞行，我们发现与双向概念相比，单向空域概念具有更好的性能。使用一组关键指标评估了这两种空域概念的性能：安全性（衡量冲突和入侵的总数）；稳定性（使用多米诺骨牌效应参数评估空域概念的稳定性）；吞吐量（衡量无人机到达率）；每个概念中每次飞行的平均转弯次数；以及累计行程时间。</p>
+<p>本研究呈现的安全结果表明，在受限的城市环境中，垂直分割交通方向以及对无人机交通流施加水平结构有利于空域安全。单向空域概念证明了这一点。从根本上讲，这种安全性的提高与分割和巡航交通之间的相对速度降低有关，这是由于每个相应高度层的巡航交通更加一致。这些观察结果与之前关于空中交通分割和对齐的研究一致
+[<a href="#ref-27">59</a>, <a href="#ref-18">62</a>]。</p>
+<p><strong>尽管在启用战术冲突消解算法后，这两个空域概念的入侵总数有所减少，但这两个空域概念的冲突总数却更高</strong>。<em>冲突总数的增加是由于在冲突消解时，由于高度受限的空域结构导致空域稀缺而引起的次生冲突或冲突链，受限的空域限制了解决策略的灵活性，因此产生了次生冲突</em>。
+Metropollis 空域设计研究也报告了两个高度结构化空域概念 [<a
+href="#ref-17">61</a>, <a
+href="#ref-18">62</a>]的类似发现。在这项研究中，在两个空域概念的所有三种交通需求情况下，多米诺骨牌效应参数的正值证实了次生冲突的形成，该参数表示每次冲突消解最多会产生一次额外冲突。这种观察结果可以与地面高速公路交通进行比较，对于地面高速公路交通，前车的制动会导致后车制动，而不会对交通流造成任何不稳定。但是如果高速公路交通需求极端，那么交通流量就会不稳定。因此，在目前的研究中，每解决一次冲突就会增加一次，或者多米诺效应参数接近
+1
+并不一定表示空域不稳定。未来的研究应该包括更大的交通需求估计，以调查多米诺效应参数是否会超过
+1。</p>
+<p>就效率而言，两种空域概念的到达率（吞吐量）与交通需求成正比。这与最初的假设相反，因此表明网络尚未达到其最大容量。特别是，未来的工作应该调查这两种空域概念在更高交通需求水平下的表现，以确定网络是否会变得拥挤，从而达到其最大容量。此外，与双向概念相比，单向空域概念平均包含额外的高度带。但这两个空域概念都表现出类似的到达率，这与我们最初的假设相反。这意味着，在每个基方向上拥有更多垂直高度带来容纳额外的交通量不一定会带来更高的到达率或吞吐量。</p>
+<p>飞行的平均转弯次数是空域概念之间的主要区别。与单向空域概念相比，双向概念平均导致每个飞行计划多转弯两次。这与最初的假设相反，也与过去地面交通街道网络研究
+[<a href="#ref-33">29</a>, <a
+href="#ref-38">49</a>]中报告的结果相反。这种差异是由于对交通流施加了水平约束。当没有对交通流施加水平结构时，路由算法
+[<a
+href="#ref-57">31</a>]会找到从起点到指定目标点的最短距离路径，它有更多可能的路径组合可供选择。因此，所选的最短路径可能是转弯次数相对较高的路径。但当强制实施水平约束以实现单向定向交通流时，可供选择的最短路径的可能组合要少得多，因此所选路径是转弯次数相对较少的路径。</p>
+<p>请注意，寻路算法会导致转弯次数的差异，因此不一定是空域概念之间的固有差异。原则上，路线优化算法也可以设置为优化最小转弯次数，这被称为最简单路径
+[<a href="#ref-64">11</a>, <a
+href="#ref-63">63</a>]。另一方面，与双向概念相比，单向空域概念为每个允许的飞行方向提供了两倍的垂直层，以均匀分布沿指定街道的航班。在双向概念中，必须通过将交通分散到不同的（平行）街道来实现类似的分布。这种水平分布有可能导致平均每次飞行转弯次数（略多）。双向概念中的转弯次数越多，导致更多的无人机飞行减速以安全转弯。双向概念中额外的转弯次数也可以追溯到更多的冲突和入侵，转弯时速度的降低可能引发了一定比例的冲突和入侵。</p>
+<p>本研究的结果有一些局限性：</p>
+<ol type="1">
+<li><p>我们的仿真采用了一个由正交网格状街道网络（即曼哈顿街道网络）组成的测试区域。尽管正交网格状街道网络在世界许多地方都很流行
+[<a href="#ref-39">12</a>]，但仍然存在其他七种类型的常见街道网络 [<a
+href="#ref-65">9</a>]。因此，我们谨慎将研究结果推断到非正交街道网络。</p></li>
+<li><p>在我们的研究中，对空域安全的调查仅限于冲突和入侵的数量。但还有更多冲突属性值得分析，例如冲突发生和结束的地点以及冲突的类型，例如正面、侧面和后方冲突的比例。解决后者将进一步增进我们对双向和单向空域概念之间观察到的差异的理解。</p></li>
+<li><p>我们的研究忽略了超局部风等气象影响。根据风向和风速，无人机可以利用这些气象效应，从而缩短飞行时间并增加每分钟无人机的到达数量。
+相反，超局部风也可能集中交通并迫使无人机偏离航线，从而降低空域的整体安全性。</p></li>
+<li><p>为了降低仿真的复杂性，未考虑起飞和降落阶段。包含这些阶段可能会对安全结果产生负面影响。</p></li>
+<li><p>我们的研究结果不应推广到固定翼无人机，因为固定翼无人机与多旋翼无人机具有不同的性能特征。</p></li>
+<li><p>当前的研究重点是随时间保持静态的空域设计以及具有均匀交通分布模式的空域设计。为了应对快递和快餐的按需配送服务模式，未来的无人机配送业务需要以灵活的方式运作。这意味着交通需求可能会在指定的时间内发生变化，而空域的某些区域的交通量将比其他区域大，因此需要空域动态地重新配置
+[<a href="#ref-20">34</a>]。</p></li>
+</ol>
+<h1 id="结论">结论</h1>
+<p>无人机快递包裹和快餐配送有望在人口密集的城市中高密度开展。此类应用可能在空气污染、交通拥堵和物流供应商成本节约方面带来诸多社会效益。但由于现有的街道网络及其相关的地形结构，城市空域受到严重限制。因此，在受限环境中容纳大规模无人机交通将成为一项重大挑战。为了更好地应对这一问题，本研究针对受限城市环境研究了两种新颖的空域设计概念，即双向和单向空域概念。基于交通对齐和分割原则，这两种空域概念都采用了航向高度规则，以垂直隔离巡航交通的航向方向。为了仿真受限环境，将空域概念应用于纽约曼哈顿的街道网络。使用
+60
+次随机快速仿真对双向和单向空域概念的性能进行了比较。我们的结果表明，在受限的城市环境中，采用垂直分割的高度层来适应方向相似的交通，并对交通流施加一些水平限制，有利于安全。</p>
+<p>这项研究为未来的研究提供了有趣的途径。我们建议进行后续研究，以检查双向和单向空域概念之间的交通冲突特性。此外，我们鼓励进一步研究动态空域设计，以应对未来按需无人机快递包裹和快餐订单配送服务。此外，未来的研究应该研究超局部风对交通分布和空域安全的影响。未来的研究还应考虑仿真中的起飞和降落阶段。</p>
+<p>致谢：这项工作极大地受益于开源工具 BlueSky、OSMnx
+及其依赖项。我们感谢三位匿名审稿人对手稿的有益评论和见解。</p>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0"
+role="list">
+<div id="ref-42" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1]</div><div
+class="csl-right-inline">2020. BlueSky. <em>TUDelft-CNS-ATM/BlueSky</em>
+(2020). URL: https://github.com/TUDelft-CNS-ATM/bluesky/releases</div>
+</div>
+<div id="ref-40" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2]</div><div class="csl-right-inline">N.
+Agatz, P. Bouman, and M. Schmidt. 2018. Optimization approaches for the
+traveling salesman problem with drone optimization approaches for the
+traveling salesman problem with drone. <em>Transp. Sci</em> 52, (2018),
+965–981.</div>
+</div>
+<div id="ref-56" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3]</div><div class="csl-right-inline">L.
+E. Alvarez, I. Jessen, M. Owen, J. Silbermann, and P. Wood. 2019-09-08.
+ACAS sXU: Robust decentralized detect and avoid for small unmanned
+aircraft systems. In <em>Proceedings of the 2019 IEEE/AIAA 38th digital
+avionics systems conference (DASC)</em>, 2019-09-08. San Diego, CA,
+USA.</div>
+</div>
+<div id="ref-25" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4]</div><div class="csl-right-inline">A.
+Bahabry, X. Wan, H. Ghazzai, H. Menouar, G. Vesonder, and Y. Massoud.
+2019. Low-altitude navigation for multi-rotor drones in urban areas.
+<em>IEEE Access</em> 7, (2019), 87716–87731.</div>
+</div>
+<div id="ref-8" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5]</div><div class="csl-right-inline">D.
+Bamburry. 2015. Drones: Designed for product delivery. <em>Des. Manag.
+Rev</em> 26, (2015), 40–48.</div>
+</div>
+<div id="ref-26" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6]</div><div class="csl-right-inline">C.
+Barrado, M. Boyero, L. Brucculeri, G. Ferrara, A. Hately, P. Hullah, D.
+Martin-marrero, E. Pastor, A. P. Rushton, and A. Volkert. 2020. U-space
+concept of operations: A key enabler for opening airspace to emerging
+low-altitude operations. <em>Aerospace</em> (2020), 7, 24.</div>
+</div>
+<div id="ref-30" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7]</div><div class="csl-right-inline">C.
+Barrington-leigh and A. Millard-ball. 2015. A century of sprawl in the
+united states. <em>Proc. Natl. Acad. Sci. USA</em> 112, (2015),
+8244–8249.</div>
+</div>
+<div id="ref-47" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8]</div><div class="csl-right-inline">C.
+Barrington-Leigh and A. Millard-Ball. 2017. More connected urban roads
+reduce US GHG emissions. <em>Environ. Res. Lett</em> 12, (2017).</div>
+</div>
+<div id="ref-65" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[9]</div><div class="csl-right-inline">C.
+Barrington-leigh and A. Millard-ball. 2019. A global assessment of
+street-network sprawl. <em>PLoS ONE</em> 14, (2019), 223078.</div>
+</div>
+<div id="ref-48" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10]</div><div class="csl-right-inline">C.
+Barrington-leigh and A. Millard-ball. 2020. Global trends toward urban
+street-network sprawl. <em>Proc. Natl. Acad. Sci. USA</em> 117, (2020),
+1941–1950.</div>
+</div>
+<div id="ref-64" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[11]</div><div class="csl-right-inline">M.
+Barthelemy. 2017. From paths to blocks: New measures for street
+patterns. <em>Environ. Plan. B Urban Anal. City Sci</em> 44, (2017),
+257–271.</div>
+</div>
+<div id="ref-39" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12]</div><div class="csl-right-inline">G.
+Boeing. 2019. Urban spatial order: Street network orientation,
+configuration, and entropy. <em>Appl. Netw. Sci</em> 4, (2019),
+1–19.</div>
+</div>
+<div id="ref-46" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13]</div><div class="csl-right-inline">G.
+Boeing. 2020. Exploring urban form through OpenStreetMap data: A visual
+introduction. In <em>Urban experience and design: Comtemporary
+perspectives on improving the public realm</em>. Routledge, London, UK,
+167–184.</div>
+</div>
+<div id="ref-51" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[14]</div><div
+class="csl-right-inline">G.Computers Boeing. 2017. Environment and urban
+systems OSMnx: New methods for acquiring, constructing, analyzing, and
+visualizing complex street networks. <em>Comput. Environ. Urban
+Syst</em> 65, (2017), 126–139.</div>
+</div>
+<div id="ref-53" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[15]</div><div class="csl-right-inline">V.
+Bulusu. 2019. Urban air mobility: Deconstructing the next revolution in
+urban transportation-feasibility, capacity and productivity.
+Ph.D. Thesis,. UC Berkeley, Berkeley, CA, USA.</div>
+</div>
+<div id="ref-2" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[16]</div><div class="csl-right-inline">S.
+Candiago, F. Remondino, M. Giglio, M. Dubbini, and M. Gattelli. 2015.
+Evaluating multispectral images and vegetation indices for precision
+farming applications from UAV images. <em>Remote Sens</em> 7, (2015),
+4026–4047.</div>
+</div>
+<div id="ref-31" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[17]</div><div class="csl-right-inline">P.
+Chakroborty and A. Das. 2005. <em>Principles of transportation
+engineering; PHI learning pvt</em>. Ltd, Delhi, India.</div>
+</div>
+<div id="ref-4" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[18]</div><div class="csl-right-inline">N.
+Coops, T. R. H. Goodbody, and C. Lin. 2019. Four steps to extend drone
+use in research. <em>Nature</em> 572, (2019), 433–435.</div>
+</div>
+<div id="ref-44" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[19]</div><div class="csl-right-inline">Y.
+Ding. 2021. E-commerce giant http://JD.com’s new delivery drone takes
+flight.</div>
+</div>
+<div id="ref-15" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[20]</div><div class="csl-right-inline">M.
+Doole, J. Ellerbroek, and J. Hoekstra. 2018-12-03. Drone delivery: Urban
+airspace traffic density estimation. In <em>Proceedings of the SESAR
+innovation days</em>, 2018-12-03. Salzburg, Austria.</div>
+</div>
+<div id="ref-16" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[21]</div><div class="csl-right-inline">M.
+Doole, J. Ellerbroek, and J. Hoekstra. 2020. Estimation of traffic
+density from drone-based delivery in very low level urban airspace.
+<em>J. Air Transp. Manag</em> 88, (2020), 101862.</div>
+</div>
+<div id="ref-12" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[22]</div><div
+class="csl-right-inline">FedEx. 2019. Drone deliveries coming soon, as
+wing unveils plans for first-of-its-kind trial with FedEx and
+walgreens.</div>
+</div>
+<div id="ref-1" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[23]</div><div class="csl-right-inline">D.
+Floreano and R. J. Wood. 2015. Science, technology and the future of
+small autonomous drones. <em>Nature</em> 521, (2015), 460–466.</div>
+</div>
+<div id="ref-28" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[24]</div><div class="csl-right-inline">R.
+Ford. 1983. On the use of height rules in off-route airspace. <em>J.
+Navig</em> 2, (1983), 269–287.</div>
+</div>
+<div id="ref-32" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[25]</div><div class="csl-right-inline">L.
+Fortuijn. 2096. Turbo roundabouts design principles and safety
+performance. <em>Transp. Res. Rec. J. Transp. Res. Board</em> 2009,
+(2096), 16–24.</div>
+</div>
+<div id="ref-9" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[26]</div><div class="csl-right-inline">E.
+Frachtenberg. 2019. Practical drone delivery. <em>Computer</em> 52,
+(2019), 53–57.</div>
+</div>
+<div id="ref-5" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[27]</div><div class="csl-right-inline">M.
+Francisco. 2016. Organ delivery by 1000 drones. <em>Nat. Biotechnol</em>
+34, (2016), 684.</div>
+</div>
+<div id="ref-36" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[28]</div><div class="csl-right-inline">N.
+Garber and L. Hoel. 2008. Traffic &amp; highway engineering; cengage
+learning. 937.</div>
+</div>
+<div id="ref-33" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[29]</div><div class="csl-right-inline">V.
+V. Gayah and C. F. Daganzo. 2012. Analytical capacity comparison of
+one-way and two-way signalized street networks. <em>Transp. Res. Rec. J.
+Transp. Res. Board</em> 2301, (2012), 76–85.</div>
+</div>
+<div id="ref-45" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[30]</div><div class="csl-right-inline">A.
+Gudmundsson and N. Mohajeri. 2013. Entropy and order in urban street
+networks. <em>Sci. Rep</em> 3, (2013), 1–8.</div>
+</div>
+<div id="ref-57" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[31]</div><div class="csl-right-inline">A.
+Hagberg, D. Schult, and P. Swart. 2008-08-19. Exploring network
+structure, dynamics, and function using NetworkX. In <em>Proceedings of
+the 7th python in science conference (SciPy2008)</em>, 2008-08-19.
+Pasadena, CA, USA, 11–15.</div>
+</div>
+<div id="ref-43" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[32]</div><div class="csl-right-inline">M.
+Hampson. 2018. Maryland test confirms drones can safely deliver human
+organs. In <em>IEEE spectrum</em>. Information Inc, Bethesda, MD,
+USA.</div>
+</div>
+<div id="ref-10" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[33]</div><div class="csl-right-inline">A.
+J. Hawkins. 2019. UPS seeks government approval for ‘advanced’ drone
+delivery service: The delivery giant could be permitted to fly drones
+over populated areas.</div>
+</div>
+<div id="ref-20" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[34]</div><div class="csl-right-inline">J.
+M. Hoekstra, J. Ellerbroek, E. Sunil, and J. Maas. 2018-06-26.
+Geovectoring: Reducing traffic complexity to increase the capacity of
+UAV airspace. In <em>Proceedings of the 8th international conference for
+research in air transportation</em>, 2018-06-26. Barcelona, Spain.</div>
+</div>
+<div id="ref-62" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[35]</div><div class="csl-right-inline">J.
+M. Hoekstra, R. N. Gent, and R. C. Ruigrok. 2002. Designing for safety:
+The ‘free flight’ air traffic management concept. <em>Reliab. Eng. Syst.
+Saf</em> (2002), 75.</div>
+</div>
+<div id="ref-19" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[36]</div><div class="csl-right-inline">J.
+M. Hoekstra, J. Maas, M. Tra, and E. Sunil. 2016-06-20. How do layered
+airspace design parameters affect airspace capacity and safety? In
+<em>Proceedings of the 7th international conference on research in air
+transportation</em>, 2016-06-20. Philadelphia, PA, USA.</div>
+</div>
+<div id="ref-61" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[37]</div><div class="csl-right-inline">J.
+M. Hoekstra, R. C. J. Ruigrok, and R. N. H. W. Gent. 2000-06-13. Free
+flight in a crowded airspace? In <em>Proceedings of the 3rd USA/europe
+air traffic management r&amp;d seminar</em>, 2000-06-13. Naples,
+Italy.</div>
+</div>
+<div id="ref-41" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[38]</div><div class="csl-right-inline">J.
+Hoekstra, J. Ellerbroek, and J. M. Hoekstra. 2016-06-20. BlueSky ATC
+simulator project: An open data and open source approach
+ThreeDimensional airborne separation assistance displays view project
+BlueSky-open source ATM simulator view project BlueSky ATC simulator
+project: An open data and open source approach. In <em>Proceedings of
+the 7th international conference for research on air transport
+(ICRAT)</em>, 2016-06-20. Philadelphia, PA, USA.</div>
+</div>
+<div id="ref-59" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[39]</div><div class="csl-right-inline">M.
+R. Jardin. 2005. Analytical relationships between conflict counts and
+air-traffic density. <em>J. Guid. Control Dyn</em> (2005), 28.</div>
+</div>
+<div id="ref-7" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[40]</div><div class="csl-right-inline">A.
+Kasliwal, N. J. Furbush, J. H. Gawron, J. R. Mcbride, T. J. Wallington,
+R. D. D. Kleine, H. C. Kim, and G. A. Keoleian. 2019. Role of flying
+cars in sustainable mobility. <em>Nat. Commun</em> (2019), 10.</div>
+</div>
+<div id="ref-3" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[41]</div><div class="csl-right-inline">A.
+King. 2017. Technology: The future of agriculture. <em>Nature</em> 544,
+(2017), 21–23.</div>
+</div>
+<div id="ref-11" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[42]</div><div class="csl-right-inline">K.
+Krader. 2019. Uber wants your next big mac to be delivered by
+drone.</div>
+</div>
+<div id="ref-58" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[43]</div><div class="csl-right-inline">J.
+Krozel, M. Peters, K. D. Bilimoria, M. Field, C. Lee, and J. S. B.
+Mitchell. 2001-12-03. System performance characteristics of centralized
+and decentralized air traffic separation strategies. In <em>Proceedings
+of the 4th USA/europe air traffic management r&amp;d seminar</em>,
+2001-12-03. Santa Fe, NM, USA, 1–11.</div>
+</div>
+<div id="ref-37" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[44]</div><div class="csl-right-inline">M.
+Kutz. 2013. <em>Handbook of transportation engineering</em>.
+McGraw-Hill, New York, NY, USA.</div>
+</div>
+<div id="ref-13" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[45]</div><div class="csl-right-inline">A.
+Levin. 2020. Amazon’s drone delivery fleet hits milestone with FAA
+clearance.</div>
+</div>
+<div id="ref-6" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[46]</div><div class="csl-right-inline">C.
+Lin, K. Shah, C. Mauntel, and S. Shah. 2018. Drone delivery of
+medications: Review of the landscape and legal considerations. <em>Bull.
+Am. Soc. Hosp. Pharm</em> 75, (2018), 153–158.</div>
+</div>
+<div id="ref-60" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[47]</div><div class="csl-right-inline">A.
+Loder, L. Ambühl, M. Menendez, and K. W. Axhausen. 2019. Understanding
+traffic capacity of urban networks. <em>Sci. Rep</em> 9, (2019),
+1–10.</div>
+</div>
+<div id="ref-29" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[48]</div><div class="csl-right-inline">I.
+C. A. O. 2005. Annex 2, rules of the air; ICAO.</div>
+</div>
+<div id="ref-38" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[49]</div><div class="csl-right-inline">J.
+Ortigosa, V. V. Gayah, and M. Menendez. 2017. Transportmetrica b:
+Transport dynamics analysis of one-way and two-way street configurations
+on urban grid networks ABSTRACT. <em>Transp. B Transp. Dyn</em> 7,
+(2017), 1–21.</div>
+</div>
+<div id="ref-24" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[50]</div><div class="csl-right-inline">B.
+Pang, F. Dai, and K. H. Low. 2020. Risk assessment model for UAV
+cost-effective path planning in urban environments. <em>IEEE Access</em>
+(2020), 8.</div>
+</div>
+<div id="ref-34" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[51]</div><div class="csl-right-inline">A.
+Petrovsky, M. Doole, J. Ellerbroek, J. M. Hoekstra, and F. Tomasello.
+2018. Challenges with obstacle data for manned and unmanned aviation.
+<em>Int. Arch. Photogramm. Remote Sens. Spat. Inf–Sci</em> 42, (2018),
+143–149.</div>
+</div>
+<div id="ref-22" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[52]</div><div class="csl-right-inline">S.
+Primatesta, G. Guglieri, and A. Rizzo. 2019. A risk-aware path planning
+strategy for UAVs in urban environments. <em>J. Intell. Robot. Syst</em>
+(2019), 629–643.</div>
+</div>
+<div id="ref-50" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[53]</div><div class="csl-right-inline">S.
+Rajendran and J. Shulman. 2020. Study of emerging air taxi network
+operation using discrete-event systems simulation approach. <em>J. Air
+Transp. Manag</em> 87, (2020), 101857.</div>
+</div>
+<div id="ref-49" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[54]</div><div class="csl-right-inline">S.
+Rajendran and J. Zack. 2019. Insights on strategic air taxi network
+infrastructure locations using an iterative constrained clustering
+approach. <em>Transp. Res. Part E Logist. Transp. Rev</em> 128, (2019),
+470–505.</div>
+</div>
+<div id="ref-52" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[55]</div><div class="csl-right-inline">M.
+Ribeiro, J. Ellerbroek, and J. M. Hoekstra. 2020. Review of conflict
+resolution methods for manned and unmanned aviation. <em>Aerospace</em>
+6, (2020), 79.</div>
+</div>
+<div id="ref-54" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[56]</div><div class="csl-right-inline">D.
+Sacharny and T. C. Henderson. 2019-06-11. A lane-based approach for
+lage-scale strategic conflict management for UAS service suppliers. In
+<em>Proceedings of the 2019 international conference on unmanned
+aircraft systems (ICUAS)</em>, 2019-06-11. Atlanta, GA, USA.</div>
+</div>
+<div id="ref-35" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[57]</div><div class="csl-right-inline">M.
+Slinn, P. Matthews, and P. Guest. 2005. <em>Traffic engineering design:
+Principles and practice</em>. Butterworth-Heinemann, Oxford, UK.</div>
+</div>
+<div id="ref-14" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[58]</div><div class="csl-right-inline">J.
+K. Stolaroff, C. Samaras, A. S. Mitchell, D. Ceperley, E. R. O. Neill,
+and A. Lubers. 2018. Energy use and life cycle greenhouse gas emissions
+of drones for commercial package delivery. <em>Nat. Commun</em> (2018),
+1–13.</div>
+</div>
+<div id="ref-27" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[59]</div><div class="csl-right-inline">E.
+Sunil. 2019. Analyzing and modeling capacity for decentralized air
+traffic control. Ph.D. Thesis,. Delft University of Technology, Delft,
+The Netherlands.</div>
+</div>
+<div id="ref-21" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[60]</div><div class="csl-right-inline">E.
+Sunil, J. Ellerbroek, J. M. Hoekstra, and J. Maas. 2018.
+Three-dimensional conflict count models for unstructured and layered
+airspace designs. <em>Transp. Res. Part C Emerg. Technol</em> 95,
+(2018), 295–319.</div>
+</div>
+<div id="ref-17" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[61]</div><div class="csl-right-inline">E.
+Sunil, J. Hoekstra, J. Ellerbroek, F. Bussink, D. Nieuwenhuisen, A.
+Vidosavljevic, and S. Kern. 2015-06-23. Metropolis: Relating airspace
+structure and capacity for extreme traffic densities. In <em>Proceedings
+of the 11th USA/europe air traffic management research and development
+seminar</em>, 2015-06-23. Lisbon, Portugal.</div>
+</div>
+<div id="ref-18" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[62]</div><div class="csl-right-inline">E.
+Sunil, J. Hoekstra, J. Ellerbroek, F. Bussink, D. Nieuwenhuisen, A.
+Vidosavljevic, and S. Kern. 2017. Analysis of airspace structure and
+capacity for decentralised separation using fast-time simulations.
+<em>J. Guid. Control. Dyn</em> 40, (2017), 38–51.</div>
+</div>
+<div id="ref-63" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[63]</div><div class="csl-right-inline">M.
+P. Viana, E. Strano, P. Bordin, and M. Barthelemy. 2013. The simplicity
+of planar networks. <em>Sci. Rep</em> 3, (2013), 1–6.</div>
+</div>
+<div id="ref-55" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[64]</div><div class="csl-right-inline">A.
+Weinert, S. Campbell, A. Vela, D. Schuldt, and J. Kurucar. 2018.
+Well-clear recommendation for small unmanned aircraft systems based on
+unmitigated collision risk. <em>J. Air Transp</em> (2018), 26.</div>
+</div>
+<div id="ref-23" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[65]</div><div class="csl-right-inline">C.
+Xu, S. Member, and X. Liao. 2020. Recent research progress of unmanned
+aerial vehicle regulation policies and technologies in urban low
+altitude. <em>IEEE Access</em> 8, (2020), 74175–74194.</div>
+</div>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p> 注意，起点是仓库位置之一<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://xishansnow.github.io/vll-pages">Xishansnow</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://xishansnow.github.io/vll-pages/posts/8f2073f9.html">http://xishansnow.github.io/vll-pages/posts/8f2073f9.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/vll-pages/tags/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/">空域管理</a><a class="post-meta__tags" href="/vll-pages/tags/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/">空域结构</a></div><div class="post-share"><div class="social-share" data-image="/vll-pages/img/coffe_05.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/vll-pages/posts/746d2025.html" title="使用 OSMnx 对城市网络和便利设施进行建模和分析"><img class="cover" src="/vll-pages/img/006.png" onerror="onerror=null;src='/vll-pages/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">使用 OSMnx 对城市网络和便利设施进行建模和分析</div></div><div class="info-2"><div class="info-item-1">   【摘 要】OSMnx1 是一个 Python 包，用于从 OpenStreetMap 数据中下载、建模、处理、分析和可视化城市网络和任何其他地理空间特征。越来越多的文献使用它来进行地理、城市规划、交通工程、计算机科学等学科的科学研究。OSMnx 项目最近开发并实现了许多新功能、建模功能和分析方法。该包现在包含的功能比文献中以前记录的要多得多。因此，本文介绍了 OSMnx 包的新功能、用法和设计，以及它们背后的科学理论和逻辑。最后，它反思了地理信息科学中的工具构建以及对开放科学模式下城市建模和分析的影响。 【原 文】 Boeing, G. (2024) ‘Modeling and analyzing urban networks and amenities with osmnx’. 【参考资料】无 p{text-indent:2em} 引言 对网络化城市基础设施（如街道、铁路、运河等）和地理空间特征（如便利设施、兴趣点等）进行建模，是研究出行行为、可达性、公共卫生、可持续性和空间公平性的基础。这项研究涵盖城市形态学 [21, 30, 42]、交通规划 [34, 38,...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/93655c42.html" title="密集建筑环境中无人机配送的路径规划"><img class="cover" src="/vll-pages/img/coffe_05.png" onerror="onerror=null;src='/vll-pages/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">密集建筑环境中无人机配送的路径规划</div></div><div class="info-2"><div class="info-item-1">   【摘 要】无人机已被引入城市环境以方便我们的生活，例如货物运送服务。但城市地区密集的建筑物对无人机的安全运行构成挑战，因为与建筑物相撞的风险。为了应对这一挑战，我们提出了一种利用改进的蚁群优化 ( IACO ) 算法的路径规划方法。该算法通过自适应参数机制和信息素强度更新机制改进了 ACO 的标准设置。通过引入基于快速探索随机树 ( RRT ) 的机制来提高搜索效率，从而进行了进一步的改进。仿真结果表明，我们提出的方法显著提高了复杂城市环境中路径规划的收敛速度和解决方案的质量。它可以在二维和三维环境中始终如一地以更快的收敛速度产生令人满意的解决方案。 【原 文】 【参考资料】  p{text-indent:2em} 引言 无人机已被应用于城市环境中的物流、巡检、疫情防控等各个领域...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/vll-pages/posts/ce8f62ac.html" title="空域结构概述"><img class="cover" src="/vll-pages/img/coffe_02.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">空域结构概述</div></div><div class="info-2"><div class="info-item-1">   【摘要】 【原文】 【参考】Kin Huat Low, Framework for urban Traffic Management of Unmanned Aircraft System (uTM-UAS), p{text-indent:2em} </div></div></div></a><a class="pagination-related" href="/vll-pages/posts/93655c42.html" title="密集建筑环境中无人机配送的路径规划"><img class="cover" src="/vll-pages/img/coffe_05.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-09</div><div class="info-item-2">密集建筑环境中无人机配送的路径规划</div></div><div class="info-2"><div class="info-item-1">   【摘 要】无人机已被引入城市环境以方便我们的生活，例如货物运送服务。但城市地区密集的建筑物对无人机的安全运行构成挑战，因为与建筑物相撞的风险。为了应对这一挑战，我们提出了一种利用改进的蚁群优化 ( IACO ) 算法的路径规划方法。该算法通过自适应参数机制和信息素强度更新机制改进了 ACO 的标准设置。通过引入基于快速探索随机树 ( RRT ) 的机制来提高搜索效率，从而进行了进一步的改进。仿真结果表明，我们提出的方法显著提高了复杂城市环境中路径规划的收敛速度和解决方案的质量。它可以在二维和三维环境中始终如一地以更快的收敛速度产生令人满意的解决方案。 【原 文】 【参考资料】  p{text-indent:2em} 引言 无人机已被应用于城市环境中的物流、巡检、疫情防控等各个领域...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/cb57fa9d.html" title="低空无人机交通管理的空域设计和运行"><img class="cover" src="/vll-pages/img/book_17.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-08</div><div class="info-item-2">低空无人机交通管理的空域设计和运行</div></div><div class="info-2"><div class="info-item-1">   【摘要】随着无人机 ( UAV ) 的可用性和需求的增加，有必要建立无人机系统交通管理 ( UTM ) 系统，以实现低空的高效无人机运行。为了避免与地面障碍物、其他无人机和有人驾驶飞机相撞，在建立安全路径时，UTM 需要确定分配给每次飞行的时间和空间。已经提出了各种形式的离散化和结构化空域的想法，以通过有效的空域分配来提高系统运行效率并改善交通拥堵。此外，文献中还研究了将无人机分配到结构化单元空间的各种方法。本文将相关研究中出现的空域分配方法和结构设计分为几种类型，并分析了它们的优缺点。结构化空域设计分为三种模型： Air-Matrix、Air-Network 和 Air-Tubes ，并根据它们的子结构和时间分配方法进行分析。此外，通过重新分类结构化空域和运行方法并建立其组合进行了定量分析。  【参考】 Lee, U.-J. et al. (2023) ‘Airspace designs and operations for UAS traffic management at low altitude’, Aerospace, 10(9),...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/5d2e7a7c.html" title="空域管理索引帖"><img class="cover" src="/vll-pages/img/coffe_09.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">空域管理索引帖</div></div><div class="info-2"><div class="info-item-1">   引言 空域要素 空域划分 空域拓扑           #refplus, #refplus li{          padding:0;         margin:0;         list-style:none;     }；                         document.querySelectorAll(".refplus-num").forEach((ref) => {         let refid = ref.firstChild.href.replace(location.origin+location.pathname,'');         let refel = document.querySelector(refid);         let refnum = refel.dataset.num;         let ref_content = refel.innerText.replace(`[${refnum}]`,'');         tippy(ref, {            ...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/c2d88c64.html" title="空域管理系统"><img class="cover" src="/vll-pages/img/book_14.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">空域管理系统</div></div><div class="info-2"><div class="info-item-1">   【摘要】 【原文】 【参考】 p{text-indent:2em} </div></div></div></a><a class="pagination-related" href="/vll-pages/posts/2e275440.html" title="空域管理法规"><img class="cover" src="/vll-pages/img/book_19.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">空域管理法规</div></div><div class="info-2"><div class="info-item-1">   【摘要】 【原文】 【参考】  CMU 10-708 Slides CMU 10-708 Notes Jordan’s Textbook Airoldi’s Tutorial  p{text-indent:2em} </div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%BD%E4%BA%BA%E8%88%AA%E7%A9%BA%E7%9A%84%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84"><span class="toc-text">载人航空的空域结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%93%E8%B7%AF%E4%BA%A4%E9%80%9A%E5%92%8C%E8%A1%97%E9%81%93%E7%BB%93%E6%9E%84"><span class="toc-text">道路交通和街道结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E5%92%8C%E5%85%A5%E4%BE%B5"><span class="toc-text">冲突和入侵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E9%80%9A%E5%88%86%E5%89%B2%E4%B8%8E%E4%BA%A4%E9%80%9A%E5%AF%B9%E9%BD%90"><span class="toc-text">交通分割与交通对齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%97%E9%99%90%E7%9A%84%E5%9F%8E%E5%B8%82%E7%A9%BA%E5%9F%9F"><span class="toc-text">受限的城市空域</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%97%E9%99%90%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E5%9F%8E%E5%B8%82%E7%A9%BA%E5%9F%9F%E6%A6%82%E5%BF%B5%E8%AE%BE%E8%AE%A1"><span class="toc-text">受限环境下的城市空域概念设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E8%A1%97%E9%81%93%E4%B8%8A%E7%A9%BA%E9%A3%9E%E8%A1%8C"><span class="toc-text">在街道上空飞行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E6%AD%A5%E8%B0%83%E6%9F%A5%E5%92%8C%E4%B8%BB%E8%A6%81%E8%A7%82%E5%AF%9F"><span class="toc-text">初步调查和主要观察</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E5%BC%AF%E8%88%AA%E7%8F%AD"><span class="toc-text">转弯航班</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E9%80%9A%E5%B1%82%E5%92%8C%E8%BD%AC%E5%BC%AF%E5%B1%82"><span class="toc-text">直通层和转弯层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E8%AE%BE%E8%AE%A1%E7%89%B9%E7%82%B9"><span class="toc-text">概念设计特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%90%91%E7%A9%BA%E5%9F%9F%E6%A6%82%E5%BF%B5"><span class="toc-text">双向空域概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%90%91%E7%A9%BA%E5%9F%9F%E6%A6%82%E5%BF%B5"><span class="toc-text">单向空域概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E6%AF%94%E8%BE%83"><span class="toc-text">概念比较</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E8%AE%BE%E8%AE%A1"><span class="toc-text">仿真设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E5%BC%80%E5%8F%91"><span class="toc-text">仿真开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E5%B9%B3%E5%8F%B0"><span class="toc-text">仿真平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E5%8C%BA%E5%9F%9F"><span class="toc-text">测试区域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B%E4%B8%8E%E6%B6%88%E8%A7%A3"><span class="toc-text">冲突检测与消解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%8E%E5%B8%82%E7%A9%BA%E5%9F%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AE%9E%E6%96%BD"><span class="toc-text">城市空域概念的实施</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E5%8F%98%E9%87%8F"><span class="toc-text">独立变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E6%A0%87%E6%B5%8B%E5%BA%A6"><span class="toc-text">指标测度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-text">安全性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-text">稳定性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%9E%E5%90%90%E9%87%8F"><span class="toc-text">吞吐量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E5%9D%87%E8%BD%AC%E5%BC%AF%E6%95%B0"><span class="toc-text">平均转弯数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%AF%E8%AE%A1%E8%A1%8C%E7%A8%8B%E6%97%B6%E9%97%B4"><span class="toc-text">累计行程时间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%81%87%E8%AE%BE"><span class="toc-text">实验假设</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-text">结果</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8"><span class="toc-text">安全</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9A"><span class="toc-text">稳定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%9E%E5%90%90%E9%87%8F-1"><span class="toc-text">吞吐量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E5%9D%87%E8%BD%AC%E5%BC%AF%E6%95%B0-1"><span class="toc-text">平均转弯数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%AF%E8%AE%A1%E8%A1%8C%E7%A8%8B%E6%97%B6%E9%97%B4-1"><span class="toc-text">累计行程时间</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-text">讨论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By Xishansnow</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional and Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/vll-pages/js/utils.js"></script><script src="/vll-pages/js/main.js"></script><script src="/vll-pages/js/tw_cn.js"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (true){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: false,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : ''
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script></div></body></html>

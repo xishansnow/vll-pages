@@ -118,7 +118,7 @@
     js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
     buttonText: 'Load More'
   },
-  isPhotoFigcaption: false,
+  isPhotoFigcaption: true,
   islazyload: false,
   isAnchor: false,
   percent: {
@@ -133,271 +133,463 @@
   isHighlightShrink: false,
   isToc: true,
   isShuoshuo: false
-}</script><link rel="stylesheet" href="/css/custom.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/vll-pages/img/favi.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/vll-pages/archives/"><div class="headline">Articles</div><div class="length-num">45</div></a><a href="/vll-pages/tags/"><div class="headline">Tags</div><div class="length-num">46</div></a><a href="/vll-pages/categories/"><div class="headline">Categories</div><div class="length-num">50</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/vll-pages/index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map"></i><span> 运行概念</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/94508604.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 综合运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UTM/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> UTM 运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UAM/"><i class="fa-fw fa-solid fa-map"></i><span> UAM 运行概念</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 空域管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/5d2e7a7c.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/"><i class="fa-fw fas fa-atom"></i><span> 空域结构</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E6%B3%95%E8%A7%84/"><i class="fa-fw fa-solid fa-magnet"></i><span> 空域法规</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 飞行规划</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d04ee52a.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%92/"><i class="fa-fw fas fa-atom"></i><span> 全局规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E5%B1%80%E9%83%A8%E8%A7%84%E5%88%92/"><i class="fa-fw fa-solid fa-magnet"></i><span> 局部规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/"><i class="fa-fw fas fa-cogs"></i><span> 轨迹生成</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 风险管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/e53d9399.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E6%80%A7%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 定性评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fa-solid fa-magnet"></i><span> 定量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%BB%93%E6%9E%9C%E5%BA%94%E7%94%A8/"><i class="fa-fw fas fa-cogs"></i><span> 结果应用</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 冲突管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d805a213.html"><i class="fa-fw fas fa-cogs"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E7%95%A5%E5%B1%82/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 战略层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E6%9C%AF%E5%B1%82/"><i class="fa-fw fa-solid fa-magnet"></i><span> 战术层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/DAA/"><i class="fa-fw fa-solid fa-magnet"></i><span> DAA</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E9%98%B2%E6%92%9E/"><i class="fa-fw fa-solid fa-magnet"></i><span> 防撞</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-ghost"></i><span> 需求容量平衡</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/337b7ab7.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E7%94%9F%E6%88%90/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求生成</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E9%A2%84%E6%B5%8B/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求预测</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 容量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/DCB%E6%8E%AA%E6%96%BD/"><i class="fa-fw fas fa-school"></i><span> DCB 措施</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 基础设施与飞行器</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E7%9B%91%E8%A7%86/"><i class="fa-fw fas fa-cogs"></i><span> 监视</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E9%80%9A%E4%BF%A1/"><i class="fa-fw fas fa-cogs"></i><span> 通信</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 定位导航</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BE%AE%E6%B0%94%E8%B1%A1/"><i class="fa-fw fa-solid fa-magnet"></i><span> 微气象</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E8%B5%B7%E9%99%8D%E5%9C%BA/"><i class="fa-fw fas fa-cogs"></i><span> 起降场</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/UAS/"><i class="fa-fw fas fa-cogs"></i><span> UAS</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eVTOL/"><i class="fa-fw fa-solid fa-layer-group"></i><span> eVTOL</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eCTOL/"><i class="fa-fw fa-solid fa-magnet"></i><span> eCTOL</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eSTOL/"><i class="fa-fw fa-solid fa-magnet"></i><span> eSTOL</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-compass"></i><span> 索引</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/archives/"><i class="fa-fw fa-solid fa-timeline"></i><span> 时间索引</span></a></li><li><a class="site-page child" href="/vll-pages/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签索引</span></a></li><li><a class="site-page child" href="/vll-pages/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类索引</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/vll-pages/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/coffe_02.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/vll-pages/"><span class="site-name">构建低空信息理论与技术知识图谱！</span></a><a class="nav-page-title" href="/vll-pages/"><span class="site-name">基于空域资源中心方法的城市空中交通无冲突轨迹规划</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/vll-pages/index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map"></i><span> 运行概念</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/94508604.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 综合运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UTM/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> UTM 运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UAM/"><i class="fa-fw fa-solid fa-map"></i><span> UAM 运行概念</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 空域管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/5d2e7a7c.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/"><i class="fa-fw fas fa-atom"></i><span> 空域结构</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E6%B3%95%E8%A7%84/"><i class="fa-fw fa-solid fa-magnet"></i><span> 空域法规</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 飞行规划</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d04ee52a.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%92/"><i class="fa-fw fas fa-atom"></i><span> 全局规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E5%B1%80%E9%83%A8%E8%A7%84%E5%88%92/"><i class="fa-fw fa-solid fa-magnet"></i><span> 局部规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/"><i class="fa-fw fas fa-cogs"></i><span> 轨迹生成</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 风险管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/e53d9399.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E6%80%A7%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 定性评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fa-solid fa-magnet"></i><span> 定量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%BB%93%E6%9E%9C%E5%BA%94%E7%94%A8/"><i class="fa-fw fas fa-cogs"></i><span> 结果应用</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 冲突管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d805a213.html"><i class="fa-fw fas fa-cogs"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E7%95%A5%E5%B1%82/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 战略层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E6%9C%AF%E5%B1%82/"><i class="fa-fw fa-solid fa-magnet"></i><span> 战术层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/DAA/"><i class="fa-fw fa-solid fa-magnet"></i><span> DAA</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E9%98%B2%E6%92%9E/"><i class="fa-fw fa-solid fa-magnet"></i><span> 防撞</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-ghost"></i><span> 需求容量平衡</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/337b7ab7.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 入门帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E7%94%9F%E6%88%90/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求生成</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E9%A2%84%E6%B5%8B/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求预测</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 容量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/DCB%E6%8E%AA%E6%96%BD/"><i class="fa-fw fas fa-school"></i><span> DCB 措施</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 基础设施与飞行器</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E7%9B%91%E8%A7%86/"><i class="fa-fw fas fa-cogs"></i><span> 监视</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E9%80%9A%E4%BF%A1/"><i class="fa-fw fas fa-cogs"></i><span> 通信</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 定位导航</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BE%AE%E6%B0%94%E8%B1%A1/"><i class="fa-fw fa-solid fa-magnet"></i><span> 微气象</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E8%B5%B7%E9%99%8D%E5%9C%BA/"><i class="fa-fw fas fa-cogs"></i><span> 起降场</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/UAS/"><i class="fa-fw fas fa-cogs"></i><span> UAS</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eVTOL/"><i class="fa-fw fa-solid fa-layer-group"></i><span> eVTOL</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eCTOL/"><i class="fa-fw fa-solid fa-magnet"></i><span> eCTOL</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/eSTOL/"><i class="fa-fw fa-solid fa-magnet"></i><span> eSTOL</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-compass"></i><span> 索引</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/archives/"><i class="fa-fw fa-solid fa-timeline"></i><span> 时间索引</span></a></li><li><a class="site-page child" href="/vll-pages/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签索引</span></a></li><li><a class="site-page child" href="/vll-pages/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类索引</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/vll-pages/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">基于空域资源中心方法的城市空中交通无冲突轨迹规划</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-08T15:00:00.000Z" title="Created 2025-01-08 23:00:00">2025-01-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-08T15:58:46.175Z" title="Updated 2025-01-08 23:58:46">2025-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/">飞行规划</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%92/">全局规划</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">5.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>19mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><script src='https://unpkg.com/tippy.js@2.0.2/dist/tippy.all.min.js'></script>
+}</script><link rel="stylesheet" href="/css/custom.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/vll-pages/img/favi.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/vll-pages/archives/"><div class="headline">Articles</div><div class="length-num">82</div></a><a href="/vll-pages/tags/"><div class="headline">Tags</div><div class="length-num">88</div></a><a href="/vll-pages/categories/"><div class="headline">Categories</div><div class="length-num">54</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/vll-pages/index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map"></i><span> 运行概念</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/94508604.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 综合运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UTM/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> UTM 运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UAM/"><i class="fa-fw fa-solid fa-map"></i><span> UAM 运行概念</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 空域管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/5d2e7a7c.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/"><i class="fa-fw fas fa-atom"></i><span> 空域结构</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E6%B3%95%E8%A7%84/"><i class="fa-fw fa-solid fa-magnet"></i><span> 空域法规</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 任务规划</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d04ee52a.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 任务分配</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%95%E6%9C%BA%E8%A7%84%E5%88%92/"><i class="fa-fw fas fa-atom"></i><span> 单机规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92/"><i class="fa-fw fa-solid fa-magnet"></i><span> 多机规划</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 风险管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/e53d9399.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E6%80%A7%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 定性评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fa-solid fa-magnet"></i><span> 定量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%BB%93%E6%9E%9C%E5%BA%94%E7%94%A8/"><i class="fa-fw fas fa-cogs"></i><span> 结果应用</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 冲突管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d805a213.html"><i class="fa-fw fas fa-cogs"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E7%95%A5%E5%B1%82/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 战略层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E6%9C%AF%E5%B1%82/"><i class="fa-fw fa-solid fa-magnet"></i><span> 战术层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/DAA/"><i class="fa-fw fa-solid fa-magnet"></i><span> DAA</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E9%98%B2%E6%92%9E/"><i class="fa-fw fa-solid fa-magnet"></i><span> 防撞</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-ghost"></i><span> DCB 管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/337b7ab7.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E7%94%9F%E6%88%90/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求生成</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E9%A2%84%E6%B5%8B/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求预测</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 容量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/DCB%E6%8E%AA%E6%96%BD/"><i class="fa-fw fas fa-school"></i><span> DCB 措施</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E7%9B%91%E8%A7%86/"><i class="fa-fw fas fa-cogs"></i><span> 监视</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E9%80%9A%E4%BF%A1/"><i class="fa-fw fas fa-cogs"></i><span> 通信</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 定位导航</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BE%AE%E6%B0%94%E8%B1%A1/"><i class="fa-fw fa-solid fa-magnet"></i><span> 微气象</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E8%B5%B7%E9%99%8D%E5%9C%BA/"><i class="fa-fw fas fa-cogs"></i><span> 起降场</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/UAS/"><i class="fa-fw fas fa-cogs"></i><span> 飞行器</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BD%AF%E4%BB%B6%E5%B9%B3%E5%8F%B0/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 软件平台</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-compass"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/archives/"><i class="fa-fw fa-solid fa-timeline"></i><span> 时间索引</span></a></li><li><a class="site-page child" href="/vll-pages/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签索引</span></a></li><li><a class="site-page child" href="/vll-pages/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类索引</span></a></li><li><a class="site-page child" href="/vll-pages/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/coffe_04.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/vll-pages/"><span class="site-name">构建低空信息理论与技术知识图谱！</span></a><a class="nav-page-title" href="/vll-pages/"><span class="site-name">基于空域资源中心方法的城市空中交通无冲突轨迹规划</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/vll-pages/index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map"></i><span> 运行概念</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/94508604.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 综合运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UTM/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> UTM 运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UAM/"><i class="fa-fw fa-solid fa-map"></i><span> UAM 运行概念</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 空域管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/5d2e7a7c.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/"><i class="fa-fw fas fa-atom"></i><span> 空域结构</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E6%B3%95%E8%A7%84/"><i class="fa-fw fa-solid fa-magnet"></i><span> 空域法规</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 任务规划</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d04ee52a.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 任务分配</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%95%E6%9C%BA%E8%A7%84%E5%88%92/"><i class="fa-fw fas fa-atom"></i><span> 单机规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92/"><i class="fa-fw fa-solid fa-magnet"></i><span> 多机规划</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 风险管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/e53d9399.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E6%80%A7%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 定性评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fa-solid fa-magnet"></i><span> 定量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%BB%93%E6%9E%9C%E5%BA%94%E7%94%A8/"><i class="fa-fw fas fa-cogs"></i><span> 结果应用</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 冲突管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d805a213.html"><i class="fa-fw fas fa-cogs"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E7%95%A5%E5%B1%82/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 战略层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E6%9C%AF%E5%B1%82/"><i class="fa-fw fa-solid fa-magnet"></i><span> 战术层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/DAA/"><i class="fa-fw fa-solid fa-magnet"></i><span> DAA</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E9%98%B2%E6%92%9E/"><i class="fa-fw fa-solid fa-magnet"></i><span> 防撞</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-ghost"></i><span> DCB 管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/337b7ab7.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E7%94%9F%E6%88%90/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求生成</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E9%A2%84%E6%B5%8B/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求预测</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 容量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/DCB%E6%8E%AA%E6%96%BD/"><i class="fa-fw fas fa-school"></i><span> DCB 措施</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E7%9B%91%E8%A7%86/"><i class="fa-fw fas fa-cogs"></i><span> 监视</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E9%80%9A%E4%BF%A1/"><i class="fa-fw fas fa-cogs"></i><span> 通信</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 定位导航</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BE%AE%E6%B0%94%E8%B1%A1/"><i class="fa-fw fa-solid fa-magnet"></i><span> 微气象</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E8%B5%B7%E9%99%8D%E5%9C%BA/"><i class="fa-fw fas fa-cogs"></i><span> 起降场</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/UAS/"><i class="fa-fw fas fa-cogs"></i><span> 飞行器</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BD%AF%E4%BB%B6%E5%B9%B3%E5%8F%B0/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 软件平台</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-compass"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/archives/"><i class="fa-fw fa-solid fa-timeline"></i><span> 时间索引</span></a></li><li><a class="site-page child" href="/vll-pages/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签索引</span></a></li><li><a class="site-page child" href="/vll-pages/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类索引</span></a></li><li><a class="site-page child" href="/vll-pages/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">基于空域资源中心方法的城市空中交通无冲突轨迹规划</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-08T15:00:00.000Z" title="Created 2025-01-08 23:00:00">2025-01-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-17T01:39:44.265Z" title="Updated 2025-01-17 09:39:44">2025-01-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/">任务规划</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%92/">全局规划</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">5.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>19mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><script src='https://unpkg.com/tippy.js@2.0.2/dist/tippy.all.min.js'></script>
 <script src='/js/attachTooltips.js'></script>
 <link rel='stylesheet' href='/css/tippy.css'>
-<div class="center" markdown="1">
-
-<p>〖摘要〗 城市空中交通 (UAM) 因其在未来城市交通系统中发挥重要作用的巨大潜力而受到相关利益者关注。预期 UAM 运行的高密度需要先进的空域资源管理策略。在本文中，我们提出了一种以空域资源为中心 (ARC) 的 UAM 飞行规划方法。首先，开发了城市空域管理的空域资源中心概念。然后在该概念下设计了一种具有最佳空域利用率的 4D 轨迹规划方法。该方法包括三个步骤。首先，为每个飞行计划分配一个飞行高度层。其次，通过 $\mathrm{A}^{*}$ 算法生成最佳 3D 路径并进行平滑。最后，将 4D 轨迹生成建模为数学优化问题，并通过商业求解器进行求解。数值模拟结果表明，该方法可为 UAM 规划轨迹，每次飞行的计算时间少于 1 秒。</p>
-<hr>
-<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>城市空中交通在解决特大城市交通拥堵方面显示出巨大潜力，近年来引起了政策制定者、服务提供商、运营商和研究人员越来越多的关注 (Thipphavong et al. 2018; Straubinger et al. 2019)。城市空中交通的明确需求导致需要建立一种能够促进城市环境中飞行运行发展的交通管理系统。空中交通管理（ATM）系统已经完善并安全运行多年。但UAM的特点与传统空中交通有很大不同。因此，对高效和安全的UAM飞行运行的研究一直是一个热门领域 (Li et al. 2020)。</p>
+<p>【摘要】 提出了一种以空域资源为中心 (ARC) 的 UAM
+飞行规划方法。首先，开发了城市空域资源中心概念，并在该概念基础上设计了一种具有最优空域利用率的
+4D
+轨迹规划方法。该方法包括三个步骤：1）高度层分配：为每个飞行计划分配一个飞行高度层；2）路径规划：通过
+A* 算法生成最优 3D 路径并进行后平滑处理；3）轨迹生成：将 4D
+轨迹生成问题建模为一个数学优化问题，通过商业求解器进行求解。数值仿真结果表明，该方法可为
+UAM 规划轨迹，每次飞行的计算时间少于 1 秒。</p>
+<hr />
+<style>p{text-indent:2em}</style>
+<h1 id="引言">引言</h1>
+<p>城市空中交通在解决特大城市交通拥堵方面显示出巨大潜力，近年来引起了政策制定者、服务提供商、运营商和研究人员越来越多的关注
+[<a href="#ref-2">13</a>, <a
+href="#ref-1">16</a>]。城市空中交通的明确需求导致需要建立一种能够促进城市环境中飞行运行发展的交通管理系统。空中交通管理（ATM）系统已经完善并安全运行多年。但UAM的特点与传统空中交通有很大不同。因此，对高效和安全的UAM飞行运行的研究一直是一个热门领域
+[<a href="#ref-3">8</a>]。</p>
 <p>基于航迹的运行（TBO）概念引入空中交通管理已有多年，在原有的三维航迹基础上增加了时间分配，提高了空中交通流量的可预测性，促进了飞行安全、燃油效率和排放减少的优化。在城市空中交通（UAM）背景下，基于轨迹的运行允许灵活利用城市空域并支持战略冲突，这两者对于城市空中交通的发展至关重要。</p>
-<p>航班 4D 轨迹规划是一个优化问题，其目标取决于航班运营商的偏好 (Delahaye et al. 2014)。在寻找最优解时，时间维度的引入增加了决策变量的维数，这大大增加了计算复杂度。此外，由于时间维度和空间维度的性质不同，问题的求解难度也显著增加 (Liang, Delahaye, and Marechal 2018; Pang, Huat, and Lv 2022)。考虑到战略冲突的消除，城市空中交通的 4D 轨迹规划尤其具有挑战性。</p>
-<p>AirMatrix 概念是为空域资源中心空域管理 (Bin Mohammed Salleh et al. 2018; Dai, Pang, and Low 2020, 2021; Pang et al. 2020)发起和开发的。其理念是将空域离散成块。通过在四个维度上分配和监控块的占用情况，可以实现空域的动态管理。在我们之前的研究中，基于 AirMatrix 概念 (Dai, Pang, and Low 2021)开发了 4D 路径规划算法。虽然在 AirMatrix 概念下已经实现了无冲突路径规划，但<strong>完全基于自由飞行假设的基于轨迹的运行将导致飞行高度 (FL) 利用不平衡，增加了空中交通的复杂性和空域管理的难度</strong>。</p>
-<p>本文提出了一种无冲突 UAM 飞行规划的空域资源中心方法。该方法基于 AirMatrix 概念下的新空域结构。在分层飞行概念下，4D 轨迹规划通过两个步骤实现。第一步为每次飞行生成最短的 3D 路径，第二步离散路径并通过操纵飞行时间来优化空域利用率。</p>
-<p>本文的其余部分组织如下。第 2 节介绍了城市空域管理的空域资源中心概念。第 3 节介绍了 4D 轨迹规划的方法。第 4 节解释了数值模拟和结果。第 5 节总结了本文。</p>
-<h1 id="以空域资源为中心的概念设计"><a href="#以空域资源为中心的概念设计" class="headerlink" title="以空域资源为中心的概念设计"></a>以空域资源为中心的概念设计</h1><p>说明了城市空域管理的空域资源中心概念。城市空域被划分为六边形柱阵列，所有空域用户的计划和实际空域资源利用情况。该概念要求飞行运营商提供其航班的实时跟踪信息。集中式空域管理服务器将空中飞行与各自的飞行计划进行比较，并识别异常空域占用情况。此类异常情况将提供给相应的空中导航服务提供商 (ANSP)，他们的城市空域管理员可以观察和解决潜在事件。</p>
-<p>该概念强调空域资源的利用。在高密度城市空中交通运行中，空域资源（包括空间体积、监视覆盖范围和其他导航服务）对于确保飞行安全至关重要。空域资源中心概念将促进这些资源的使用效率。同时，该概念提供了一个统一的框架来模拟各种运行（如 UAS、UAM 和通用航空飞行）的空域利用情况。此外，该概念使空域利用状态可视化，使城市空域管制员不必将过多的注意力放在单个飞机上，而是关注整个空域的情况。</p>
+<p>航班 4D 轨迹规划是一个优化问题，其目标取决于航班运营商的偏好 [<a
+href="#ref-5">4</a>]。在寻找最优解时，时间维度的引入增加了决策变量的维数，这大大增加了计算复杂度。此外，由于时间维度和空间维度的性质不同，问题的求解难度也显著增加
+[<a href="#ref-6">9</a>, <a
+href="#ref-7">11</a>]。考虑到战略冲突的消除，城市空中交通的 4D
+轨迹规划尤其具有挑战性。</p>
+<p>AirMatrix 概念是为空域资源中心空域管理 [<a href="#ref-8">1</a>–<a
+href="#ref-11">3</a>, <a
+href="#ref-10">10</a>]发起和开发的。其理念是将空域离散成块。通过在四个维度上分配和监控块的占用情况，可以实现空域的动态管理。在我们之前的研究中，基于
+AirMatrix 概念 [<a href="#ref-11">3</a>]开发了 4D 路径规划算法。虽然在
+AirMatrix
+概念下已经实现了无冲突路径规划，但<strong>完全基于自由飞行假设的基于轨迹的运行将导致飞行高度
+(FL) 利用不平衡，增加了空中交通的复杂性和空域管理的难度</strong>。</p>
+<p>本文提出了一种无冲突 UAM 飞行规划的空域资源中心方法。该方法基于
+AirMatrix 概念下的新空域结构。在分层飞行假设下，4D
+轨迹规划通过两个步骤实现。第一步为每次飞行生成最短的 3D
+路径，第二步离散化路径，并通过操控飞行时间来优化空域利用率。</p>
+<p>本文的其余部分组织如下。第 2
+节介绍了城市空域管理的空域资源中心概念。第 3 节介绍了 4D
+轨迹规划的方法。第 4 节解释了数值仿真和结果。第 5 节总结了本文。</p>
+<h1 id="以空域资源为中心的概念设计">以空域资源为中心的概念设计</h1>
+<p>说明了城市空域管理的空域资源中心概念。城市空域被划分为六边形柱阵列，所有空域用户的计划和实际空域资源利用情况。该概念要求飞行运营商提供其航班的实时跟踪信息。集中式空域管理服务器将空中飞行与各自的飞行计划进行比较，并识别异常空域占用情况。此类异常情况将提供给相应的空中导航服务提供商
+(ANSP)，他们的城市空域管理员可以观察和解决潜在事件。</p>
+<p>该概念强调空域资源的利用。在高密度城市空中交通运行中，空域资源（包括空间体积、监视覆盖范围和其他导航服务）对于确保飞行安全至关重要。空域资源中心概念将促进这些资源的使用效率。同时，该概念提供了一个统一的框架来仿真各种运行（如
+UAS、UAM
+和通用航空飞行）的空域利用情况。此外，该概念使空域利用状态可视化，使城市空域管制员不必将过多的注意力放在单个飞机上，而是关注整个空域的情况。</p>
 <figure id="fig:fig1">
 <div class="scriptsize">
 <div class="center">
-<img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-03.jpg" style="width:65.0%" />
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-03.jpg" style="width:65.0%" /></p>
 </div>
 </div>
-<figcaption>四维空域资源中心空域管理概念。</figcaption>
+<figcaption>
+图 1：四维空域资源中心空域管理概念。
+</figcaption>
 </figure>
-
-<p>值得注意的是，本研究开发了一种新的空域结构。我们将城市空域分成六边形柱。W. Xie 等 (Xie and Ouyang 2015)已证明服务区形状会影响物流系统的成本，其中六边形优于三角形和矩形。在本研究中，与块相比，六边形柱具有两大优势（如所示）：首先，在飞行过程中，飞机需要在水平和垂直方向上与其他飞机保持一定距离。该距离称为隔离，旨在吸收可能导致空中碰撞的不可避免的飞行偏差。最小隔离以圆形边缘的形式出现。与正方形相比，六边形更接近水平隔离 (HS) 边缘，从而减少了未使用的空域体积。事实上，在可以覆盖整个平面面积的正多边形中，六边形的边最多，即最接近圆形。因此，与块相比，六角柱在空域离散化时减少了浪费的空间面积。其次，在AirMatrix中构建路由网络时，成对区块之间的水平对角线链接没有任何侧向保护裕度。当相邻块被占用时，飞机可能会因偏差而侵入这些块。但禁用对角线链接会将路径规划中的水平自由度（DoF）降低到四个，从而导致飞行运行效率降低，因为路径的直线度差。六角柱结构提供了折衷方案，其中水平 DoF 为六个，提供了足够的侧向裕度。</p>
-<div class="scriptsize" markdown="1">
-
-<div class="center" markdown="1">
-
-<img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-04.jpg" style="width:65.0%" alt="image" />
-
+<p>值得注意的是，本研究开发了一种新的空域结构。我们将城市空域分成六边形柱。W.
+Xie 等 [<a
+href="#ref-12">19</a>]已证明服务区形状会影响物流系统的成本，其中六边形优于三角形和矩形。在本研究中，与块相比，六边形柱具有两大优势（如所示）：首先，在飞行过程中，飞机需要在水平和垂直方向上与其他飞机保持一定距离。该距离称为隔离，旨在吸收可能导致空中碰撞的不可避免的飞行偏差。最小隔离以圆形边缘的形式出现。与正方形相比，六边形更接近水平隔离
+(HS)
+边缘，从而减少了未使用的空域体积。事实上，在可以覆盖整个平面面积的正多边形中，六边形的边最多，即最接近圆形。因此，与块相比，六角柱在空域离散化时减少了浪费的空间面积。其次，在AirMatrix中构建路由网络时，成对区块之间的水平对角线链接没有任何侧向保护裕度。当相邻块被占用时，飞机可能会因偏差而侵入这些块。但禁用对角线链接会将路径规划中的水平自由度（DoF）降低到四个，从而导致飞行运行效率降低，因为路径的直线度差。</p>
+<figure id="fig:fig1a">
+<div class="scriptsize">
+<div class="center">
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-04.jpg" style="width:65.0%" /></p>
 </div>
-
 </div>
-
-<p>本研究中的概念验证 (PoC) 研究以新加坡裕廊东的 $2 \times 2 \mathrm{~km}$ 城市区域为场景，如所示。六边形柱的尺寸根据我们之前的研究 (Deng, Wang, and Low 2021; Wang, Ng, and Low 2021)的结果决定。每个六边形的边长为 20 米，提供的置信度高于 $99 %$ ，即飞机不会水平偏离分配给它的空域单元。每个单元的高度为 40 米，这是基于城市环境中典型机载 GPS 系统垂直导航误差测量的 $0.5 %$ 和 $99.5 %$ 百分位数。在 200 米的高度限制下，构建了四层单元，代表四个飞行高度层。在此区域生成六边形柱单元，建筑物占据的单元如所示</p>
-<h1 id="空域资源中心无冲突-4D-轨迹规划"><a href="#空域资源中心无冲突-4D-轨迹规划" class="headerlink" title="空域资源中心无冲突 4D 轨迹规划"></a>空域资源中心无冲突 4D 轨迹规划</h1><p>说明了空域资源中心轨迹规划的方法。首先，根据起点-终点对的位置为每个飞行计划分配一个飞行高度。下一步，将生成一条三维路径。在由连接代表空域单元中心的节点的链接所形成的网络中，将采用 A-Star（ $\mathrm{A}^{*}$ ）算法来创建最短路径。然后在进行下一步之前对路径进行平滑处理。最后，通过操纵速度和加速度，采用线性规划（LP）方法实现 4D 无冲突轨迹规划。本章的其余部分将进一步解释轨迹规划方法的细节。</p>
+<figcaption>
+六角柱结构提供了折衷方案，其中水平 DoF 为六个，提供了足够的侧向裕度。
+</figcaption>
+</figure>
+<p>本研究中的概念验证 (PoC) 研究以新加坡裕廊东的 <span
+class="math inline">\(2 \times 2 \mathrm{~km}\)</span>
+城市区域为场景，如所示。六边形柱的尺寸根据我们之前的研究 [<a
+href="#ref-13">5</a>, <a
+href="#ref-14">18</a>]的结果决定。每个六边形的边长为 20
+米，提供的置信度高于 <span class="math inline">\(99 \%\)</span>
+，即飞机不会水平偏离分配给它的空域单元。每个单元的高度为 40
+米，这是基于城市环境中典型机载 GPS 系统垂直导航误差测量的 <span
+class="math inline">\(0.5 \%\)</span> 和 <span
+class="math inline">\(99.5 \%\)</span> 百分位数。在 200
+米的高度限制下，构建了四层单元，代表四个飞行高度层。在此区域生成六边形柱单元，建筑物占据的单元如所示</p>
+<h1 id="空域资源中心无冲突-4d-轨迹规划">空域资源中心无冲突 4D
+轨迹规划</h1>
+<p>本节说明空域资源中心轨迹规划的方法：1）根据起点-终点对的位置为每个飞行计划分配一个飞行高度。2）生成一条三维路径。在由连接代表空域单元中心的节点的链接所形成的网络中，采用
+A*
+算法创建最短路径，并对路径做平滑处理。3）通过操控速度和加速度，采用线性规划（LP）方法实现
+4D 无冲突轨迹规划。</p>
+<p>本章的其余部分将进一步解释轨迹规划方法的细节。</p>
 <figure id="fig:fig2">
 <div class="scriptsize">
 <div class="center">
-<img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-05(1).jpg" style="width:65.0%" />
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-05(1).jpg" style="width:65.0%" /></p>
 </div>
 </div>
-<figcaption>以新加坡的城市地区作为模拟场景。</figcaption>
+<figcaption>
+图 2：以新加坡的城市地区作为仿真场景。
+</figcaption>
 </figure>
-
 <figure id="fig:fig3">
 <div class="scriptsize">
 <div class="center">
-<img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-05.jpg" style="width:65.0%" />
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-05.jpg" style="width:65.0%" /></p>
 </div>
 </div>
-<figcaption>空域中被建筑物占据的单元格。</figcaption>
+<figcaption>
+图 3：空域中被建筑物占据的单元格。
+</figcaption>
 </figure>
-
-<h2 id="飞行高度分配"><a href="#飞行高度分配" class="headerlink" title="飞行高度分配"></a>飞行高度分配</h2><p>我们之前的研究结果表明，在自由飞行假设下全面实施基于轨迹的运行将导致高度利用不平衡，其中低高度空域的利用率高于高高度空域 (Dai, Pang, and Low 2021)。</p>
+<h2 id="飞行高度分配">1）飞行高度分配</h2>
+<p>之前的研究结果表明，在自由飞行假设下，全面实施基于轨迹的运行，会导致在高度维上的利用不平衡，低高度空域的利用率会高于高高度空域
+[<a href="#ref-11">3</a>]。</p>
 <figure id="fig:fig4">
 <div class="scriptsize">
 <div class="center">
-<img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-06.jpg" style="width:65.0%" />
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-06.jpg" style="width:65.0%" /></p>
 </div>
 </div>
-<figcaption>空域资源中心无冲突 4D 轨迹规划方法。</figcaption>
+<figcaption>
+图 4：空域资源中心无冲突 4D 轨迹规划方法。
+</figcaption>
 </figure>
-
-<p>这种不平衡将对城市空中交通运行产生双重不利影响。一方面，过于拥挤的低空导致没有空域空间供新航班爬升到高空，因此高空空域未得到充分利用，从而降低了城市空域的总容量。另一方面，不平衡的空中交通密度将导致局部交通密度过高，从而导致发生碰撞的风险很高。在本研究中，我们寻求一种更平衡地利用不同高度的方法。</p>
-<p>目前已有许多研究探讨空域结构设计与空中交通性能之间的关系，其中，E. Sunil 等（ (Sunil et al. 2017, 2018)）进行的基于模拟的研究表明，与高度密集的城市地区的完全混合、区域和管道相比，分层结构具有增加空域容量的优势。在另一项研究中，J. Hoesktra（ (Hoekstra et al. 2018)）开发了一种地理矢量概念，其中分配具有相似地速方向的航班可降低空中交通的复杂性和潜在冲突的概率，从而通过增加容量来有利于交通流量。</p>
-<p>受上述研究的启发，在本研究中，我们采用分层空域，即要求每个航班在巡航期间保持其高度。根据起点-终点角度将航班分配到各个高度层，起点-终点角度定义为北向与出发地到目的地方向之间的顺时针角度。在本研究中使用的城市空域中，建立了四个高度层。因此，航班按照分配。在本研究中，由于缺乏关于现实世界的城市空中交通需求的数据，将使用均匀分布的随机起点-终点对。因此，将均匀使用四个高度层。在实际应用中，可以根据空域层数将阈值设置为需求起点-终点角度的百分位数来调整起点-终点角度间隔。</p>
-<div class="scriptsize" markdown="1">
-
-<div class="center" markdown="1">
-
-<div id="tab:tab2" markdown="1">
-
+<p>这种不平衡将对城市空中交通运行产生双重不利影响。一方面，高空空域未得到充分利用，从而降低了城市空域的总容量。另一方面，不平衡的空中交通密度将导致局部交通密度过高，进而导致碰撞风险增加。在本研究中，我们寻求一种更平衡地利用不同高度的方法。</p>
+<p>目前已有许多研究探讨空域结构设计与空中交通性能之间的关系，其中，E.
+Sunil 等（ [<a href="#ref-16">14</a>, <a
+href="#ref-15">15</a>]）进行的基于仿真的研究表明，在高度密集城市地区，与
+Full Mix、Zones 和 Tubes
+空域结构相比，分层结构可以增加空域容量。在另一项研究中，J. Hoesktra（
+[<a
+href="#ref-17">6</a>]）开发了一种地理矢量概念，将具有相似飞行方向的航班分配在同一层，可有效降低空中交通的复杂性和潜在冲突的概率，进而增加容量、提升交通流量。</p>
+<p>受上述研究的启发，在本研究中，我们将采用分层空域结构，即要求每个航班在巡航期间保持高度不变。根据起点-终点角度将航班分配到各个高度层，起点-终点角度定义为与出发地到目的地方向之间以北向为基准的顺时针角度。<strong>在本研究中使用的城市空域中，建立了四个高度层</strong>。因此，航班按照分配。在本研究中，由于缺乏关于现实世界的城市空中交通需求的数据，将使用均匀分布的随机起点-终点对。因此，将均匀使用四个高度层。下表为四个高度层对应的北向角度区间，在实际应用中，可以根据空域层数要求按需调整角度区间。</p>
+<div class="scriptsize">
+<div class="center">
+<div id="tab:tab2">
 <table>
+<caption>高度指定</caption>
 <thead>
 <tr>
-<th align="center">OD angle interval $\left({}^{\circ}\right)$</th>
-<th align="center">Flight level</th>
-<th align="center">Altitude $(\mathrm{m})$</th>
+<th style="text-align: center;">OD angle interval <span
+class="math inline">\(\left({}^{\circ}\right)\)</span></th>
+<th style="text-align: center;">Flight level</th>
+<th style="text-align: center;">Altitude <span
+class="math inline">\((\mathrm{m})\)</span></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">$[0,90)$</td>
-<td align="center">$1^{\text{st}}$</td>
-<td align="center">40</td>
+<tbody>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\([0,90)\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(1^{\text{st}}\)</span></td>
+<td style="text-align: center;">40</td>
 </tr>
 <tr>
-<td align="center">$[90,180)$</td>
-<td align="center">$2^{\text{nd}}$</td>
-<td align="center">80</td>
+<td style="text-align: center;"><span
+class="math inline">\([90,180)\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(2^{\text{nd}}\)</span></td>
+<td style="text-align: center;">80</td>
 </tr>
 <tr>
-<td align="center">$[180,270)$</td>
-<td align="center">$3^{r d}$</td>
-<td align="center">120</td>
+<td style="text-align: center;"><span
+class="math inline">\([180,270)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3^{r
+d}\)</span></td>
+<td style="text-align: center;">120</td>
 </tr>
 <tr>
-<td align="center">$[270,360)$</td>
-<td align="center">$4^{\text{th}}$</td>
-<td align="center">160</td>
+<td style="text-align: center;"><span
+class="math inline">\([270,360)\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(4^{\text{th}}\)</span></td>
+<td style="text-align: center;">160</td>
 </tr>
-</tbody></table>
-<p>高度指定</p>
+</tbody>
+</table>
 </div>
-
 </div>
-
 </div>
-
-<h2 id="3D-路径生成"><a href="#3D-路径生成" class="headerlink" title="3D 路径生成"></a>3D 路径生成</h2><p>为了提供最短的3D路径作为轨迹规划的输入，进行了3D路径生成，其中包括两个步骤。</p>
-<h3 id="A-路径查找"><a href="#A-路径查找" class="headerlink" title="A* 路径查找"></a>A* 路径查找</h3><p>在每个飞行高度，水平层的单元格自然形成一个节点和链接图，其中节点是单元格的中心。每个单元格通过六条链接连接到六个邻居单元格。可以应用许多基于图的路径规划算法来找到起点-终点对之间的最短路径，例如 Dijkstra 算法、A* 算法等 (LaValle 2006)。在本研究中，我们使用 A* 算法，因为它具有最优性和计算效率。</p>
-<h3 id="路径平滑"><a href="#路径平滑" class="headerlink" title="路径平滑"></a>路径平滑</h3><p>A* 算法在起点-终点对之间找到一条最优路径。最优路径是一组连接单元中心的直线段。因此，需要进行平滑处理以生成飞机可遵循的飞行路径。可以应用许多技术来解决这个问题，包括贝塞尔样条曲线、B 样条曲线等 (Ravankar et al. 2018)。在本研究中，我们使用一种简单的方法。当单元中心的航向发生变化时，我们使用与路径相切的圆弧连接计划路径与单元边界的交点。除了该方法提供的一阶和二阶导数的连续性（指连续速度和加速度）之外，我们选择该方法还因为计算平滑路径的距离很简单。计算出的距离将用于下一步的轨迹规划。</p>
-<h2 id="4D-轨迹规划"><a href="#4D-轨迹规划" class="headerlink" title="4D 轨迹规划"></a>4D 轨迹规划</h2><p>在4D轨迹规划中，采用数学规划方法，尽量减少空域占用，从而更好地利用空域资源。</p>
-<h3 id="决策变量"><a href="#决策变量" class="headerlink" title="决策变量"></a>决策变量</h3><p>在轨迹规划中，我们需要将路径离散化为多个步骤，并生成每一步的速度和加速度，以形成在运动学和冲突避免约束下最优化目标的四维轨迹。轨迹可以按时间或距离离散化 (Tian et al. 2021)。由于每一步的速度不确定，飞行所需的总时间是未知的，因此很难按时间离散化轨迹。因此在本研究中，轨迹按距离离散化。</p>
-<p>在上一节中，我们生成了一条从原点到目的地的最短水平路径，并计算出了该路径的总距离。这使我们能够对该路径进行等距离离散化。设路径的总距离为 $D$ ，采样间隔（步长）为 $\delta$。该路径可以离散化为 $N&#x3D;D &#x2F; \delta$ 段，总共会有 $N+1$ 个节点。本研究中的决策变量是飞机到达每个节点的时间： $\boldsymbol{t}&#x3D;\left[t_{0}, t_{1}, t_{2}, \ldots, t_{N}\right]$。</p>
-<p>只要确定了 $\boldsymbol{t}$ ，速度和加速度就可以通过以下方式计算：</p>
-<p>$$\begin{aligned}<br>    v_{i} &amp; &#x3D;\frac{\delta}{t_{i+1}-t_{i}}, i&#x3D;0,1, \ldots, N-1 \tag{1}        \<br>    a_{i} &amp; &#x3D;\frac{v_{i+1}-v_{i}}{t_{i+1}-t_{i}}, i&#x3D;0,1, \ldots, N-1 \tag{2}<br>\end{aligned}$$</p>
+<h2 id="d-路径生成">2）3D 路径生成</h2>
+<p>为了提供最短的3D路径作为轨迹规划的输入，进行了3D路径生成，其中包括两个步骤。</p>
+<h3 id="a-路径查找">A* 路径查找</h3>
+<p>在每个飞行高度，水平层的单元格自然形成一个节点和链接图，其中节点是单元格的中心。每个单元格通过六条链接连接到六个邻居单元格。可以应用许多基于图的路径规划算法来找到起点-终点对之间的最短路径，例如
+Dijkstra 算法、A* 算法等 [<a href="#ref-18">7</a>]。在本研究中，我们使用
+A* 算法，因为它具有最优性和计算效率。</p>
+<h3 id="路径平滑">路径平滑</h3>
+<p>A*
+算法在起点-终点对之间找到一条最优路径。最优路径是一组连接单元中心的直线段。因此，需要进行平滑处理以生成飞机可遵循的飞行路径。可以应用许多技术来解决这个问题，包括贝塞尔样条曲线、B
+样条曲线等 [<a
+href="#ref-19">12</a>]。在本研究中，我们使用一种简单的方法。当单元中心的航向发生变化时，我们使用与路径相切的圆弧连接计划路径与单元边界的交点。除了该方法提供的一阶和二阶导数的连续性（指连续速度和加速度）之外，我们选择该方法还因为计算平滑路径的距离很简单。计算出的距离将用于下一步的轨迹规划。</p>
+<h2 id="d-轨迹规划">3）4D 轨迹规划</h2>
+<p>在4D轨迹规划中，采用数学规划方法，尽量减少空域占用，从而更好地利用空域资源。</p>
+<h3 id="决策变量">决策变量</h3>
+<p>在轨迹规划中，我们需要将路径离散化为多个步骤，并生成每一步的速度和加速度，以形成在运动学和冲突避免约束下最优化目标的四维轨迹。轨迹可以按时间或距离离散化
+[<a
+href="#ref-20">17</a>]。由于每一步的速度不确定，飞行所需的总时间是未知的，因此很难按时间离散化轨迹。因此在本研究中，轨迹按距离离散化。</p>
+<p>在上一节中，我们生成了一条从原点到目的地的最短水平路径，并计算出了该路径的总距离。这使我们能够对该路径进行等距离离散化。设路径的总距离为
+<span class="math inline">\(D\)</span> ，采样间隔（步长）为 <span
+class="math inline">\(\delta\)</span>。该路径可以离散化为 <span
+class="math inline">\(N=D / \delta\)</span> 段，总共会有 <span
+class="math inline">\(N+1\)</span>
+个节点。本研究中的决策变量是飞机到达每个节点的时间： <span
+class="math inline">\(\boldsymbol{t}=\left[t_{0}, t_{1}, t_{2}, \ldots,
+t_{N}\right]\)</span>。</p>
+<p>只要确定了 <span class="math inline">\(\boldsymbol{t}\)</span>
+，速度和加速度就可以通过以下方式计算：</p>
+<p><span class="math display">\[\begin{align*}
+    v_{i} &amp; =\frac{\delta}{t_{i+1}-t_{i}}, \quad i=0,1, \ldots, N-1
+\tag{1}        \\
+    a_{i} &amp; =\frac{v_{i+1}-v_{i}}{t_{i+1}-t_{i}},\quad i=0,1,
+\ldots, N-1 \tag{2}
+\end{align*}\]</span></p>
 <p>将公式（1）代入公式（2）：</p>
-<p>$$a_{i}&#x3D;\frac{\delta\left(2 t_{i+1}-t_{i}-t_{i+2}\right)}{\left(t_{i+2}-t_{i+1}\right)\left(t_{i+1}-t_{i}\right)^{2}}, i&#x3D;0,1, \ldots, N-2 \tag{3}$$</p>
-<h3 id="问题表述"><a href="#问题表述" class="headerlink" title="问题表述"></a>问题表述</h3><p>轨迹的优化可以表述为：</p>
-<p>$$\begin{aligned}<br>     &amp; \underset{t}{\operatorname{minimize}}\quad J_{A R C}&#x3D;\sum_{i&#x3D;0}^{N-1}O_{i}\left(t_{i+1}-t_{i}\right) \tag{4a} \<br>     &amp; \text{subject to}\tag{4b}                                                                                     \<br>     &amp; t_{i+1}-t_{i}\geq \frac{\delta}{v_{\max}}                                                                     \<br>     &amp; \frac{v_{\max}^{3}}{\delta^{2}}\left(2 t_{i+1}-t_{i}-t_{i+2}\right) \geq a_{\min}\tag{4c}                     \<br>     &amp; \frac{v_{\max}^{3}}{\delta^{2}}\left(2 t_{i+1}-t_{i}-t_{i+2}\right) \leq a_{\max}\tag{4d}                     \<br>     &amp; t_{j}\in A_{j}\tag{4e}<br>\end{aligned}$$</p>
-<p>空域资源中心目标式 4a 是最小化一次飞行所占用的总体空域，其中 $O_{i}$ 是 $i^{t h}$ 时间步长的空域占用率。约束式 $4 \mathrm{~b}, 4 \mathrm{c}$ ) 和 4 d 是运动学约束。约束式 4 b 等同于 $0 \leq v_{i}\leq v_{\max}$。由于 $\delta$ 和 $v_{\max}$ 为正，约束式 4b) 也确保 $t_{i}&lt;t_{i+1}$。约束式 (4c) 和 (4d) 等同于 $a_{\min}\leq a_{i}\leq a_{\max}$。约束式 (4e) 展示了模型中的冲突避免特性，其中 $A_{j}$ 是 $\mathbb{R}$ 中的连续集，指的是单元格 $j$ 的最近可用时间窗口。回想一下， $t_{j}$ 指的是飞机到达节点 $j$ 的时间，节点 $j$ 的位置是距离原点 $j \delta$ 的路径上的点。因此，节点 $j$ 所在的单元格是已知的。基于先来先服务 (FCFS) 方案，该算法为每次飞行规划一条轨迹。规划的轨迹将转移到单元格占用序列。每个单元格的占用时间将记录为不可用。</p>
-<h1 id="数值模拟和结果"><a href="#数值模拟和结果" class="headerlink" title="数值模拟和结果"></a>数值模拟和结果</h1><p>在第 2 节描述的裕廊东地区进行数值模拟。在此区域内，随机生成 1,000 个飞行计划，包括起点和终点。每个飞行计划都分配了一个出发时间，该时间在 5 分钟的时间窗口内随机分配。每个飞行计划都分配了一个飞行高度层。说明了飞行高度层的分配，其中起点-终点对用箭头表示。为了更清楚，图中仅显示了 200 个航班。</p>
+<p><span class="math display">\[a_{i}=\frac{\delta\left(2
+t_{i+1}-t_{i}-t_{i+2}\right)}{\left(t_{i+2}-t_{i+1}\right)\left(t_{i+1}-t_{i}\right)^{2}},\quad
+i=0,1, \ldots, N-2 \tag{3}\]</span></p>
+<h3 id="问题表述">问题表述</h3>
+<p>轨迹的优化可以表述为：</p>
+<p><span class="math display">\[\begin{align*}
+     \underset{t}{\operatorname{minimize}}\quad &amp; J_{A R
+C}=\sum_{i=0}^{N-1}O_{i}\left(t_{i+1}-t_{i}\right) \tag{4a} \\
+     \text{subject to}&amp;
+\tag{4b}                                                                                     \\
+     &amp; t_{i+1}-t_{i}\geq
+\frac{\delta}{v_{\max}}                                                                     \\
+     &amp; \frac{v_{\max}^{3}}{\delta^{2}}\left(2
+t_{i+1}-t_{i}-t_{i+2}\right) \geq
+a_{\min}\tag{4c}                     \\
+     &amp; \frac{v_{\max}^{3}}{\delta^{2}}\left(2
+t_{i+1}-t_{i}-t_{i+2}\right) \leq
+a_{\max}\tag{4d}                     \\
+     &amp; t_{j}\in A_{j}\tag{4e}
+\end{align*}\]</span></p>
+<p>目标公式(4a) 是最小化一次飞行所占用的总体空域，其中 <span
+class="math inline">\(O_{i}\)</span> 是第 <span
+class="math inline">\(i^{t h}\)</span> 个时间步的空域占用率。式
+(4b)、(4c)、(4d) 是运动学约束。式（4b） 等同于 <span
+class="math inline">\(0 \leq v_{i}\leq v_{\max}\)</span>。由于 <span
+class="math inline">\(\delta\)</span> 和 <span
+class="math inline">\(v_{\max}\)</span> 为正，式 (4b) 也确保 <span
+class="math inline">\(t_{i}&lt;t_{i+1}\)</span>。式 (4c) 和 (4d) 等同于
+<span class="math inline">\(a_{\min}\leq a_{i}\leq
+a_{\max}\)</span>。<strong>式 (4e) 展示了模型中的冲突避免特性，其中
+<span class="math inline">\(A_{j}\)</span> 是 <span
+class="math inline">\(\mathbb{R}\)</span> 中的连续集，指的是单元格 <span
+class="math inline">\(j\)</span> 的最近可用时间窗口</strong>。回想一下，
+<span class="math inline">\(t_{j}\)</span> 指的是飞机到达节点 <span
+class="math inline">\(j\)</span> 的时间，节点 <span
+class="math inline">\(j\)</span> 的位置是距离原点 <span
+class="math inline">\(j \delta\)</span> 的路径上的点。因此，节点 <span
+class="math inline">\(j\)</span> 所在的单元格是已知的。基于先来先服务
+(FCFS)
+方案，该算法为每次飞行规划一条轨迹。规划的轨迹将转换为单元格占用序列。每个单元格的占用时间将记录为不可用。</p>
+<h1 id="数值仿真和结果">数值仿真和结果</h1>
+<p>在第 2 节描述的裕廊东地区进行数值仿真。在此区域内，随机生成 1,000
+个飞行计划，包括起点和终点。每个飞行计划都分配了一个出发时间，该时间在 5
+分钟的时间窗口内随机分配。每个飞行计划都分配了一个飞行高度层。说明了飞行高度层的分配，其中起点-终点对用箭头表示。为了更清楚，图中仅显示了
+200 个航班。</p>
 <figure id="fig:fig5">
 <div class="scriptsize">
 <div class="center">
-<img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-08.jpg" style="width:65.0%" />
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-08.jpg" style="width:65.0%" /></p>
 </div>
 </div>
-<figcaption>基于起点-终点角的飞行高度分配示例（200 次飞行）</figcaption>
+<figcaption>
+图 5：基于起点-终点角的飞行高度分配示例（200 次飞行）
+</figcaption>
 </figure>
-
-<p>该程序在具有 $\operatorname{Intel}(\mathrm{R})$ Core(TM) i9-9900X CPU 的工作站上运行，该工作站具有 10 个物理核心、20 个逻辑处理器，并支持最多 20 个线程。线性规划问题通过其 Python API 使用 Gurobi v9.5 求解器解决。Gurobi 求解器能够充分利用 20 个逻辑处理器通过并行计算来加速。</p>
-<p>算法的运行时间如所示。$A^{*}$ 算法的运行时间中值为0.12秒，尽管有一些异常值，但绝大多数都少于0.6秒。解决LP问题的时间更短。即使包括处理时间，LP求解器所需的总时间也少于0.1秒。总而言之，包括3D路径规划和4D轨迹优化在内的规划器对于大多数飞行所需的运行时间少于1秒。</p>
-<p>是一次飞行中速度变化趋势的示例。（a）显示了速度与飞行距离的关系，（b）显示了速度与飞行时间的关系。水平红色虚线表示飞机的最大速度，对于该飞机而言为 $15 \mathrm{<del>m}&#x2F; \mathrm{s}$。此次飞行在巡航过程中达到了最大速度。示出了飞行方向平均速度的统计视图。如（a）所示，平均速度的中值大约为 $5 \mathrm{</del>m}&#x2F; \mathrm{s}$ ，大部分平均速度都在 $4 \mathrm{<del>m}&#x2F; \mathrm{s}$ 和 $7.5 \mathrm{</del>m}&#x2F; \mathrm{s}$ 之间。降低平均速度的因素之一是时间窗约束，有时需要飞机减速以避免冲突。另一个因素是起始速度设置为零，需要有一个加速过程才能达到高速度。b）示出了平均速度与总飞行距离的关系，其呈现增长趋势，但斜率却下降。</p>
+<p>该程序在具有 Intel Core(TM) i9-9900X CPU 的工作站上运行，该工作站具有
+10 个物理核心、20 个逻辑处理器，并支持最多 20 个线程。线性规划问题通过其
+Python API 使用 Gurobi v9.5 求解器解决。Gurobi 求解器能够充分利用 20
+个逻辑处理器通过并行计算来加速。</p>
+<p>算法的运行时间如所示。A*
+算法的运行时间中值为0.12秒，尽管有一些异常值，但绝大多数都少于0.6秒。解决LP问题的时间更短。即使包括处理时间，LP求解器所需的总时间也少于0.1秒。总而言之，包括3D路径规划和4D轨迹优化在内的规划器对于大多数飞行所需的运行时间少于1秒。</p>
+<p>下图是一次飞行中速度变化趋势的示例。（a）显示了速度与飞行距离的关系，（b）显示了速度与飞行时间的关系。水平红色虚线表示飞机的最大速度，对于该飞机而言为
+<span class="math inline">\(15 \mathrm{~m}/
+\mathrm{s}\)</span>。此次飞行在巡航过程中达到了最大速度。示出了飞行方向平均速度的统计视图。如（a）所示，平均速度的中值大约为
+<span class="math inline">\(5 \mathrm{~m}/ \mathrm{s}\)</span>
+，大部分平均速度都在 <span class="math inline">\(4 \mathrm{~m}/
+\mathrm{s}\)</span> 和 <span class="math inline">\(7.5 \mathrm{~m}/
+\mathrm{s}\)</span>
+之间。降低平均速度的因素之一是时间窗约束，有时需要飞机减速以避免冲突。另一个因素是起始速度设置为零，需要有一个加速过程才能达到高速度。b）示出了平均速度与总飞行距离的关系，其呈现增长趋势，但斜率却下降。</p>
 <figure id="fig:fig6">
 <div class="scriptsize">
 <div class="center">
-<img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-09.jpg" style="width:65.0%" />
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-09.jpg" style="width:65.0%" /></p>
 </div>
 </div>
-<figcaption>算法的运行时间</figcaption>
+<figcaption>
+图 6： 算法的运行时间
+</figcaption>
 </figure>
-
 <figure id="fig:fig7">
 <div class="scriptsize">
 <div class="center">
-<img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-09(1).jpg" style="width:65.0%" />
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-09(1).jpg" style="width:65.0%" /></p>
 </div>
 </div>
-<figcaption>样本飞行的速度模式</figcaption>
+<figcaption>
+图 7：样本飞行的速度模式
+</figcaption>
 </figure>
-
 <figure id="fig:fig8">
 <div class="scriptsize">
 <div class="center">
-<img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-09(2).jpg" style="width:65.0%" />
+<p><img src="https://xishansnowblog.oss-cn-beijing.aliyuncs.com/images/vll/2025_01_06_958caff9da3472142ee4g-09(2).jpg" style="width:65.0%" /></p>
 </div>
 </div>
-<figcaption>1000 个航班平均速度统计视图</figcaption>
+<figcaption>
+图 8：1000 个航班平均速度统计视图
+</figcaption>
 </figure>
-
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>本文提出了一种优化空域资源利用的轨迹规划方法。AirMatrix 被作为城市空域管理的概念实施。我们开发了一种由六边形柱构成的新空域结构，以利用其在水平安全裕度方面的优势。采用分层空域设计，其中每个飞行计划根据起点-终点角度分配到四个飞行高度之一。在规划和平滑 3D 路径后，使用线性规划方法生成具有冲突避免的 4D 轨迹。线性规划问题通过商业求解器进行了优化，结果表明空域资源中心方法能够有效地生成具有最佳空域资源利用率的 4D 轨迹。</p>
+<h1 id="结论">结论</h1>
+<p>本文提出了一种优化空域资源利用的轨迹规划方法。AirMatrix
+被作为城市空域管理的概念实施。我们开发了一种由六边形柱构成的新空域结构，以利用其在水平安全裕度方面的优势。采用分层空域设计，其中每个飞行计划根据起点-终点角度分配到四个飞行高度之一。在规划和平滑
+3D 路径后，使用线性规划方法生成具有冲突避免的 4D
+轨迹。线性规划问题通过商业求解器进行了优化，结果表明空域资源中心方法能够有效地生成具有最佳空域资源利用率的
+4D 轨迹。</p>
 <p>在未来的工作中，研究可能会集中于批量规划多条轨迹，从而避免FCFS方案中忽略的优先级问题。这将促进飞行运营商的公平性，并朝着全球优化空域利用的方向发展。</p>
-<h1 id="致谢-致谢"><a href="#致谢-致谢" class="headerlink" title="致谢 [致谢]"></a>致谢 [致谢]</h1><p>本研究由新加坡国家研究基金会和新加坡民航局在航空转型计划下资助。本材料中表达的任何意见、发现和结论或建议均为作者的观点，并不反映新加坡国家研究基金会和新加坡民航局的观点。</p>
-<div id="refs" class="references csl-bib-body hanging-indent" markdown="1" entry-spacing="0">
-
-<div id="ref-8" class="csl-entry" markdown="1">
-
-<p>Bin Mohammed Salleh, M. F., W. Chi, Z. Wang, S. Huang, D. Y. Tan, T. Huang, and K. H. Low. 2018. “Preliminary Concept of Adaptive Urban Airspace Management for Unmanned Aircraft Operations.” <em>AIAA Information Systems-AIAA Infotech at Aerospace</em>, no. 209989: 1–12.</p>
+<h1 class="unnumbered" id="致谢">致谢</h1>
+<p>本研究由新加坡国家研究基金会和新加坡民航局在航空转型计划下资助。本材料中表达的任何意见、发现和结论或建议均为作者的观点，并不反映新加坡国家研究基金会和新加坡民航局的观点。</p>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0"
+role="list">
+<div id="ref-8" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1]</div><div class="csl-right-inline">M.
+F. Bin Mohammed Salleh, W. Chi, Z. Wang, S. Huang, D. Y. Tan, T. Huang,
+and K. H. Low. 2018. Preliminary concept of adaptive urban airspace
+management for unmanned aircraft operations. <em>AIAA Information
+Systems-AIAA Infotech at Aerospace</em> 209989 (2018), 1–12.</div>
 </div>
-
-<div id="ref-9" class="csl-entry" markdown="1">
-
-<p>Dai, W., B. Pang, and K. H. Low. 2020. “Accessibility Analysis of Unmanned Aerial Vehicles Near Airports with a FourDimensional Airspace Management Concept.” In <em>2020 AIAA&#x2F;IEEE 39th Digital Avionics Systems Conference (DASC)</em>, 1–9.</p>
+<div id="ref-9" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2]</div><div class="csl-right-inline">W.
+Dai, B. Pang, and K. H. Low. 2020. Accessibility analysis of unmanned
+aerial vehicles near airports with a FourDimensional airspace management
+concept. In <em>2020 AIAA/IEEE 39th digital avionics systems conference
+(DASC)</em>, 2020. 1–9.</div>
 </div>
-
-<div id="ref-11" class="csl-entry" markdown="1">
-
-<p>———. 2021. “Conflict-Free Four-Dimensional Path Planning for Urban Air Mobility Considering Airspace Occupancy.” <em>Aerospace Science and Technology</em> 119: 107154.</p>
+<div id="ref-11" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3]</div><div class="csl-right-inline">W.
+Dai, B. Pang, and K. H. Low. 2021. Conflict-free four-dimensional path
+planning for urban air mobility considering airspace occupancy.
+<em>Aerospace Science and Technology</em> 119, (2021), 107154.</div>
 </div>
-
-<div id="ref-5" class="csl-entry" markdown="1">
-
-<p>Delahaye, D., S. Puechmorel, P. Tsiotras, and E. Feron. 2014. “Mathematical Models for Aircraft Trajectory Design: A Survey,”.”</p>
+<div id="ref-5" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4]</div><div class="csl-right-inline">D.
+Delahaye, S. Puechmorel, P. Tsiotras, and E. Feron. 2014. Mathematical
+models for aircraft trajectory design: A survey,".</div>
 </div>
-
-<div id="ref-13" class="csl-entry" markdown="1">
-
-<p>Deng, C., C. H. J. Wang, and K. H. Low. 2021. “Preliminary UAS Navigation Performance Analysis in Urban-Like Environments.” <em>AIAA Aviation 2021 Forum</em>, 2385.</p>
+<div id="ref-13" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5]</div><div class="csl-right-inline">C.
+Deng, C. H. J. Wang, and K. H. Low. 2021. Preliminary UAS navigation
+performance analysis in urban-like environments. <em>AIAA Aviation 2021
+Forum</em> (2021), 2385.</div>
 </div>
-
-<div id="ref-17" class="csl-entry" markdown="1">
-
-<p>Hoekstra, J., J. Ellerbroek, E. Sunil, and J. Maas. 2018. “Geovectoring: Reducing Traffic Complexity to Increase the Capacity of UAV Airspace.” In <em>2018 International Conference on Research in Air Transportation</em>.</p>
+<div id="ref-17" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6]</div><div class="csl-right-inline">J.
+Hoekstra, J. Ellerbroek, E. Sunil, and J. Maas. 2018. Geovectoring:
+Reducing traffic complexity to increase the capacity of UAV airspace. In
+<em>2018 international conference on research in air
+transportation</em>, 2018.</div>
 </div>
-
-<div id="ref-18" class="csl-entry" markdown="1">
-
-<p>LaValle, S. M. 2006. <em>Planning Algorithms</em>. Cambridge university press.</p>
+<div id="ref-18" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7]</div><div class="csl-right-inline">S.
+M. LaValle. 2006. <em>Planning algorithms</em>. Cambridge university
+press.</div>
 </div>
-
-<div id="ref-3" class="csl-entry" markdown="1">
-
-<p>Li, C. L., W. Q. Qu, Y. D. Li, L. Y. Huang, and P. Wei. 2020. “Overview of Traffic Management of Urban Air Mobility (UAM) with eVTOL Aircraft.” <em>Jiaotong Yunshu Gongcheng Xuebao&#x2F;Journal of Traffic and Transportation Engineering</em> 20: 35–54.</p>
+<div id="ref-3" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8]</div><div class="csl-right-inline">C.
+L. Li, W. Q. Qu, Y. D. Li, L. Y. Huang, and P. Wei. 2020. Overview of
+traffic management of urban air mobility (UAM) with eVTOL aircraft.
+<em>Jiaotong Yunshu Gongcheng Xuebao/Journal of Traffic and
+Transportation Engineering</em> 20, (2020), 35–54.</div>
 </div>
-
-<div id="ref-6" class="csl-entry" markdown="1">
-
-<p>Liang, M., D. Delahaye, and P. Marechal. 2018. “Conflict-Free Arrival and Departure Trajectory Planning for Parallel Runway with Advanced Point-Merge System.” <em>Transportation Research Part C: Emerging Technologies</em> 95: 207–27.</p>
+<div id="ref-6" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[9]</div><div class="csl-right-inline">M.
+Liang, D. Delahaye, and P. Marechal. 2018. Conflict-free arrival and
+departure trajectory planning for parallel runway with advanced
+point-merge system. <em>Transportation Research Part C: Emerging
+Technologies</em> 95, (2018), 207–227.</div>
 </div>
-
-<div id="ref-10" class="csl-entry" markdown="1">
-
-<p>Pang, B., W. Dai, T. Ra, and K. H. Low. 2020. “A Concept of Airspace Configuration and Operational Rules for UAS in Current Airspace.” In <em>AIAA&#x2F;IEEE Digital Avionics Systems Conference - Proceedings</em>. Vol. 2020–Octob.</p>
+<div id="ref-10" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10]</div><div class="csl-right-inline">B.
+Pang, W. Dai, T. Ra, and K. H. Low. 2020. A concept of airspace
+configuration and operational rules for UAS in current airspace. In
+<em>AIAA/IEEE digital avionics systems conference - proceedings</em>,
+2020.</div>
 </div>
-
-<div id="ref-7" class="csl-entry" markdown="1">
-
-<p>Pang, B., K. Huat, and C. Lv. 2022. “Adaptive Conflict Resolution for Multi-UAV 4D Routes Optimization Using Stochastic Fractal Search Algorithm.” <em>Transportation Research Part C</em> 139 (September 2021): 103666.</p>
+<div id="ref-7" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[11]</div><div class="csl-right-inline">B.
+Pang, K. Huat, and C. Lv. 2022. Adaptive conflict resolution for
+multi-UAV 4D routes optimization using stochastic fractal search
+algorithm. <em>Transportation Research Part C</em> 139, September 2021
+(2022), 103666.</div>
 </div>
-
-<div id="ref-19" class="csl-entry" markdown="1">
-
-<p>Ravankar, A., A. A. Ravankar, Y. Kobayashi, Y. Hoshino, and C.-C. Peng. 2018. “Path Smoothing Techniques in Robot Navigation: State-of-the-Art, Current and Future Challenges.” <em>Sensors</em> 18 (9): 3170.</p>
+<div id="ref-19" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12]</div><div class="csl-right-inline">A.
+Ravankar, A. A. Ravankar, Y. Kobayashi, Y. Hoshino, and C.-C. Peng.
+2018. Path smoothing techniques in robot navigation: State-of-the-art,
+current and future challenges. <em>Sensors</em> 18, 9 (2018),
+3170.</div>
 </div>
-
-<div id="ref-2" class="csl-entry" markdown="1">
-
-<p>Straubinger, A., R. Rothfeld, M. Shamiyeh, K. D. Büchter, J. Kaiser, and K. O. Plötner. 2019. “An Overview of Current Research and Developments in Urban Air Mobility - Setting the Scene for UAM Introduction.” <em>Journal of Air Transport Management</em> 87 (August).</p>
+<div id="ref-2" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13]</div><div class="csl-right-inline">A.
+Straubinger, R. Rothfeld, M. Shamiyeh, K. D. Büchter, J. Kaiser, and K.
+O. Plötner. 2019. An overview of current research and developments in
+urban air mobility - setting the scene for UAM introduction. <em>Journal
+of Air Transport Management</em> 87, August (2019).</div>
 </div>
-
-<div id="ref-16" class="csl-entry" markdown="1">
-
-<p>Sunil, E., J. Ellerbroek, J. M. Hoekstra, and J. Maas. 2018. “Three-Dimensional Conflict Count Models for Unstructured and Layered Airspace Designs.” <em>Transportation Research Part C: Emerging Technologies</em> 95: 295–319. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.trc.2018.05.031.">https://doi.org/10.1016/j.trc.2018.05.031.</a></p>
+<div id="ref-16" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[14]</div><div class="csl-right-inline">E.
+Sunil, J. Ellerbroek, J. M. Hoekstra, and J. Maas. 2018.
+Three-dimensional conflict count models for unstructured and layered
+airspace designs. <em>Transportation Research Part C: Emerging
+Technologies</em> 95, (2018), 295–319. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1016/j.trc.2018.05.031."
+class="uri">https://doi.org/10.1016/j.trc.2018.05.031.</a></div>
 </div>
-
-<div id="ref-15" class="csl-entry" markdown="1">
-
-<p>Sunil, E., J. Ellerbroek, J. Hoekstra, A. Vidosavljevic, M. Arntzen, F. Bussink, and D. Nieuwenhuisen. 2017. “Analysis of Airspace Structure and Capacity for Decentralized Separation Using Fast-Time Simulations.” <em>Journal of Guidance, Control, and Dynamics</em> 40: 38–51.</p>
+<div id="ref-15" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[15]</div><div class="csl-right-inline">E.
+Sunil, J. Ellerbroek, J. Hoekstra, A. Vidosavljevic, M. Arntzen, F.
+Bussink, and D. Nieuwenhuisen. 2017. Analysis of airspace structure and
+capacity for decentralized separation using fast-time simulations.
+<em>Journal of Guidance, Control, and Dynamics</em> 40, (2017),
+38–51.</div>
 </div>
-
-<div id="ref-1" class="csl-entry" markdown="1">
-
-<p>Thipphavong, D. P., R. Apaza, B. Barmore, V. Battiste, B. Burian, Q. Dao, M. Feary, S. Go, K. H. Goodrich, and J. Homola. 2018. “Urban Air Mobility Airspace Integration Concepts and Considerations.” In <em>2018 Aviation Technology, Integration, and Operations Conference</em>, 3676.</p>
+<div id="ref-1" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[16]</div><div class="csl-right-inline">D.
+P. Thipphavong, R. Apaza, B. Barmore, V. Battiste, B. Burian, Q. Dao, M.
+Feary, S. Go, K. H. Goodrich, and J. Homola. 2018. Urban air mobility
+airspace integration concepts and considerations. In <em>2018 aviation
+technology, integration, and operations conference</em>, 2018.
+3676.</div>
 </div>
-
-<div id="ref-20" class="csl-entry" markdown="1">
-
-<p>Tian, F., R. Zhou, Z. Li, L. Li, Y. Gao, D. Cao, and L. Chen. 2021. “Trajectory Planning for Autonomous Mining Trucks Considering Terrain Constraints.” <em>IEEE Transactions on Intelligent Vehicles</em>.</p>
+<div id="ref-20" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[17]</div><div class="csl-right-inline">F.
+Tian, R. Zhou, Z. Li, L. Li, Y. Gao, D. Cao, and L. Chen. 2021.
+Trajectory planning for autonomous mining trucks considering terrain
+constraints. <em>IEEE Transactions on Intelligent Vehicles</em>
+(2021).</div>
 </div>
-
-<div id="ref-14" class="csl-entry" markdown="1">
-
-<p>Wang, C. H. J., E. M. Ng, and K. H. Low. 2021. “Investigation and Modeling of Flight Technical Error (FTE) Associated with UAS Operating with and Without Pilot Guidance.” <em>IEEE Transactions on Vehicular Technology</em>.</p>
+<div id="ref-14" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[18]</div><div class="csl-right-inline">C.
+H. J. Wang, E. M. Ng, and K. H. Low. 2021. Investigation and modeling of
+flight technical error (FTE) associated with UAS operating with and
+without pilot guidance. <em>IEEE Transactions on Vehicular
+Technology</em> (2021).</div>
 </div>
-
-<div id="ref-12" class="csl-entry" markdown="1">
-
-<p>Xie, W., and Y. Ouyang. 2015. “Optimal Layout of Transshipment Facility Locations on an Infinite Homogeneous Plane.” <em>Transportation Research Part B: Methodological</em> 75: 74–88.</p>
+<div id="ref-12" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[19]</div><div class="csl-right-inline">W.
+Xie and Y. Ouyang. 2015. Optimal layout of transshipment facility
+locations on an infinite homogeneous plane. <em>Transportation Research
+Part B: Methodological</em> 75, (2015), 74–88.</div>
 </div>
-
 </div>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://xishansnow.github.io/vll-pages">Xishansnow</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://xishansnow.github.io/vll-pages/posts/cebe6f4d.html">http://xishansnow.github.io/vll-pages/posts/cebe6f4d.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/vll-pages/tags/%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%92/">飞行规划</a><a class="post-meta__tags" href="/vll-pages/tags/%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%92/">全局规划</a></div><div class="post-share"><div class="social-share" data-image="/vll-pages/img/coffe_02.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/vll-pages/posts/cb57fa9d.html" title="低空无人机交通管理的空域设计和运行"><img class="cover" src="/vll-pages/img/book_04.png" onerror="onerror=null;src='/vll-pages/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">低空无人机交通管理的空域设计和运行</div></div><div class="info-2"><div class="info-item-1">   〖摘要〗随着无人机 ( UAV ) 的可用性和需求的增加，有必要建立无人机系统交通管理 ( UTM ) 系统，以实现低空的高效无人机运行。为了避免与地面障碍物、其他无人机和有人驾驶飞机相撞，在建立安全路径时，UTM 需要确定分配给每次飞行的时间和空间。已经提出了各种形式的离散化和结构化空域的想法，以通过有效的空域分配来提高系统运行效率并改善交通拥堵。此外，文献中还研究了将无人机分配到结构化单元空间的各种方法。本文将相关研究中出现的空域分配方法和结构设计分为几种类型，并分析了它们的优缺点。结构化空域设计分为三种模型： Air-Matrix、Air-Network 和 Air-Tubes ，并根据它们的子结构和时间分配方法进行分析。此外，通过重新分类结构化空域和运行方法并建立其组合进行了定量分析。   〖参考〗 Lee, U.-J. et al. (2023) ‘Airspace designs and operations for UAS traffic management at low altitude’, Aerospace, 10(9), p. 737....</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/vll-pages/posts/1710cae3.html" title="静态航路规划"><img class="cover" src="/vll-pages/img/coffe_08.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">静态航路规划</div></div><div class="info-2"><div class="info-item-1">   〖摘要〗 〖原文〗 〖参考〗  CMU 10-708 Slides CMU 10-708 Notes Jordan’s Textbook Airoldi’s Tutorial  p{text-indent:2em}  </div></div></div></a><a class="pagination-related" href="/vll-pages/posts/d04ee52a.html" title="飞行规划索引帖"><img class="cover" src="/vll-pages/img/coffe_11.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">飞行规划索引帖</div></div><div class="info-2"><div class="info-item-1">             #refplus, #refplus li{          padding:0;         margin:0;         list-style:none;     }；                         document.querySelectorAll(".refplus-num").forEach((ref) => {         let refid = ref.firstChild.href.replace(location.origin+location.pathname,'');         let refel = document.querySelector(refid);         let refnum = refel.dataset.num;         let ref_content = refel.innerText.replace(`[${refnum}]`,'');         tippy(ref, {             content: ref_content,    ...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/aec5bb89.html" title="轨迹生成技术"><img class="cover" src="/vll-pages/img/book_01.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">轨迹生成技术</div></div><div class="info-2"><div class="info-item-1">   〖摘要〗 〖原文〗 〖参考〗  CMU 10-708 Slides CMU 10-708 Notes Jordan’s Textbook Airoldi’s Tutorial  p{text-indent:2em} </div></div></div></a><a class="pagination-related" href="/vll-pages/posts/86e4cef1.html" title="飞行规划相关项目"><img class="cover" src="/vll-pages/img/coffe_04.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">飞行规划相关项目</div></div><div class="info-2"><div class="info-item-1">   〖摘要〗 〖原文〗 〖参考〗  CMU 10-708 Slides CMU 10-708 Notes Jordan’s Textbook Airoldi’s Tutorial  p{text-indent:2em}   </div></div></div></a><a class="pagination-related" href="/vll-pages/posts/1790fd21.html" title="动态航路规划"><img class="cover" src="/vll-pages/img/book_20.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-05</div><div class="info-item-2">动态航路规划</div></div><div class="info-2"><div class="info-item-1">   〖摘要〗 〖原文〗 〖参考〗 p{text-indent:2em}   </div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A5%E7%A9%BA%E5%9F%9F%E8%B5%84%E6%BA%90%E4%B8%BA%E4%B8%AD%E5%BF%83%E7%9A%84%E6%A6%82%E5%BF%B5%E8%AE%BE%E8%AE%A1"><span class="toc-text">以空域资源为中心的概念设计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A9%BA%E5%9F%9F%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E6%97%A0%E5%86%B2%E7%AA%81-4D-%E8%BD%A8%E8%BF%B9%E8%A7%84%E5%88%92"><span class="toc-text">空域资源中心无冲突 4D 轨迹规划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9E%E8%A1%8C%E9%AB%98%E5%BA%A6%E5%88%86%E9%85%8D"><span class="toc-text">飞行高度分配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3D-%E8%B7%AF%E5%BE%84%E7%94%9F%E6%88%90"><span class="toc-text">3D 路径生成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-%E8%B7%AF%E5%BE%84%E6%9F%A5%E6%89%BE"><span class="toc-text">A* 路径查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E5%B9%B3%E6%BB%91"><span class="toc-text">路径平滑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4D-%E8%BD%A8%E8%BF%B9%E8%A7%84%E5%88%92"><span class="toc-text">4D 轨迹规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E5%8F%98%E9%87%8F"><span class="toc-text">决策变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%A1%A8%E8%BF%B0"><span class="toc-text">问题表述</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E6%A8%A1%E6%8B%9F%E5%92%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">数值模拟和结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%B4%E8%B0%A2-%E8%87%B4%E8%B0%A2"><span class="toc-text">致谢 [致谢]</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By Xishansnow</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional and Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/vll-pages/js/utils.js"></script><script src="/vll-pages/js/main.js"></script><script src="/vll-pages/js/tw_cn.js"></script><script>(() => {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://xishansnow.github.io/vll-pages">Xishansnow</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://xishansnow.github.io/vll-pages/posts/cebe6f4d.html">http://xishansnow.github.io/vll-pages/posts/cebe6f4d.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/vll-pages/tags/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/">路径规划</a><a class="post-meta__tags" href="/vll-pages/tags/%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%92/">全局规划</a><a class="post-meta__tags" href="/vll-pages/tags/%E7%A6%BB%E7%BA%BF%E8%A7%84%E5%88%92/">离线规划</a><a class="post-meta__tags" href="/vll-pages/tags/UAM/">UAM</a></div><div class="post-share"><div class="social-share" data-image="/vll-pages/img/coffe_04.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/vll-pages/posts/93655c42.html" title="密集建筑环境中无人机配送的路径规划"><img class="cover" src="/vll-pages/img/coffe_05.png" onerror="onerror=null;src='/vll-pages/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">密集建筑环境中无人机配送的路径规划</div></div><div class="info-2"><div class="info-item-1">   【摘 要】无人机已被引入城市环境以方便我们的生活，例如货物运送服务。但城市地区密集的建筑物对无人机的安全运行构成挑战，因为与建筑物相撞的风险。为了应对这一挑战，我们提出了一种利用改进的蚁群优化 ( IACO ) 算法的路径规划方法。该算法通过自适应参数机制和信息素强度更新机制改进了 ACO 的标准设置。通过引入基于快速探索随机树 ( RRT ) 的机制来提高搜索效率，从而进行了进一步的改进。仿真结果表明，我们提出的方法显著提高了复杂城市环境中路径规划的收敛速度和解决方案的质量。它可以在二维和三维环境中始终如一地以更快的收敛速度产生令人满意的解决方案。 【原 文】 【参考资料】  p{text-indent:2em} 引言 无人机已被应用于城市环境中的物流、巡检、疫情防控等各个领域...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/cb57fa9d.html" title="低空无人机交通管理的空域设计和运行"><img class="cover" src="/vll-pages/img/book_17.png" onerror="onerror=null;src='/vll-pages/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">低空无人机交通管理的空域设计和运行</div></div><div class="info-2"><div class="info-item-1">   【摘要】随着无人机 ( UAV ) 的可用性和需求的增加，有必要建立无人机系统交通管理 ( UTM ) 系统，以实现低空的高效无人机运行。为了避免与地面障碍物、其他无人机和有人驾驶飞机相撞，在建立安全路径时，UTM 需要确定分配给每次飞行的时间和空间。已经提出了各种形式的离散化和结构化空域的想法，以通过有效的空域分配来提高系统运行效率并改善交通拥堵。此外，文献中还研究了将无人机分配到结构化单元空间的各种方法。本文将相关研究中出现的空域分配方法和结构设计分为几种类型，并分析了它们的优缺点。结构化空域设计分为三种模型： Air-Matrix、Air-Network 和 Air-Tubes ，并根据它们的子结构和时间分配方法进行分析。此外，通过重新分类结构化空域和运行方法并建立其组合进行了定量分析。  【参考】 Lee, U.-J. et al. (2023) ‘Airspace designs and operations for UAS traffic management at low altitude’, Aerospace, 10(9),...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/vll-pages/posts/44b0be2e.html" title="无人机交通管理的多智能体路径寻找"><img class="cover" src="/vll-pages/img/coffe_04.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-12</div><div class="info-item-2">无人机交通管理的多智能体路径寻找</div></div><div class="info-2"><div class="info-item-1">   【摘要】 无人驾驶飞行器 (UAV) 有望提供广泛的服务，因此无人机机队将由共享低空空域中的多个独立服务提供商管理。无人机安全高效运行的一个重要因素或冗余是飞行前冲突检测和消解 (CDR) 方法，该方法在实际飞行之前为无人机生成无冲突路径。多智能体寻路 (MAPF) 已经成功应用于地面机器人的类似问题。但大多数 MAPF 方法都是用简化假设进行测试的，这些假设并不反映许多现实世界领域的重要特征，例如无人机送货时需要考虑异构智能体，并且不断收到新的飞行运行请求。在本文中，我们扩展了 CBS 和 ECBS，以有效地将异构智能体与计算几何结合起来，并通过时空剪枝减少了搜索空间。此外，我们的工作在 CBS 和 ECBS 中引入了一种 “批处理” 方法，以高效的方式处理越来越多的送货运行请求。我们将该 “批处理” 方法在运行时间和求解成本方面的性能与 “先到先得” 方法进行了比较。我们的场景基于对日本某个真实地区 2030 年无人机使用情况的预测研究。我们的仿真表明，我们提出的基于 ECBS 的 “批处理” 方法比基于...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/9b1993f5.html" title="🔥 单机全局路径规划方法索引帖"><img class="cover" src="/vll-pages/img/coffe_12.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-19</div><div class="info-item-2">🔥 单机全局路径规划方法索引帖</div></div><div class="info-2"><div class="info-item-1">   p{text-indent:2em} 路径规划问题通常被视为一个 “最优路径或最短路径问题”，这与将任务分配视为 “组合优化问题” 截然不同。具体来说，路径规划为某架飞行器找到一条从起点到终点的路径，使其能够避开障碍物、最大化效率或满足其他优化目标。路径规划在理想空间中寻找一条从起点到终点的可行路径、次优路径或最优路径，其结果是一个航路点序列，并且通常作为行动规划（ Motion Planning ）问题的初值。 🔔 本帖仅针对单一飞行器（机器人）的全局路径规划问题进行综述 🔔 。 一、基础流程  环境建模  将整个环境进行建模，包括飞行器的起始位置、任务的起始位置和目标位置、障碍物位置等。  路径规划  对于每个飞行器，根据分配的任务，使用合适的路径规划算法（如...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/38dcf777.html" title="A* 家族"><img class="cover" src="/vll-pages/img/book_01.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-18</div><div class="info-item-2">A* 家族</div></div><div class="info-2"><div class="info-item-1">   【摘要】A* 是经典的启发式搜索算法，但存在无法任意角度、可扩展性差、动态适应性不足等问题。为了解决这些问题，人们开发了一系列基于 A* 的新算法。我们将其分为。 【参考】 p{text-indent:2em} A* 家族概述 提升算法效率的变体 提升算法效率的变体  EPEA*（ Goldenberg 2013 ）：参见 Goldenberg, M., Felner, A., Sturtevant, N.R., Holte, R.C., Schaeffer, J.: Optimal generation variants of EPEA. In: SoCS ( 2013 ) 跳点法（ Harabor 2011 ）：一种剪枝方法  目的：认为 A* 的邻域搜索策略展开了太多明显不在最优路线上的节点，因此提出沿着某个方向连续跳过多步无展开意义节点的跳点搜索方法。判断节点是否跳点的方法是分析其是否为目标节点或是否有受迫邻居节点。 算法：与 A* 类似 优点：可扩展性高，计算效率高 缺点： 有价值点的选择通常与障碍物有关  HPA*（ Botea 2004...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/4b5b9f66.html" title="Dijkstra 算法"><img class="cover" src="/vll-pages/img/001.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-17</div><div class="info-item-2">Dijkstra 算法</div></div><div class="info-2"><div class="info-item-1">   【摘要】Dijkstra 算法 是一种经典的图算法，用于在加权图中计算从单一源点到所有其他节点的最短路径。它是由计算机科学家 Edsger W. Dijkstra 在 1956 年提出的，广泛应用于网络路由、地图导航、图形学等领域。 【参考】 p{text-indent:2em} Dijkstra 算法的基本思想 Dijkstra 算法的核心思想是贪心策略。它通过不断选择当前最短的路径扩展到图中的其他节点，直到找到了从源点到目标节点的最短路径。算法使用优先队列来高效地选择当前最短的路径进行扩展。 Dijkstra 算法的步骤  初始化：  为每个节点分配一个初始距离值。源点的距离为 0，其他所有节点的距离初始化为无穷大（表示不可达）。 设定一个空的最短路径树（或树集合），用于记录已经找到最短路径的节点。  选择最小距离节点：  从尚未处理的节点中选择一个距离最小的节点 \(u\)，加入已处理的节点集合。  更新邻接节点的距离：  对于节点 \(u\) 的每一个邻接节点 \(v\)，计算从源点经过 \(u\) 到...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/a3fa4c46.html" title="人工势场法（APF）"><img class="cover" src="/vll-pages/img/book_19.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-18</div><div class="info-item-2">人工势场法（APF）</div></div><div class="info-2"><div class="info-item-1">   【摘要】人工势场法（Artificial Potential Field Method, APF）将机器人看作一个受力的物体，通过在配置空间中为每个点定义一种 “势场” 来引导机器人从起点到达目标点。目标点生成一个引力势场，障碍物生成一个斥力势场，机器人根据这些势场的合力实施移动。 【参考】 p{text-indent:2em} 人工势场法的基本原理 核心思想是将环境中的目标和障碍物视为具有不同 “势能” 的物体，根据机器人的位置计算其与这些物体之间的势能，机器人根据受力情况决定运动方向。势场分为两部分： 1．引力势场：目标点产生的引力将机器人吸引到目标，通常随着与目标距离的减小而增大。 2．斥力势场：障碍物产生的斥力将机器人推离障碍物，通常随着与障碍物的距离的减小而增大。 势场函数的定义 1）引力势场：目标点产生的引力通常定义为： \[ U_{\text {goal }}(q)=\frac{1}{2} \cdot k_{\text {goal }} \cdot\left\|q-q_{\text {goal }}\right\|^2 \] 其中：  \(q\)...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/73230899.html" title="可见性图算法(VG)"><img class="cover" src="/vll-pages/img/book_12.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-17</div><div class="info-item-2">可见性图算法(VG)</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A5%E7%A9%BA%E5%9F%9F%E8%B5%84%E6%BA%90%E4%B8%BA%E4%B8%AD%E5%BF%83%E7%9A%84%E6%A6%82%E5%BF%B5%E8%AE%BE%E8%AE%A1"><span class="toc-text">以空域资源为中心的概念设计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A9%BA%E5%9F%9F%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E6%97%A0%E5%86%B2%E7%AA%81-4d-%E8%BD%A8%E8%BF%B9%E8%A7%84%E5%88%92"><span class="toc-text">空域资源中心无冲突 4D
+轨迹规划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9E%E8%A1%8C%E9%AB%98%E5%BA%A6%E5%88%86%E9%85%8D"><span class="toc-text">1）飞行高度分配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#d-%E8%B7%AF%E5%BE%84%E7%94%9F%E6%88%90"><span class="toc-text">2）3D 路径生成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a-%E8%B7%AF%E5%BE%84%E6%9F%A5%E6%89%BE"><span class="toc-text">A* 路径查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E5%B9%B3%E6%BB%91"><span class="toc-text">路径平滑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#d-%E8%BD%A8%E8%BF%B9%E8%A7%84%E5%88%92"><span class="toc-text">3）4D 轨迹规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E5%8F%98%E9%87%8F"><span class="toc-text">决策变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%A1%A8%E8%BF%B0"><span class="toc-text">问题表述</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E4%BB%BF%E7%9C%9F%E5%92%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">数值仿真和结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%B4%E8%B0%A2"><span class="toc-text">致谢</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By Xishansnow</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional and Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/vll-pages/js/utils.js"></script><script src="/vll-pages/js/main.js"></script><script src="/vll-pages/js/tw_cn.js"></script><script>(() => {
   const panguFn = () => {
     if (typeof pangu === 'object') pangu.autoSpacingPage()
     else {
@@ -419,6 +611,49 @@
   btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
   document.addEventListener('DOMContentLoaded', panguInit)
 })()</script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: false,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
   const runMermaid = ele => {
     window.loadMermaid = true
     const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : ''
