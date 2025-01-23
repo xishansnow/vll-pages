@@ -1,0 +1,429 @@
+<!DOCTYPE html><html class="hide-aside" lang="zh-cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>HPA* 算法 | 构建低空信息理论与技术知识图谱！</title><meta name="author" content="Xishansnow"><meta name="copyright" content="Xishansnow"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="   HPA*（Hierarchical Path-Finding A*）是一种针对大规模网格地图的分层路径规划算法，由 Botea 等人于 2004 年提出。它通过将地图划分成多个区域（clusters），并在更高层级（抽象层）进行搜索，从而加速在大地图上的路径搜索过程。下文先对 HPA*..."><link rel="shortcut icon" href="/vll-pages/img/favi.jpg"><link rel="canonical" href="http://xishansnow.github.io/vll-pages/posts/d6d97a3a.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/vll-pages/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/vll-pages/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HPA* 算法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/vll-pages/img/favi.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/vll-pages/archives/"><div class="headline">Articles</div><div class="length-num">108</div></a><a href="/vll-pages/tags/"><div class="headline">Tags</div><div class="length-num">88</div></a><a href="/vll-pages/categories/"><div class="headline">Categories</div><div class="length-num">51</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/vll-pages/index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map"></i><span> 运行概念</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/94508604.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 综合运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UTM/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> UTM 运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UAM/"><i class="fa-fw fa-solid fa-map"></i><span> UAM 运行概念</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 空域管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/5d2e7a7c.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/"><i class="fa-fw fas fa-atom"></i><span> 空域结构</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E6%B3%95%E8%A7%84/"><i class="fa-fw fa-solid fa-magnet"></i><span> 空域法规</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 任务规划</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d04ee52a.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 任务分配</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%95%E6%9C%BA%E8%A7%84%E5%88%92/"><i class="fa-fw fas fa-atom"></i><span> 单机规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92/"><i class="fa-fw fa-solid fa-magnet"></i><span> 多机规划</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 风险管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/e53d9399.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E6%80%A7%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 定性评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fa-solid fa-magnet"></i><span> 定量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%BB%93%E6%9E%9C%E5%BA%94%E7%94%A8/"><i class="fa-fw fas fa-cogs"></i><span> 结果应用</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 冲突管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d805a213.html"><i class="fa-fw fas fa-cogs"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E7%95%A5%E5%B1%82/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 战略层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E6%9C%AF%E5%B1%82/"><i class="fa-fw fa-solid fa-magnet"></i><span> 战术层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/DAA/"><i class="fa-fw fa-solid fa-magnet"></i><span> DAA</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E9%98%B2%E6%92%9E/"><i class="fa-fw fa-solid fa-magnet"></i><span> 防撞</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-ghost"></i><span> DCB 管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/337b7ab7.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E7%94%9F%E6%88%90/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求生成</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E9%A2%84%E6%B5%8B/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求预测</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 容量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/DCB%E6%8E%AA%E6%96%BD/"><i class="fa-fw fas fa-school"></i><span> DCB 措施</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E7%9B%91%E8%A7%86/"><i class="fa-fw fas fa-cogs"></i><span> 监视</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E9%80%9A%E4%BF%A1/"><i class="fa-fw fas fa-cogs"></i><span> 通信</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 定位导航</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BE%AE%E6%B0%94%E8%B1%A1/"><i class="fa-fw fa-solid fa-magnet"></i><span> 微气象</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E8%B5%B7%E9%99%8D%E5%9C%BA/"><i class="fa-fw fas fa-cogs"></i><span> 起降场</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/UAS/"><i class="fa-fw fas fa-cogs"></i><span> 飞行器</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BD%AF%E4%BB%B6%E5%B9%B3%E5%8F%B0/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 软件平台</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-compass"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/archives/"><i class="fa-fw fa-solid fa-timeline"></i><span> 时间索引</span></a></li><li><a class="site-page child" href="/vll-pages/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签索引</span></a></li><li><a class="site-page child" href="/vll-pages/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类索引</span></a></li><li><a class="site-page child" href="/vll-pages/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/010.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/vll-pages/"><span class="site-name">构建低空信息理论与技术知识图谱！</span></a><a class="nav-page-title" href="/vll-pages/"><span class="site-name">HPA* 算法</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/vll-pages/index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map"></i><span> 运行概念</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/94508604.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 综合运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UTM/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> UTM 运行概念</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BF%90%E8%A1%8C%E6%A6%82%E5%BF%B5/UAM/"><i class="fa-fw fa-solid fa-map"></i><span> UAM 运行概念</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 空域管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/5d2e7a7c.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E7%BB%93%E6%9E%84/"><i class="fa-fw fas fa-atom"></i><span> 空域结构</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%A9%BA%E5%9F%9F%E6%B3%95%E8%A7%84/"><i class="fa-fw fa-solid fa-magnet"></i><span> 空域法规</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 任务规划</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d04ee52a.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 任务分配</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%95%E6%9C%BA%E8%A7%84%E5%88%92/"><i class="fa-fw fas fa-atom"></i><span> 单机规划</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92/"><i class="fa-fw fa-solid fa-magnet"></i><span> 多机规划</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-atom"></i><span> 风险管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/e53d9399.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E6%80%A7%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 定性评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E5%AE%9A%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fa-solid fa-magnet"></i><span> 定量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%BB%93%E6%9E%9C%E5%BA%94%E7%94%A8/"><i class="fa-fw fas fa-cogs"></i><span> 结果应用</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-cogs"></i><span> 相关项目</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 冲突管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/d805a213.html"><i class="fa-fw fas fa-cogs"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E7%95%A5%E5%B1%82/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 战略层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E6%88%98%E6%9C%AF%E5%B1%82/"><i class="fa-fw fa-solid fa-magnet"></i><span> 战术层</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/DAA/"><i class="fa-fw fa-solid fa-magnet"></i><span> DAA</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86/%E9%98%B2%E6%92%9E/"><i class="fa-fw fa-solid fa-magnet"></i><span> 防撞</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-ghost"></i><span> DCB 管理</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/posts/337b7ab7.html"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 索引帖</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E7%94%9F%E6%88%90/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求生成</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E9%9C%80%E6%B1%82%E9%A2%84%E6%B5%8B/"><i class="fa-fw fa-solid fa-pen-nib"></i><span> 需求预测</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0/"><i class="fa-fw fas fa-atom"></i><span> 容量评估</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%9C%80%E6%B1%82%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/DCB%E6%8E%AA%E6%96%BD/"><i class="fa-fw fas fa-school"></i><span> DCB 措施</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E7%9B%91%E8%A7%86/"><i class="fa-fw fas fa-cogs"></i><span> 监视</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E9%80%9A%E4%BF%A1/"><i class="fa-fw fas fa-cogs"></i><span> 通信</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%AF%BC%E8%88%AA/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 定位导航</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BE%AE%E6%B0%94%E8%B1%A1/"><i class="fa-fw fa-solid fa-magnet"></i><span> 微气象</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E8%B5%B7%E9%99%8D%E5%9C%BA/"><i class="fa-fw fas fa-cogs"></i><span> 起降场</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E9%A3%9E%E8%A1%8C%E5%99%A8/UAS/"><i class="fa-fw fas fa-cogs"></i><span> 飞行器</span></a></li><li><a class="site-page child" href="/vll-pages/categories/%E8%BD%AF%E4%BB%B6%E5%B9%B3%E5%8F%B0/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"><i class="fa-fw fa-solid fa-layer-group"></i><span> 软件平台</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-compass"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/vll-pages/archives/"><i class="fa-fw fa-solid fa-timeline"></i><span> 时间索引</span></a></li><li><a class="site-page child" href="/vll-pages/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签索引</span></a></li><li><a class="site-page child" href="/vll-pages/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类索引</span></a></li><li><a class="site-page child" href="/vll-pages/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">HPA* 算法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-17T06:00:00.000Z" title="Created 2025-01-17 14:00:00">2025-01-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-23T08:52:06.562Z" title="Updated 2025-01-23 16:52:06">2025-01-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/">任务规划</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/vll-pages/categories/%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%92/%E5%8D%95%E6%9C%BA%E8%A7%84%E5%88%92/">单机规划</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>7mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><script src='https://unpkg.com/tippy.js@2.0.2/dist/tippy.all.min.js'></script>
+<script src='/js/attachTooltips.js'></script>
+<link rel='stylesheet' href='/css/tippy.css'>
+<p><strong>HPA*（Hierarchical Path-Finding
+A*</strong>）是一种针对大规模网格地图的分层路径规划算法，由
+<strong>Botea</strong> 等人于 2004
+年提出。它通过将地图划分成多个区域（clusters），并在更高层级（抽象层）进行搜索，从而加速在大地图上的路径搜索过程。下文先对
+HPA* 的主要思想和流程进行介绍，然后给出一个简化的 Python
+伪实现示例，用于帮助理解。</p>
+<hr />
+<h2 id="一hpa-的核心思想">一、HPA* 的核心思想</h2>
+<ol type="1">
+<li><strong>地图分块（Clustering）</strong>
+<ul>
+<li>将原始大网格地图分割成若干个小块（clusters），如每个小块为 <span
+class="math inline">\(C \times C\)</span> 的网格。<br />
+</li>
+<li>通过分块减少需要显式搜索的节点数量，从而加快整体搜索。</li>
+</ul></li>
+<li><strong>抽象图构建（Abstraction）</strong>
+<ul>
+<li>在每个小块中，选取若干 “出入口（entry/exit points）”
+做为该块对外连接的入口/出口。<br />
+</li>
+<li>这些出入口间在小块内部使用 A*
+或类似方法预先计算最短子路径，形成一个抽象节点与边的图。<br />
+</li>
+<li>在更高层次的抽象图中，每个小块视为一个<strong>抽象节点</strong>，块与块之间通过出入口点相连。</li>
+</ul></li>
+<li><strong>分层搜索</strong>
+<ol type="1">
+<li><strong>高层搜索</strong>：在抽象图上进行 A*
+等基于图的搜索，找到从起始块到目标块的抽象路径。<br />
+</li>
+<li><strong>低层修正</strong>：对抽象路径上的每个块，再调用本地的子路径（已预先计算或实时搜索）来拼接出完整、精细化的路径。<br />
+</li>
+<li>这样就不需要在原图上做全局搜索，而是在抽象层快速定位大体方向，在局部小块内完成细化路径。</li>
+</ol></li>
+<li><strong>动态更新</strong>
+<ul>
+<li>如果地图发生变化（障碍物增减），可局部地更新受影响的小块抽象，而不必重新计算整张地图。<br />
+</li>
+<li>能适应动态环境，效率比普通 A* 在大地图中高得多。</li>
+</ul></li>
+</ol>
+<h3 id="优点">优点</h3>
+<ul>
+<li><strong>缩小搜索空间</strong>：只需在抽象层搜索，以及在局部块内搜索，减少搜索节点总量。<br />
+</li>
+<li><strong>可扩展</strong>：对大规模地图有良好效果，并可进行多级抽象（HPA*、Hierarchical
+HPA*）。</li>
+</ul>
+<h3 id="缺点">缺点</h3>
+<ul>
+<li><strong>预处理</strong>：需要花费额外时间和内存构建抽象图/出入口点信息；初次路径可能不如
+A* 直接搜索快，但在多次查询时通常更优。<br />
+</li>
+<li><strong>近似最优</strong>：由于抽象，可能导致路径比精确最优路径稍长。</li>
+</ul>
+<hr />
+<h2 id="二hpa-算法流程示例">二、HPA* 算法流程示例</h2>
+<ol type="1">
+<li><strong>分块</strong>
+<ul>
+<li>将网格划分为大小为 <span class="math inline">\(C \times C\)</span>
+的若干块。<br />
+</li>
+<li>对每个块，标识其内部所有可行点（空地）以及与相邻块连通的
+“出入口点（entry/exit points）” 。</li>
+</ul></li>
+<li><strong>构建抽象图</strong>
+<ul>
+<li>对于每个块：
+<ul>
+<li>在块内部预先计算任意出入口点之间的最短路径（可用 A*）。<br />
+</li>
+<li>这些出入口点在抽象层成为抽象节点，出入口点之间的最短路径距离成为抽象边的代价。<br />
+</li>
+</ul></li>
+<li>在块与块之间，若有共享出入口点或相邻出入口点，则在抽象图中建立边连接。</li>
+</ul></li>
+<li><strong>高层搜索</strong>
+<ul>
+<li>给定起点和终点，找到它们各自所在的块和对应出入口点。<br />
+</li>
+<li>在抽象图中使用 A*（或 Dijkstra
+等）搜索，从起点所在块的出入口点到终点所在块的出入口点，得到抽象路径（sequence
+of blocks and doorways）。</li>
+</ul></li>
+<li><strong>低层拼接</strong>
+<ul>
+<li>对抽象路径中的相邻块之间，通过预先存储的出入口点-出入口点最短路径或直接在块内部用
+A* 进行局部搜索，拼接成完整精细的网格路径。</li>
+</ul></li>
+</ol>
+<hr />
+<h2 id="三hpa-简化-python-实现示例伪代码">三、HPA* 简化 Python
+实现（示例伪代码）</h2>
+<p>下述示例代码仅演示主要结构，忽略了很多实现细节，比如网格如何准确分块、如何选择出入口点等。只用来帮助理解
+HPA* 的基本流程。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HPAStarPlanner</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, grid, cluster_size=<span class="number">8</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        grid: 2D numpy array, 0表示空地, 1表示障碍物</span></span><br><span class="line"><span class="string">        cluster_size: 每个簇(cluster)的大小</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.grid = grid</span><br><span class="line">        <span class="variable language_">self</span>.height, <span class="variable language_">self</span>.width = grid.shape</span><br><span class="line">        <span class="variable language_">self</span>.cluster_size = cluster_size</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 分块 =&gt; 生成clusters</span></span><br><span class="line">        <span class="variable language_">self</span>.clusters = <span class="variable language_">self</span>.build_clusters()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 出入口点与抽象图</span></span><br><span class="line">        <span class="variable language_">self</span>.portals = &#123;&#125;</span><br><span class="line">        <span class="variable language_">self</span>.abstract_graph = &#123;&#125;</span><br><span class="line">        <span class="variable language_">self</span>.build_abstract_graph()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">build_clusters</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot; 将网格划分为多个 cluster，每个 cluster 对应 grid 上一块区域 &quot;&quot;&quot;</span></span><br><span class="line">        clusters = []</span><br><span class="line">        cluster_id = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="variable language_">self</span>.height, <span class="variable language_">self</span>.cluster_size):</span><br><span class="line">            <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="variable language_">self</span>.width, <span class="variable language_">self</span>.cluster_size):</span><br><span class="line">                <span class="comment"># 以 (r, c) 为左上角, 高宽 cluster_size</span></span><br><span class="line">                cluster_info = &#123;</span><br><span class="line">                    <span class="string">&quot;id&quot;</span>: cluster_id,</span><br><span class="line">                    <span class="string">&quot;row_range&quot;</span>: (r, <span class="built_in">min</span>(r+<span class="variable language_">self</span>.cluster_size, <span class="variable language_">self</span>.height)),</span><br><span class="line">                    <span class="string">&quot;col_range&quot;</span>: (c, <span class="built_in">min</span>(c+<span class="variable language_">self</span>.cluster_size, <span class="variable language_">self</span>.width))</span><br><span class="line">                &#125;</span><br><span class="line">                clusters.append(cluster_info)</span><br><span class="line">                cluster_id += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> clusters</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">build_abstract_graph</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        对每个 cluster 找出出入口点(与相邻 cluster 交接的空地),</span></span><br><span class="line"><span class="string">        预先计算出入口点间的最短路径(块内).</span></span><br><span class="line"><span class="string">        然后在抽象层把 cluster 之间的出入口点相连.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># <span class="doctag">TODO:</span> 找到出入口点</span></span><br><span class="line">        <span class="comment"># <span class="doctag">TODO:</span> 计算出入口点之间的局部最短路径(使用 A* or BFS)</span></span><br><span class="line">        <span class="comment"># <span class="doctag">TODO:</span> 在 self.abstract_graph 上记录出入口点间的距离</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">locate_cluster</span>(<span class="params">self, x, y</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot; 根据坐标 (x,y) 找到它属于哪个 cluster. &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 根据 cluster_size 来定位</span></span><br><span class="line">        cid_r = x // <span class="variable language_">self</span>.cluster_size</span><br><span class="line">        cid_c = y // <span class="variable language_">self</span>.cluster_size</span><br><span class="line">        <span class="comment"># cluster id = ...</span></span><br><span class="line">        <span class="comment"># 省略实现</span></span><br><span class="line">        <span class="keyword">return</span> cid</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">high_level_search</span>(<span class="params">self, start_cluster, goal_cluster</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        在抽象图上进行 A* 搜索, 返回抽象路径(簇序列+出入口点).</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># <span class="doctag">TODO:</span> 实现抽象层 A*</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">refine_path</span>(<span class="params">self, abstract_path, start, goal</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        根据抽象层得到的簇序列, 在每个簇内进行局部搜索,</span></span><br><span class="line"><span class="string">        拼接成完整网格路径.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        full_path = []</span><br><span class="line">        <span class="comment"># <span class="doctag">TODO:</span> 遍历抽象路径的相邻节点, 在对应 cluster 内找具体路径, 拼起来</span></span><br><span class="line">        <span class="keyword">return</span> full_path</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">plan_path</span>(<span class="params">self, start, goal</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        HPA* 主流程</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        start_cluster = <span class="variable language_">self</span>.locate_cluster(start[<span class="number">0</span>], start[<span class="number">1</span>])</span><br><span class="line">        goal_cluster = <span class="variable language_">self</span>.locate_cluster(goal[<span class="number">0</span>], goal[<span class="number">1</span>])</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 抽象图搜索</span></span><br><span class="line">        abstract_path = <span class="variable language_">self</span>.high_level_search(start_cluster, goal_cluster)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> abstract_path:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 低层拼接</span></span><br><span class="line">        path = <span class="variable language_">self</span>.refine_path(abstract_path, start, goal)</span><br><span class="line">        <span class="keyword">return</span> path</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示意使用</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="comment"># 构造随机地图</span></span><br><span class="line">    height, width = <span class="number">64</span>, <span class="number">64</span></span><br><span class="line">    map_data = np.random.choice([<span class="number">0</span>,<span class="number">1</span>], size=(height, width), p=[<span class="number">0.95</span>, <span class="number">0.05</span>])</span><br><span class="line">    start = (<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    goal = (<span class="number">63</span>, <span class="number">63</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 初始化 HPA*</span></span><br><span class="line">    planner = HPAStarPlanner(map_data, cluster_size=<span class="number">8</span>)</span><br><span class="line">    <span class="comment"># 规划路径</span></span><br><span class="line">    path = planner.plan_path(start, goal)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;HPA* path:&quot;</span>, path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h3 id="代码思路">代码思路：</h3>
+<ol type="1">
+<li><p><strong>分块</strong>：<code>build_clusters</code> 将 64×64
+地图按 <code>8×8</code> 区域划分成
+<code>(64/8) * (64/8) = 8*8 = 64</code> 个块，每个块记录其行列范围和唯一
+ID。</p></li>
+<li><p><strong>出入口点</strong>：</p>
+<ul>
+<li>在每个簇边界上查找与相邻簇连通的点（ “出入口” ）。<br />
+</li>
+<li>对这些出入口点进行簇内 A* 或 BFS
+计算其两两最短子路径，储存抽象图信息。</li>
+</ul></li>
+<li><p><strong>抽象图</strong>：</p>
+<ul>
+<li>把每个簇作为一个抽象节点，在抽象层将不同簇之间的出入口点互连并存储距离。<br />
+</li>
+<li><code>high_level_search</code> 在抽象层对簇进行
+A*，返回抽象路径（簇序列 + 出入口点序列）。</li>
+</ul></li>
+<li><p><strong>低层修正</strong>：</p>
+<ul>
+<li><code>refine_path</code>
+根据抽象路径中相邻的簇与出入口点信息，进行局部搜索或查表，拼接出完整网格级别路径。</li>
+</ul></li>
+</ol>
+<p>因为 HPA*
+的实现细节较繁琐（尤其是<strong>出入口点</strong>搜索、<strong>抽象图</strong>构建、<strong>局部搜索</strong>拼接等），上面仅演示框架与关键函数，具体可参考
+Botea 2004 年的相关论文或开源项目进行深度实现。</p>
+<hr />
+<h2 id="三关键要点">三、关键要点</h2>
+<ol type="1">
+<li><p><strong>分层思想</strong>：大地图被切分为多个簇，局部搜索在簇内得到出入口点间的最短路径，抽象层搜索只在簇与簇之间的连通进行快速规划。</p></li>
+<li><p><strong>出入口点与抽象边</strong>：</p>
+<ul>
+<li>需在簇边缘上找到空地点，可以作为出入口点来与相邻簇相连。<br />
+</li>
+<li>计算出入口点间的最短路径，需要在簇内部做一次 BFS/A*
+并记录结果。</li>
+</ul></li>
+<li><p><strong>多次查询的效率</strong>：</p>
+<ul>
+<li>若在同一个大地图上多次进行不同起终点的规划，HPA*
+的预处理（出入口点-出入口点最短路）可被复用，极大提升查询效率。</li>
+</ul></li>
+<li><p><strong>动态更新</strong>：</p>
+<ul>
+<li>如果地图发生变化（障碍增删），只需更新受影响簇的内部最短路径，不必整体重算。</li>
+</ul></li>
+</ol>
+<hr />
+<h2 id="四优缺点">四、优缺点</h2>
+<ul>
+<li><strong>优点</strong>：适合大地图，可以显著减少在精细网格上全局搜索的开销；在多次路径查询时效率极大提升。<br />
+</li>
+<li><strong>缺点</strong>：需要额外的预处理；当地图障碍物分布复杂时，出入口点选择和局部搜索也不简单；生成的路径有时不如全局精细搜索的路径短，但通常误差很小。</li>
+</ul>
+<hr />
+<h3 id="参考文献">参考文献</h3>
+<ul>
+<li>Botea, A., Müller, M., &amp; Schaeffer, J. (2004). <strong>Near
+Optimal Hierarchical Path-Finding</strong>. <em>Journal of Game
+Development</em>, 1(1):7-28.<br />
+</li>
+<li>Botea, A., Müller, M., &amp; Schaeffer, J. (2004). <strong>Using
+abstraction for planning in real-time strategy games</strong>.
+AIIDE.</li>
+</ul>
+<p>通过以上示例和说明，即可了解 <strong>HPA*</strong>
+的主要过程与一个示例化的代码结构。若需完整可运行版本，请参考相关开源项目或自行实现细节（如出入口点选取策略、簇内部最短路径预计算、抽象层搜索等）。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://xishansnow.github.io/vll-pages">Xishansnow</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://xishansnow.github.io/vll-pages/posts/d6d97a3a.html">http://xishansnow.github.io/vll-pages/posts/d6d97a3a.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/vll-pages/tags/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/">路径规划</a><a class="post-meta__tags" href="/vll-pages/tags/%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%92/">全局规划</a><a class="post-meta__tags" href="/vll-pages/tags/%E7%A6%BB%E7%BA%BF%E8%A7%84%E5%88%92/">离线规划</a><a class="post-meta__tags" href="/vll-pages/tags/%E5%8D%95%E6%9C%BA/">单机</a><a class="post-meta__tags" href="/vll-pages/tags/A-%E5%AE%B6%E6%97%8F/">A* 家族</a></div><div class="post-share"><div class="social-share" data-image="/vll-pages/img/010.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/vll-pages/posts/bbf9a27b.html" title="EPEA* 算法"><img class="cover" src="/vll-pages/img/005.png" onerror="onerror=null;src='/vll-pages/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">EPEA* 算法</div></div><div class="info-2"><div class="info-item-1">    </div></div></div></a><a class="pagination-related" href="/vll-pages/posts/c6198f89.html" title="PRA* 算法"><img class="cover" src="/vll-pages/img/coffe_02.png" onerror="onerror=null;src='/vll-pages/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">PRA* 算法</div></div><div class="info-2"><div class="info-item-1">   PRA（Partial Refinement A）是一种面向大规模网格地图的分层路径规划算法，可视为 HPA*（Hierarchical Path-Finding A*） 家族的一种变体。它通过将地图划分为分层抽象（clusters）并在高层进行搜索，然后只在必要的部分对抽象路径进行细化（Refinement），从而减少对整幅地图的搜索，提升效率。该算法适用于在大型地图上频繁执行路径规划的场景，例如游戏AI、仿真或机器人导航。以下从算法思想、主要流程、示例结构几个方面展开介绍。  一、PRA* 算法思想  抽象层搜索（高层）  将原始网格地图分成若干个簇（clusters）。在每个簇的边缘或出入口节点（entry/exit points）之间预先存储连通信息或最短路径。  在抽象层，将每个簇视为一个抽象节点，把簇之间的出入口连通作为抽象边，并在这个抽象图上使用类似 A* 的搜索得到一个近似全局的路径序列（即簇序列）。  局部细化（Partial...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/vll-pages/posts/8c57237a.html" title="进化优化算法"><img class="cover" src="/vll-pages/img/book_17.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-19</div><div class="info-item-2">进化优化算法</div></div><div class="info-2"><div class="info-item-1">   【摘要】 【参考】 p{text-indent:2em} </div></div></div></a><a class="pagination-related" href="/vll-pages/posts/44b0be2e.html" title="无人机交通管理的多智能体路径寻找"><img class="cover" src="/vll-pages/img/book_02.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-12</div><div class="info-item-2">无人机交通管理的多智能体路径寻找</div></div><div class="info-2"><div class="info-item-1">   【摘要】 无人驾驶飞行器 (UAV) 有望提供广泛的服务，因此无人机机队将由共享低空空域中的多个独立服务提供商管理。无人机安全高效运行的一个重要因素或冗余是飞行前冲突检测和消解 (CDR) 方法，该方法在实际飞行之前为无人机生成无冲突路径。多智能体寻路 (MAPF) 已经成功应用于地面机器人的类似问题。但大多数 MAPF 方法都是用简化假设进行测试的，这些假设并不反映许多现实世界领域的重要特征，例如无人机送货时需要考虑异构智能体，并且不断收到新的飞行运行请求。在本文中，我们扩展了 CBS 和 ECBS，以有效地将异构智能体与计算几何结合起来，并通过时空剪枝减少了搜索空间。此外，我们的工作在 CBS 和 ECBS 中引入了一种 “批处理” 方法，以高效的方式处理越来越多的送货运行请求。我们将该 “批处理” 方法在运行时间和求解成本方面的性能与 “先到先得” 方法进行了比较。我们的场景基于对日本某个真实地区 2030 年无人机使用情况的预测研究。我们的仿真表明，我们提出的基于 ECBS 的 “批处理” 方法比基于...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/38dcf777.html" title="🔥 A* 家族"><img class="cover" src="/vll-pages/img/coffe_04.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-23</div><div class="info-item-2">🔥 A* 家族</div></div><div class="info-2"><div class="info-item-1">   【摘要】A* 是经典的启发式搜索算法，但存在无法任意角度、可扩展性差、动态适应性不足等问题。为了解决这些问题，人们开发了一系列基于 A* 的新算法。我们将其分为五种常见的变体：效率提升类、几何改进类、动态环境在线规划类、多机协作离线规划类、指定成本类。 💡 注意： 本文仅考虑为单一智能体规划路径的问题，可能适用于不同的应用场景的不同问题。多智能体路径规划问题不在本文范围内，关心的读者请参见 多机路径规划方法索引帖。多机协作类 A* 变体看似与多智能体路径规划有关，但其仅关注多机环境下的单一智能体路径规划问题。 p{text-indent:2em} A* 家族概述 （暂略） 效率提升类 A* 变体  EPEA*（ Goldenberg 2013 ）：参见 Goldenberg, M., Felner, A., Sturtevant, N.R., Holte, R.C., Schaeffer, J.: Optimal generation variants of EPEA. In: SoCS ( 2013 )。详情参见 EPEA*算法。 跳点法（ Harabor 2011...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/31a0c104.html" title="Block A* 算法"><img class="cover" src="/vll-pages/img/coffe_10.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-17</div><div class="info-item-2">Block A* 算法</div></div><div class="info-2"><div class="info-item-1">   Block A* 是一种面向网格地图的路径规划算法，通过将网格划分为更大的 “块” （block），在块级别进行快速跳跃或查找，从而减少搜索节点数量、加速路径规划。它常与 JPS（Jump Point Search） 等方法相结合或比较，用于大规模离散网格上加速 A* 搜索。下面从原理、算法流程、优缺点、示例思路等方面进行介绍。  一、算法原理  分块（Blocking）  将原先的细颗粒网格（例如 1×1 每格）聚合成更大粒度的 “块” （如 4×4、8×8 等），在块上构建抽象化的搜索图。  每个块包含若干网格单元，并为块的边缘选取 “关键信息” ——例如可通行的边缘格子或预计算边缘到边缘的最短路径。  块级跳跃  当进行 A* 搜索时，如果当前位置可通过预先计算好的信息迅速判断跳跃到某个块的另一个边缘位置，则无需遍历块内部的所有节点。  这类似于预处理一个块内的通行情况，一旦确定能在块内从某边缘到另一边缘直通，就跳到块边缘，不用在块内离散搜索。  与 HPA* 的区别  Block...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/801c855a.html" title="压缩路径数据库（ CPD ）算法"><img class="cover" src="/vll-pages/img/coffe_12.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-17</div><div class="info-item-2">压缩路径数据库（ CPD ）算法</div></div><div class="info-2"><div class="info-item-1">   CPD（Compressed Path Database） 算法是一种针对网格地图（或其它离散图）进行多次路径查询时高效检索的技术。它由 [Strasser et al., 2017] 等人提出，被广泛应用于游戏AI、导航系统等场景下的重复路径查询（Offline Query）。 CPD 的核心思路是： 1. 在离线阶段对地图进行预处理，构建压缩后的路径数据库（Compressed Path Database）； 2. 在在线阶段（实际查询时）通过查表或少量运算即可快速还原从起点到终点的最短路径。 下面从原理、主要流程、优缺点以及示例实现思路进行介绍。  一、CPD 算法基本原理  离线预处理阶段：  构建最短路树 / 图：对地图中的每个节点（网格坐标）进行最短路径计算，如 BFS 或 A*，或将其划分为多个区块后在抽象图上做全局 Floyd-Warshall 等；  压缩存储：以“方向向量”或“中间关键节点”的方式对最短路信息进行存储和压缩。  具体做法各有不同，但目标是让从任意节点 s 到任意节点...</div></div></div></a><a class="pagination-related" href="/vll-pages/posts/bbf9a27b.html" title="EPEA* 算法"><img class="cover" src="/vll-pages/img/005.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-17</div><div class="info-item-2">EPEA* 算法</div></div><div class="info-2"><div class="info-item-1">    </div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80hpa-%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-text">一、HPA* 的核心思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8Chpa-%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E7%A4%BA%E4%BE%8B"><span class="toc-text">二、HPA* 算法流程示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89hpa-%E7%AE%80%E5%8C%96-python-%E5%AE%9E%E7%8E%B0%E7%A4%BA%E4%BE%8B%E4%BC%AA%E4%BB%A3%E7%A0%81"><span class="toc-text">三、HPA* 简化 Python
+实现（示例伪代码）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%80%9D%E8%B7%AF"><span class="toc-text">代码思路：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%85%B3%E9%94%AE%E8%A6%81%E7%82%B9"><span class="toc-text">三、关键要点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">四、优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-text">参考文献</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By Xishansnow</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional and Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/vll-pages/js/utils.js"></script><script src="/vll-pages/js/main.js"></script><script src="/vll-pages/js/tw_cn.js"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (true){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: false,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : ''
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script></div></body></html>
